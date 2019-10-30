@@ -92,6 +92,31 @@ us with the largest dataset. We have data till 1992 to 2017.
 
 We use \cite{aw2011}.
 
+
+\section{Model}
+
+
+\subsection{Dynamic Model}
+ $$ S_{it} = (\omega_{it}, K_{it}, e_{it-1}, m_{it-1})$$
+\begin{equation}
+  V_{it}(s_{it}) = \int (\pi_{it}^D + max_{e_{it}}\{( \pi_{it}^D +
+  e_{it-1}\gamma_{it}^{F} - (1- e_{it})\gamma_{it}^{S}) + V_{it}^{E}(s_{it}) ,
+  V_{it}^{D}(s_{it})\}) dG^{\gamma}
+\end{equation}
+
+
+\begin{equation}
+  V_{it}^E(s_{it}) = \int ( max_{m_{it}}\{ \beta E_{t}
+  V_{it+1}(s_{it+1}|e_{it}=1, m_{it} =1) - m_{it-1} \gamma_{it}^{mf} , \beta E_{t}
+  V_{it+1}(s_{it+1}|e_{it=1}=1, m_{it} =0) \} dG^{\gamma}
+\end{equation}
+
+
+\begin{equation}
+  V_{it}^D(s_{it}) = \int ( max_{m_{it}}\{ \beta E_{t}
+  V_{it+1}(s_{it+1}|e_{it}=0, m_{it} =1) - m_{it-1} \gamma_{it}^{mf} , \beta E_{t}
+  V_{it+1}(s_{it+1}|e_{it}=0, m_{it} =0) \} dG^{\gamma}
+\end{equation}
 \subsection{Productivity measurement}
 
 
