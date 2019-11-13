@@ -237,27 +237,32 @@ prodestLP_ex <- function (Y, fX, sX, pX, idvar, timevar, lagexp, lagimp, R = 20,
 
 
 lp_ex <- lp
-lagexp <- as.numeric(lp_ex$lagexp)
-lagimp <- as.numeric(lp_ex$lagimp)
+lagexp <- as.numeric(as.character(lp_ex$lagexp))
+lagimp <- as.numeric(as.character(lp_ex$lagimp))
 
-Y <- as.numeric(lp_ex$lsales)
-fX<- as.numeric(lp_ex$lsalary)
-sX<- as.numeric(lp_ex$lgfa)
-pX<- as.numeric(lp_ex$lrawmat)
-idvar<- as.numeric(lp_ex$sa_finance1_cocode)
-timevar<- as.numeric(lp_ex$year)
+Y <- as.numeric(as.character(lp_ex$lsales))
+fX<- as.numeric(as.character(lp_ex$lsalary))
+sX<- as.numeric(as.character(lp_ex$lgfa))
+pX<- as.numeric(as.character(lp_ex$lrawmat))
+idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
+timevar<- as.numeric(as.character(lp_ex$year))
 
 lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
 
-lpex_data <- data.frame(do.call("cbind",lpex@Data))
+
+lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
+colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
 lpres <- lpex@Data$Y - (lpex@Data$free*lpex@Estimates$pars[1]) - (lpex@Data$state*lpex@Estimates$pars[2])
 lpex_data$lpres <- lpres
-lpex_data <- pdata.frame(lpex_data, index=c("V5","V6"))
+lpex_data <- pdata.frame(lpex_data, index=c("idvar","timevar"))
 lpex_data$lagres<- lag(lpex_data$lpres,1)
 lpex_data$lagres2 <- lpex_data$lagres^2
 lpex_data$lagres3 <- lpex_data$lagres^3
 lpex_data <- cbind(lpex_data, lp_ex[,c("lagexp","lagimp")])
 lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, data=lpex_data)
+
+
+save(lpex_data, file="forprobit.rda")
 
 sink(file="../DOC/TABLES/prod.gen")
 stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"))

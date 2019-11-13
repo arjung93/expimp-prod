@@ -1,4 +1,3 @@
-
 \documentclass[11pt]{article}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{graphicx}
@@ -17,7 +16,7 @@
  \usepackage[ style=authoryear,backend=biber, url=true]{biblatex}
  \addbibresource{proposal.bib}
 
-\title{Exporting/Importing and firm performance: Evidence from India}
+\title{Exporting/Importing and Firm Performance: Evidence from India}
 \author{Arjun Gupta}
 %\institution{National Institute of Public Finance and Policy}
 \newcommand{\alert}[1]{#1}
@@ -260,9 +259,13 @@ positive effect on the other and This might be because importing
 complements exporting and vice-versa. Therefore, there is correlation between these
 activities that needs further research. 
 
-% \begin{center}
-% \input{./TABLES/transition.gen}
-% \end{center}
+\begin{center}
+\begin{table}[!htp]
+\caption{Transition probability}
+
+\input{./TABLES/transition.gen}
+\end{table}
+\end{center}
 
 
 \subsection{Productivity and Export/Import}
@@ -305,7 +308,98 @@ profit to sales ratio in every case is negative.
 \end{tabular}
 \end{table}
 \end{center}
+\section{Preliminary Analysis}
+Before modelling this behavior, I try to check if the phenemenon
+mentioned above are seen in the data. 
 
+I divide this into three parts and check whether: 
+\begin{itemize}
+\item Learning-by-doing: How does lagged choice of export/import
+  impact productivity?
+\item Self-Selection: Selection of more productive firms into
+  exporting/importing
+\item Complementarity between exporting and importing: Does engaging
+  in one activity complements participation in the other?
+\end{itemize}
+\subsection{Learning-by-doing}
+I use \cite{levinsohn2003estimating} to estimate productivity using  a Cobb-Douglus production function: 
+\begin{equation}
+y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} +
+\omega_{it}(m_{it}, k_{it} + \eta_{it} 
+\end{equation}
+I use the variable gross fixed assets as a measure of capital, salary
+as a measure of labor and a expenditure on raw materials as a measure
+of intermediated input. The estimation procedure has been described
+below (see here \ref{lp}). Since \cite{levinsohn2003estimating} assume
+a markovian nature of productivity evolution, where the
+productivity evolution is assumed to follow the procedure below:
+$$ \omega_{it} = \alpha_{o} + \alpha_{1}\omega_{it-1} +
+\alpha_{2}\omega_{it-1} + \alpha_{3}\omega_{it-1}^{2}+
+\alpha_{4}d_{it-1}^{X} + \alpha_{5} d_{it-1}^{M} +
+\alpha_{6}d_{it-1}^{X}d_{it-1}^{M}  + \nu_{it}
+$$ 
+where $d_{it-1}^{X}$ and $d_{it-1}^{M}$ is the discrete decision to
+export and import respectively. 
+ I use the method highlighted in \cite{de2013detecting}  to accommodate endogenous
+productivity evolution which allows  past export experience to impact
+the evolution of capital. The estimates of the productivity evolution
+are shown in Table (\ref{lp}). The Cobb-Douglus coefficients are shown in
+Table 12 (\ref{lp}). 
+
+It is seen that productivity evolutions depends non linearly on past
+productivity. The interesting result is that lagged exporting does not a have
+a significant effect on productivity. However, it is seen that
+importing does have a significant effect on productivity i.e the
+decision to import causes the productivity to increase by 3 per
+cent. The interaction term between exporting and importing also does
+not have a significant effect on productivity. Based on these results, I
+conclude that manufacturing firms experience learning-by-importing and
+do not experience learning-by-exporting.
+
+In the next section, I check whether more productive self-select into
+exporting/importing 
+\subsection{Self-Selection}
+I use the following equations  to verify that more productive firms
+self-select into participating in the export/import market:
+\begin{equation}
+\hat{log(TFP)_{t-j}} = \gamma_{1}log(export)_{it}+ \gamma_{2}log(import)_{it} +
+ \beta c_{i,t-j}
+\end{equation}
+
+\begin{equation}
+\hat{log(TFP)_{t-j}} = \gamma_{1}d_{it}^{X}+ \gamma_{2}d_{it}^{M} +
+\gamma_{3}d_{it}^{X}d_{it}^{M} + \beta c_{i,t-j}
+\end{equation}
+where $c_{i,t-j}$ contains log of capital and labour. I estimate the
+equation mentioned above for three time periods $j=1,2 \& 3$ and for
+the discrete decision as well as the value of exports/imports.  The
+coefficients are estimated using fixed-effects regression. 
+Table 11 and Table 12 display  $\gamma$ estimates for equation 2 and 3
+respectively
+  
+\input{./TABLES/discprod.gen}
+\input{./TABLES/contprod.gen}
+In the discrete case, productivity of firms which export in year t is
+12.5 \%, 7\% and 4.2 \% higher than non-exporting firms in in year
+t-1,t-2 and t-3 respectively. And the productivity of firms which
+import in year t is 13.8 \%, 8\% and 4.9 \% higher than non-nonimporting firms in in year
+t-1,t-2 and t-3 respectively. The interaction variables are
+not significant in all the three cases. This suggests that for firms
+to participate in both the markets, their lagged productivity needs to
+be higher than firm who participate in either the export or the export
+market. Another interesting feature is that firms that only import in
+year t have higher lagged productivity than firms that only export in
+year t.
+
+Tables 11 and 12 provide evidence that lagged productivity at for all the three
+time periods before is higher when the firm participates in the export
+market in year t. This gives evidence of self-selection of firms into
+exporting and importing as the lagged productivity for three
+consecutive time periods before exporting/importing has a
+significantly positive value. 
+\subsection{Complimentarity between exporting and importing}
+I suspect that I will need to use a dynamic probit/logit model to do
+this. 
 
 
 \section{Model}
@@ -406,7 +500,6 @@ The model assumes that productivity is only affected by the intensity
 of export/importing but is only dependent on the decision. 
 
 The firm-specific demand shock is modelled as an AR(1) process. 
-
 
 
 \subsection{Dynamic Model}
@@ -515,41 +608,89 @@ V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}\pi_{it}^{X} + F(d_{it}, d_{it-1}) + 
 \end{center}
 
 \subsection{Productivity Estimation}
-\subsubsection{Levinsohn-Petrin Productivity Estimation}
+\subsubsection{Levinsohn-Petrin Productivity Estimation}\label{lp}
 \cite{levinsohn2003estimating} suggest a strategy to estimate
 productivity and it goes as follows:
 
 Let the production function be: 
 \begin{equation}
-y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} +\beta_{I}I_{it}+ \omega_{it} + \eta_{it} 
+y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} + \omega_{it} + \eta_{it} 
 \end{equation}
-where $l_[it}$ is labour, $K_{it}$ is capital, $I_{it}$  is
-intermediate input, $\omega_{it}$ is firm-level-productivity
+where $l_{it}$ is labour, $K_{it}$ is capital, $m_{it}$  is
+the demand for materials, $\omega_{it}$ is firm-level-productivity
 observable to the firm and $\eta_{it}$ is an iid shock.\\
 
-Here, the intermediated input demand function is given by:
-$$  I_{it} = I_{it}(\omega_{it}, k_{it})$$
+Here, the intermediated material demand function is given by:
+$$  m_{it} = m_{it}(\omega_{it}, k_{it})$$
 This function is assumed to be montonically increasing and therefore
 productivity can be found by inverting the function above. Therefore,
 we can write the equation above as: 
-$$ y_{it} = \beta_{l}l_{it} + \phi_{it}(I_{it},K_{it})$$
-where $\phi_{it}(I_{it},K_{it}) = \beta_{o} + \beta_{k}K_{it}
-+\beta_{I}I_{it}+ \omega_{it}(I_{it}, K_{it})$
+$$ y_{it} = \beta_{l}l_{it} + \phi_{it}(m_{it},K_{it})$$
+where $\phi_{it}(m_{it},K_{it}) = \beta_{o} + \beta_{k}K_{it}+ \omega_{it}(m_{it}, K_{it})$
 
+They suggest to use a third degree polynomial approximation of
+$\phi_{it}$ and substitute it into the equation above to give the
+following result: 
+
+$$  y_{it} = \beta_{o}+ \beta_{l}l_{it} + \sum_{i=0}^{3} \sum_{j=0}^{3-i}
+\delta_{ij}k_{it}^{i}m_{it}^{j}$$
+The coefficient is $\beta_{l}$ is estimtated by OLS using the equation
+above and $\hat{\phi_{it}}$ is estimtated by subtracting labor from
+the fitted value of the above equation:
+$$ \hat{\phi_{it}} = \hat{y_{it}} - \hat{\beta_{l}}l_{it} =
+\hat{\beta_{o}} + \sum_{i=0}^{3} \sum_{j=0}^{3-i}
+\hat{\delta_{ij}}k_{it}^{i}m_{it}^{j}$$
 Therefore, 
 
+So, for any value of $\beta_{k}^{*}$:
+$$\hat{\omega_{it}} = \hat{\phi_{it}} - \beta_{k}^{*}k_{it}$$
 $$ y_{it}^{*} = y_{it} - \beta_{l}l_{it} = \beta_{o} + \beta_{k}K_{it}
-+\beta_{I}I_{it}+ \omega_{it}(I_{it}, K_{it})$$
++ \omega_{it}(m_{it}, K_{it})$$
  
 It is also assumed that $\omega_{it}$ follows a first order markov
 process : 
-$$\omega_{it} = E[\omega_{it}|\omega_{it-1}] + \epsilon_{it}$$ 
-Therefore, the equation above can be written as: 
+$$\omega_{it} = E[\omega_{it}|\omega_{it-1}] + \epsilon_{it}$$
+They assume a polynomial expansion of the expectation above to give:
+$$ \omega_{it}=  \gamma_{o}+\gamma_{1}\omega_{it-1} +
+\gamma_{2}\omega_{it-1}^2 + \gamma_{3}\omega_{it-1}^3 + \epsilon_{it} $$ 
+
+Therefore, the value of $\beta_{l}$, for which the expression below is
+minimized is chosen to be the coefficient.  
+\begin{equation}
+\max_{\beta_{k}^{*}}\sum (y_{it} - \hat{\beta_{l}l_{it}} -
+\beta_{k}^{*}K_{it} - \hat{E[\omega_{it}|\omega_{it-1}]})^2 
+\end{equation}
+\input{./TABLES/regLP.gen}
+\input{./TABLES/prod.gen} 
+\subsection{Ackerberg Productivity Estimation}
+\subsection{Dynamic Random Effects Probit Model}
+Let i be the unit and t be the time. A dynamic random effects probit
+is written as: 
+$$ y_{it}^{*} = \gamma y_{i,t-1} + x_{it}'\beta + \alpha_{i} +
+\epsilon_{it}; y_{it}=1[y_{it}^{*} > 0]$$
+where $\gamma$ is the state dependence parameter.
+
+There are three ways to estimate the above equation: 
+\begin{enumerate}
+\item Treat $y_{i1}$ as exogenously given and do not explain it
+\item Heckman Method
+\item Wooldridge Method
+\end{enumerate} 
+
+My aim is to estimate two equations for import and export and check if
+participating in one activity increases the odds of participating in
+the other activity. This would provide evidence of complimentarity
+between these two trade market activities and it would provide further
+evidence of estimating the complimentarity between exporting and
+importing. The two equations are as follows: 
 
 \begin{equation}
-y_{it}^{*} = \beta_{o} + \beta_{k}K_{it}
-+\beta_{I}I_{it}+ E[\omega_{it}|\omega_{it-1}] + \epsilon_{it}
+d_{it}^{X} = \gamma d_{it-1}^{X} + \beta_{1} K_{it} + \beta_{2} L_{it} + \beta_{2}
+\omega_{it} +\beta_{4} d_{it}^{M} + \epsilon_{it}
 \end{equation}
-
+\begin{equation}
+d_{it}^{M} = \gamma d_{it}^{M} + \beta_{1} K_{it} + \beta_{2}
+\omega_{it} +\beta_{3} d_{it}^{X}+ \epsilon_{it}
+\end{equation}
 \end{document}
 

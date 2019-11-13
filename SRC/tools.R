@@ -490,7 +490,7 @@ genxtable <- function(x, basename, include.rownames=FALSE) {
         table.placement="tp",
         caption.placement="top",
         sanitize.text=function(x)x,
-        latex.environments=c("center","footnotesize"), signif.stars = TRUE, floating=FALSE)
+        latex.environments=c("center","footnotesize"), signif.stars = TRUE, floating=TRUE)
 }
 
 ##==Function for Chainlinking
