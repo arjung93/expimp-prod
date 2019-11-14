@@ -249,7 +249,6 @@ timevar<- as.numeric(as.character(lp_ex$year))
 
 lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
 
-
 lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
 colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
 lpres <- lpex@Data$Y - (lpex@Data$free*lpex@Estimates$pars[1]) - (lpex@Data$state*lpex@Estimates$pars[2])
@@ -273,6 +272,43 @@ rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
 
 sink(file="../DOC/TABLES/regLP.gen")
+stargazer(regLPest, title="Cobb-Douglus coefficients")
+sink()
+
+## Continuous exporting and Importing
+lagexp <- as.numeric(as.character(lag(log(lp$export+1),1)))
+lagimp <- as.numeric(as.character(lag(log(lp$import+1),1)))
+
+Y <- as.numeric(as.character(lp_ex$lsales))
+fX<- as.numeric(as.character(lp_ex$lsalary))
+sX<- as.numeric(as.character(lp_ex$lgfa))
+pX<- as.numeric(as.character(lp_ex$lrawmat))
+idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
+timevar<- as.numeric(as.character(lp_ex$year))
+
+lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
+
+lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
+colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
+lpres <- lpex@Data$Y - (lpex@Data$free*lpex@Estimates$pars[1]) - (lpex@Data$state*lpex@Estimates$pars[2])
+lpex_data$lpres <- lpres
+lpex_data <- pdata.frame(lpex_data, index=c("idvar","timevar"))
+lpex_data$lagres<- lag(lpex_data$lpres,1)
+lpex_data$lagres2 <- lpex_data$lagres^2
+lpex_data$lagres3 <- lpex_data$lagres^3
+lpex_data <- cbind(lpex_data, lp_ex[,c("lagexp","lagimp")])
+lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, data=lpex_data)
+
+
+sink(file="../DOC/TABLES/prodcont.gen")
+stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"))
+sink()
+regLPest <- do.call("rbind", lpex@Estimates)
+regLPest <-t(regLPest)
+rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
+colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
+
+sink(file="../DOC/TABLES/regLPcont.gen")
 stargazer(regLPest, title="Cobb-Douglus coefficients")
 sink()
 

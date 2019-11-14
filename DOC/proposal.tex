@@ -259,21 +259,13 @@ positive effect on the other and This might be because importing
 complements exporting and vice-versa. Therefore, there is correlation between these
 activities that needs further research. 
 
-\begin{center}
-\begin{table}[!htp]
-\caption{Transition probability}
-
-\input{./TABLES/transition.gen}
-\end{table}
-\end{center}
-
 
 \subsection{Productivity and Export/Import}
 \cite{gupta2018exporting} define a rough measure of productivity known
 as \textit{capital productivity}. It is defined as the log of value added per
 unit of capital used by a firm:
 
-$$ log(VA_{it} - log(K_{it})$$
+$$ log(VA_{it} - log(K_{it}))$$
 where $VA_{it}$ is firm-level value added, computed as total industrial sales plus
 change in stock minus power and fuel expenditures, and raw material
 expenses. Table * displays the summary statistics for this variable
@@ -308,6 +300,31 @@ profit to sales ratio in every case is negative.
 \end{tabular}
 \end{table}
 \end{center}
+
+\subsection{Transition Probability}
+Table 8 displays the transition probabilities observed in the data. It
+can be seen that there are very high levels of persistence from
+\textit{None} in t-1 to \textit{None} in t  and from \textit{Both} in
+t-1 to \textit{Both} in t. This means that there must be high fixed
+costs to enter in the export/import market since only 12\% of the
+firms  that do not participate in the trade market in t-1 start
+participating in the trade market in t. The high levels of persistence
+in \textit{Both} must mean that this mechanism benefits the firms in a
+lot of ways. The levels of persistence in \textit{Import Only} and \textit{Export Only}  is not as high. A large
+portion of firms switch to participating in both the trade market
+activities.This can mean that participating in the export in time
+period in t-1 complements participating in the export market in period
+t and vice-versa. Also, the number of firms that flip-flop (i.e switch
+trade market status) is low, this can mean that there are fixed costs
+to participating in the stock market as well. 
+\begin{center}
+\begin{table}[!htp]
+\caption{Transition probability}
+
+\input{./TABLES/transition.gen}
+\end{table}
+\end{center}
+
 \section{Preliminary Analysis}
 Before modelling this behavior, I try to check if the phenemenon
 mentioned above are seen in the data. 
@@ -325,7 +342,7 @@ I divide this into three parts and check whether:
 I use \cite{levinsohn2003estimating} to estimate productivity using  a Cobb-Douglus production function: 
 \begin{equation}
 y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} +
-\omega_{it}(m_{it}, k_{it} + \eta_{it} 
+\omega_{it}(m_{it}, k_{it}) + \eta_{it} 
 \end{equation}
 I use the variable gross fixed assets as a measure of capital, salary
 as a measure of labor and a expenditure on raw materials as a measure
@@ -343,9 +360,14 @@ export and import respectively.
  I use the method highlighted in \cite{de2013detecting}  to accommodate endogenous
 productivity evolution which allows  past export experience to impact
 the evolution of capital. The estimates of the productivity evolution
-are shown in Table (\ref{lp}). The Cobb-Douglus coefficients are shown in
-Table 12 (\ref{lp}). 
+are shown in Table 11 (\ref{lp}). The Cobb-Douglus coefficients are shown in
+Table 13. 
+\input{./TABLES/regLP.gen}
+\input{./TABLES/prod.gen} 
 
+Table 18 and 19 (\ref{lp}) display the Cobb-Douglus coefficients when the
+productivity is dependent on the continuous value of export and import
+and they show results similar to the ones shown in tables 12 and 13. 
 It is seen that productivity evolutions depends non linearly on past
 productivity. The interesting result is that lagged exporting does not a have
 a significant effect on productivity. However, it is seen that
@@ -398,10 +420,35 @@ exporting and importing as the lagged productivity for three
 consecutive time periods before exporting/importing has a
 significantly positive value. 
 \subsection{Complimentarity between exporting and importing}
-I suspect that I will need to use a dynamic probit/logit model to do
-this. 
+In this section, I try to check if the probability of participating in
+one activity in year t increases the odds of participating in the
+other. This will provide evidence that participating in one activity
+complements participating in the other activity. 
 
+This can be done by estimating the following dynamic discrete choice models:
+\begin{equation}
+d_{it}^{X} = \gamma_{1}^{X} d_{it-1}^{X} + \gamma_{2}^{X} d_{it-1}^{M}+
+\gamma_{3}^{X} \hat{\omega}_{it-1}  + \beta_{1}^{X}K_{it-1}  +
+IndustrialDummy_{i}^{X} + TimeDummy_{t}^{X}  + \epsilon_{it}^{X}
+\end{equation}
 
+\begin{equation}
+d_{it}^{M} = \gamma_{1}^{M} d_{it-1}^{M} + \gamma_{2}^{M} d_{it-1}^{X}+
+\gamma_{3}^{M} \hat{\omega}_{it-1}  + \beta_{1}^{M}K_{it-1}  +
+IndustrialDummy_{i}^{M} + TimeDummy_{t}^{M}  + \epsilon_{it}^{M}
+\end{equation}
+Here $\gamma_{1}$ identifies the sunk costs, $\gamma_{2}$ accounts for
+the fact that participating in one activity in time t-1 improves the
+odds of participating in the other at time t,$\gamma_{3}$ accounts for
+the self-selection mechanism, $\beta_{1}$ accounts for capital at time
+t-1 and $IndustrialDummy_{i}^{M}$  $TimeDummy_{t}^{M}$ are industrial
+and time dummies respectively. The above equations can be estimated by
+dynamic probit model. But we need to account for initial
+conditions. This can be dealt in a number of ways. 
+Since I want to check the contemporaneous relationship between
+exporting and importing at time t, there needs to be a provision to
+allow for the correlation of the errors and therefore I need estimate
+a Bivariate dynamic probit model. 
 \section{Model}
 
 I use a model inspired from  \cite{aw2011}, \cite{de2011product} and \cite{kasahara2013productivity}. 
@@ -660,9 +707,10 @@ minimized is chosen to be the coefficient.
 \max_{\beta_{k}^{*}}\sum (y_{it} - \hat{\beta_{l}l_{it}} -
 \beta_{k}^{*}K_{it} - \hat{E[\omega_{it}|\omega_{it-1}]})^2 
 \end{equation}
-\input{./TABLES/regLP.gen}
-\input{./TABLES/prod.gen} 
-\subsection{Ackerberg Productivity Estimation}
+\input{./TABLES/regLPcont.gen}
+\input{./TABLES/prodcont.gen} 
+
+\subsubsection{Ackerberg Productivity Estimation}
 \subsection{Dynamic Random Effects Probit Model}
 Let i be the unit and t be the time. A dynamic random effects probit
 is written as: 
@@ -676,21 +724,12 @@ There are three ways to estimate the above equation:
 \item Heckman Method
 \item Wooldridge Method
 \end{enumerate} 
-
-My aim is to estimate two equations for import and export and check if
-participating in one activity increases the odds of participating in
-the other activity. This would provide evidence of complimentarity
-between these two trade market activities and it would provide further
-evidence of estimating the complimentarity between exporting and
-importing. The two equations are as follows: 
-
-\begin{equation}
-d_{it}^{X} = \gamma d_{it-1}^{X} + \beta_{1} K_{it} + \beta_{2} L_{it} + \beta_{2}
-\omega_{it} +\beta_{4} d_{it}^{M} + \epsilon_{it}
-\end{equation}
-\begin{equation}
-d_{it}^{M} = \gamma d_{it}^{M} + \beta_{1} K_{it} + \beta_{2}
-\omega_{it} +\beta_{3} d_{it}^{X}+ \epsilon_{it}
-\end{equation}
+Code for bivariate probit model 
+\textit{biprobit dumexp dumrd x lnk lagexp lagdumrd year92-year93, r }
 \end{document}
 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
