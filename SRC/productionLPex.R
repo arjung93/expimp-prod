@@ -35,11 +35,11 @@ finalOPLP_ex<- function (ind, data, fnum, snum, cnum, opt, theta0, boot, tol,
         ind <- as.matrix(ind)
     }
     data <- data[ind, ]
-    first.stage <- lm(data[, "Y"] ~ data[, grepl("regvars", colnames(data))], 
+    first.stage <- lm(data[, "Y"] ~ data[, grepl("regvars", colnames(data))] , 
         na.action = na.exclude)
     fX <- data[, grepl("free", colnames(data)), drop = FALSE]
     phi <- fitted(first.stage)
-    beta.free <- coef(first.stage)[2:(1 + fnum)]
+    beta.free <- coef(first.stage)[2:(1+fnum)]
     if (cnum != 0) {
         beta.control <- coef(first.stage)[(2 + fnum):(1 + fnum + 
             cnum)]
@@ -51,7 +51,7 @@ finalOPLP_ex<- function (ind, data, fnum, snum, cnum, opt, theta0, boot, tol,
         theta0 <- coef(first.stage)[(2 + fnum):(1 + fnum + snum)] + 
             rnorm((snum), 0, 0.01)
     }
-    phi <- phi - (fX %*% beta.free)
+    phi <- phi - (fX %*% beta.free) 
     newtime <- data[, "timevar", drop = FALSE]
     rownames(phi) <- NULL
     rownames(newtime) <- NULL
@@ -68,7 +68,8 @@ finalOPLP_ex<- function (ind, data, fnum, snum, cnum, opt, theta0, boot, tol,
         try.state <- try(optim(theta0, gOPLP_ex, method = "BFGS", 
             mX = tmp.data$state, mlX = tmp.data$lag.sX, vphi = tmp.data$phi, 
             vlag.phi = tmp.data$lag.phi, vres = tmp.data$res, 
-            stol = tol, Pr.hat = tmp.data$Pr.hat, att = att ,lagexp=tmp.data$lagexp, lagimp=tmp.data$lagimp), 
+            stol = tol, Pr.hat = tmp.data$Pr.hat, att = att ,
+            lagexp=tmp.data$lagexp, lagimp=tmp.data$lagimp), 
             silent = TRUE)
         if (!inherits(try.state, "try-error")) {
             beta.state <- try.state$par
@@ -246,6 +247,7 @@ sX<- as.numeric(as.character(lp_ex$lgfa))
 pX<- as.numeric(as.character(lp_ex$lrawmat))
 idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
 timevar<- as.numeric(as.character(lp_ex$year))
+nic <- as.factor(lp_ex$nic.2digit)
 
 lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
 
@@ -264,7 +266,7 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 save(lpex_data, file="forprobit.rda")
 
 sink(file="../DOC/TABLES/prod.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"))
+stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prod")
 sink()
 regLPest <- do.call("rbind", lpex@Estimates)
 regLPest <-t(regLPest)
@@ -272,7 +274,7 @@ rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
 
 sink(file="../DOC/TABLES/regLP.gen")
-stargazer(regLPest, title="Cobb-Douglus coefficients")
+stargazer(regLPest, title="Cobb-Douglus coefficients", label="regLP")
 sink()
 
 ## Continuous exporting and Importing
@@ -301,7 +303,7 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 
 
 sink(file="../DOC/TABLES/prodcont.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"))
+stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodcont")
 sink()
 regLPest <- do.call("rbind", lpex@Estimates)
 regLPest <-t(regLPest)
@@ -309,10 +311,13 @@ rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
 
 sink(file="../DOC/TABLES/regLPcont.gen")
-stargazer(regLPest, title="Cobb-Douglus coefficients")
+stargazer(regLPest, title="Cobb-Douglus coefficients", label="regLPcont")
 sink()
 
-## Debugging exogenous process of LP
+##Debugging exogenous process of LP
+
+
+
 ## lp_ex <- lp
 ## lagexp <- as.numeric(lp_ex$lagexp)
 ## lagimp <- as.numeric(lp_ex$lagimp)
@@ -410,12 +415,13 @@ sink()
 ##         newid <- as.matrix(as.numeric(rownames(ind)))
 ##         ind <- as.matrix(ind)
 ##     }
-##     data <- data[ind, ]
-##     first.stage <- lm(data[, "Y"] ~ data[, grepl("regvars", colnames(data))], 
+## data <- data[ind, ]
+## nic <- model.matrix(~as.factor(nic), data=nic)
+##     first.stage <- lm(data[, "Y"] ~ data[, grepl("regvars", colnames(data))] + nic -1, 
 ##         na.action = na.exclude)
 ##     fX <- data[, grepl("free", colnames(data)), drop = FALSE]
 ##     phi <- fitted(first.stage)
-##     beta.free <- coef(first.stage)[2:(1 + fnum)]
+##     beta.free <- coef(first.stage)[1:(0+ fnum)]
 ##     if (cnum != 0) {
 ##         beta.control <- coef(first.stage)[(2 + fnum):(1 + fnum + 
 ##             cnum)]
@@ -426,7 +432,8 @@ sink()
 ##         theta0 <- coef(first.stage)[(2 + fnum):(1 + fnum + snum)] + 
 ##             rnorm((snum), 0, 0.01)
 ##     }
-##     phi <- phi - (fX %*% beta.free)
+## niccoef <- coef(first.stage)[grep("nic", names(coef(first.stage)))]
+##     phi <- phi - (fX %*% beta.free)  - c(nic%*%niccoef)
 ##     newtime <- data[, "timevar", drop = FALSE]
 ##     rownames(phi) <- NULL
 ##     rownames(newtime) <- NULL

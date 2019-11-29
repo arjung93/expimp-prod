@@ -4,6 +4,7 @@ library(tsdb)
 library(RMySQL)
 library(tidyverse)
 library(plm)
+library(readstata13)
 options(scipen=22)
 
 ## Removing column names with indigenous
@@ -52,7 +53,7 @@ table(long$year)
 compnfirms <- t(t(table(long$year)))
 compnfirms <- data.frame(rownames(compnfirms), compnfirms[,1])
 colnames(compnfirms) <- c("Year","Number of firms")
-genxtable(xtable(compnfirms, caption="Compostion of firms by year"), "../DOC/TABLES/compnfirms")
+genxtable(xtable(compnfirms, caption="Compostion of firms by year",label="compnfirms"), "../DOC/TABLES/compnfirms")
 
 ## Filtering data from 2000 to 2016
 long$year <- as.numeric(long$year)
@@ -68,7 +69,7 @@ meta <- meta[meta$variable %in% colnames(long),][,1:2]
 nic <- c("nic.2digit", "Broad industry classification code")
 meta <- rbind(meta, nic)
 sink("../DOC/TABLES/indicatordescription.gen")
-print(xtable(unique(meta), caption="Data Variables"),
+print(xtable(unique(meta), caption="Data Variables", label="indicator"),
       include.rownames=FALSE,
       latex.environments=c("center"), floating=TRUE)
 sink()
@@ -142,7 +143,7 @@ comp_table <- lapply(comp_table, function(x){
     return(fin)
 })
 comp_table <- do.call("rbind", comp_table)
-genxtable(xtable(comp_table, caption="Composition of firms based on trade market participation"), "../DOC/TABLES/composition")
+genxtable(xtable(comp_table, caption="Composition of firms based on trade market participation", label="comp_table"), "../DOC/TABLES/composition")
 
 ### Productivity 
 ## Labour Productivity
@@ -156,6 +157,9 @@ long$labprod <- log(long$va)-log(long$sa_salaries) #(Tabrizy Trofimenko 2010)
 long$capprod <- log(long$va)-log(long$sa_gross_fixed_assets) #(Tabrizy Trofimenko 2010)
 long$labprod <- winsorise(long$labprod)$winsorised
 long$capprod <- winsorise(long$capprod)$winsorised
+
+long$dom_sales <- long$sa_sales-long$sa_export_goods-long$sa_export_serv
+long$dom_sales[which(long$dom_sales<0)] <- 0
 
 
 
@@ -172,6 +176,7 @@ long$lrawmat <- log(long$sa_rawmat_exp +1)
 long$lpower <- log(long$sa_power_and_fuel_exp+1)
 long$lexport <- log(long$export)
 long$limport <- log(long$import)
+long$ldom_sales <- log(long$dom_sales)
 
 ## Density plots for sales, Total assets, gross fixed assets, wage bill, Age, Power expenses
 pdf("../DOC/PICS/denslsales.pdf", width=5.6, height=2.4, pointsize=10)
@@ -282,11 +287,34 @@ transition <- do.call("rbind", transition)
 colnames(transition) <- c("None", "Import Only", "Export Only", "Both")
 transition <- cbind(c("None", "Import Only", "Export Only", "Both"), transition)
 colnames(transition)[1] <- "T-1/ T"
-genxtable(xtable(transition), "../DOC/TABLES/transition")
+genxtable(xtable(transition, label="transition"), "../DOC/TABLES/transition")
 
 lpcol <- c("sa_finance1_cocode", "year", "lsales", "lsalary", "lgfa","lrawmat","lpower",
-           "export", "import", "expimp", "exp","imp","limport", "lexport", "lagexpimp", "lagexp", "lagimp")
+           "export", "import", "expimp", "exp","imp","limport",
+           "lexport","ldom_sales", "lagexpimp", "lagexp", "lagimp", "nic.2digit")
 lp <- longpd[,lpcol]
+
 
 save(lp,file="forproduction.rda")
 save(longpd, file="fulldata.rda")
+
+
+
+
+# Creating intital export and import variable for dynamic probit model 
+longprobit <- split(longpd, longpd$sa_finance1_cocode)
+
+longprobit <- lapply(longprobit, function(x){
+    x <- x[order(x$year),]
+    x$initexp <- rep(x$exp[1], nrow(x))
+    x$initimp <- rep(x$imp[1], nrow(x))
+    return(x)
+})
+longprobit <- do.call("rbind", longprobit)
+
+
+longprobit <- longprobit[,c("year","sa_finance1_cocode", "sa_total_income", "sa_sales",
+                            "lgfa","lsize", "lsalary","age", "lpower", "lrawmat","exp","imp",
+                            "lagexp","lagimp","initexp","initimp", "nic.2digit")]
+
+save(longprobit, file="dynprobit.rda")
