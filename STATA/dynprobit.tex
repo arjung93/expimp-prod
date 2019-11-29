@@ -1,0 +1,44 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+            &\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{imp}\\
+\hline
+main        &                     &                     \\
+lagexp      &       1.870\sym{***}&                     \\
+            &     (77.04)         &                     \\
+[1em]
+L.lpres     &       0.173\sym{***}&       0.205\sym{***}\\
+            &     (13.61)         &     (18.05)         \\
+[1em]
+L.lgfa      &      0.0856\sym{***}&       0.118\sym{***}\\
+            &      (7.09)         &     (10.74)         \\
+[1em]
+L.lsalary   &       0.158\sym{***}&       0.157\sym{***}\\
+            &     (12.48)         &     (14.21)         \\
+[1em]
+initexp     &       1.221\sym{***}&                     \\
+            &     (29.21)         &                     \\
+[1em]
+lagimp      &                     &       1.648\sym{***}\\
+            &                     &     (72.70)         \\
+[1em]
+initimp     &                     &       1.009\sym{***}\\
+            &                     &     (28.73)         \\
+[1em]
+\_cons      &      -2.973\sym{***}&      -3.031\sym{***}\\
+            &    (-15.67)         &    (-16.97)         \\
+\hline
+lnsig2u     &                     &                     \\
+\_cons      &      -0.508\sym{***}&      -0.782\sym{***}\\
+            &     (-8.66)         &    (-13.65)         \\
+\hline
+\(N\)       &       67591         &       67591         \\
+rho         &       0.376         &       0.314         \\
+sigma\_u     &       0.776         &       0.676         \\
+\hline\hline
+\multicolumn{3}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
