@@ -1,44 +1,44 @@
 {
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\begin{tabular}{l*{2}{c}}
+\begin{tabular}{l*{4}{c}}
 \hline\hline
-            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
-            &\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{imp}\\
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{imp}&\multicolumn{1}{c}{imp}\\
 \hline
-main        &                     &                     \\
-lagexp      &       1.870\sym{***}&                     \\
-            &     (77.04)         &                     \\
+main        &                     &                     &                     &                     \\
+lagexp      &       1.837\sym{***}&       1.788\sym{***}&                     &       0.398\sym{***}\\
+            &     (70.83)         &     (68.38)         &                     &     (17.60)         \\
 [1em]
-L.lpres     &       0.173\sym{***}&       0.205\sym{***}\\
-            &     (13.61)         &     (18.05)         \\
+L.lpres     &       0.168\sym{***}&       0.146\sym{***}&       0.188\sym{***}&       0.176\sym{***}\\
+            &     (12.56)         &     (11.04)         &     (15.86)         &     (15.22)         \\
 [1em]
-L.lgfa      &      0.0856\sym{***}&       0.118\sym{***}\\
-            &      (7.09)         &     (10.74)         \\
+L.lgfa      &      0.0809\sym{***}&      0.0576\sym{***}&       0.108\sym{***}&       0.100\sym{***}\\
+            &      (6.38)         &      (4.62)         &      (9.49)         &      (9.05)         \\
 [1em]
-L.lsalary   &       0.158\sym{***}&       0.157\sym{***}\\
-            &     (12.48)         &     (14.21)         \\
+L.lsalary   &       0.164\sym{***}&       0.140\sym{***}&       0.161\sym{***}&       0.134\sym{***}\\
+            &     (12.27)         &     (10.65)         &     (13.90)         &     (11.78)         \\
 [1em]
-initexp     &       1.221\sym{***}&                     \\
-            &     (29.21)         &                     \\
+initexp     &       1.319\sym{***}&       1.239\sym{***}&                     &                     \\
+            &     (29.22)         &     (28.42)         &                     &                     \\
 [1em]
-lagimp      &                     &       1.648\sym{***}\\
-            &                     &     (72.70)         \\
+lagimp      &                     &       0.412\sym{***}&       1.643\sym{***}&       1.598\sym{***}\\
+            &                     &     (16.50)         &     (68.24)         &     (65.87)         \\
 [1em]
-initimp     &                     &       1.009\sym{***}\\
-            &                     &     (28.73)         \\
+initimp     &                     &                     &       1.047\sym{***}&       0.947\sym{***}\\
+            &                     &                     &     (28.12)         &     (26.37)         \\
 [1em]
-\_cons      &      -2.973\sym{***}&      -3.031\sym{***}\\
-            &    (-15.67)         &    (-16.97)         \\
+\_cons      &      -3.095\sym{***}&      -2.935\sym{***}&      -3.239\sym{***}&      -3.206\sym{***}\\
+            &    (-24.43)         &    (-23.75)         &    (-27.50)         &    (-28.06)         \\
 \hline
-lnsig2u     &                     &                     \\
-\_cons      &      -0.508\sym{***}&      -0.782\sym{***}\\
-            &     (-8.66)         &    (-13.65)         \\
+lnsig2u     &                     &                     &                     &                     \\
+\_cons      &      -0.469\sym{***}&      -0.569\sym{***}&      -0.770\sym{***}&      -0.908\sym{***}\\
+            &     (-7.64)         &     (-9.08)         &    (-12.71)         &    (-14.32)         \\
 \hline
-\(N\)       &       67591         &       67591         \\
-rho         &       0.376         &       0.314         \\
-sigma\_u     &       0.776         &       0.676         \\
+rho         &       0.385         &       0.361         &       0.317         &       0.287         \\
+sigma\_u     &       0.791         &       0.752         &       0.681         &       0.635         \\
+ll          &    -14729.0         &    -14594.4         &    -16281.9         &    -16130.5         \\
 \hline\hline
-\multicolumn{3}{l}{\footnotesize \textit{t} statistics in parentheses}\\
-\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
 }
