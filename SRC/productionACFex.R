@@ -196,12 +196,12 @@ idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
 timevar<- as.numeric(as.character(lp_ex$year))
 nic <- as.factor(lp_ex$nic.2digit)
 
-lpex <- prodestACF(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
+lpex2 <- prodestACF(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
 
 
-lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
-colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
-lpres <- lpex@Data$Y - (lpex@Data$free*lpex@Estimates$pars[1]) - (lpex@Data$state*lpex@Estimates$pars[2])
+lpex_data <- data.frame(do.call("cbind",lpex2@Data[-which(names(lpex2@Data) %in% "control")]))
+colnames(lpex_data) <- names(lpex2@Data[-which(names(lpex2@Data) %in% "control")])
+lpres <- lpex2@Data$Y - (lpex2@Data$free*lpex2@Estimates$pars[1]) - (lpex2@Data$state*lpex2@Estimates$pars[2])
 lpex_data$lpres <- lpres
 lpex_data <- pdata.frame(lpex_data, index=c("idvar","timevar"))
 lpex_data$lagres<- lag(lpex_data$lpres,1)
@@ -214,10 +214,12 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 sink(file="../DOC/TABLES/prodACF.gen")
 stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodACF")
 sink()
-regLPest <- do.call("rbind", lpex@Estimates)
+
+regLPest <- do.call("rbind", lpex2@Estimates)
 regLPest <-t(regLPest)
 rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
+
 
 sink(file="../DOC/TABLES/regACF.gen")
 stargazer(regLPest, title="Cobb-Douglus coefficients", label="regACF")

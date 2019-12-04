@@ -30,11 +30,6 @@ stargazer(sales, lgfa, lrawmat, lsalary,
 sink()
 
 
-
-
-
-
-
 sink(file="../DOC/TABLES/prodpremia.gen")
 stargazer(lexport,limport, capprod, patsales,
           dep.var.labels=c("Export","Import","Capital Productivity","Profit to Sales"),

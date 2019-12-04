@@ -55,9 +55,9 @@ compnfirms <- data.frame(rownames(compnfirms), compnfirms[,1])
 colnames(compnfirms) <- c("Year","Number of firms")
 genxtable(xtable(compnfirms, caption="Compostion of firms by year",label="compnfirms"), "../DOC/TABLES/compnfirms")
 
-## Filtering data from 2000 to 2016
+## Filtering data from 2001 to 2016
 long$year <- as.numeric(long$year)
-long <- long[which(long$year >= 1996 & long$year <= 2016),]
+long <- long[which(long$year >= 2001 & long$year <= 2016),]
 
 
 
@@ -291,7 +291,7 @@ genxtable(xtable(transition, label="transition"), "../DOC/TABLES/transition")
 
 lpcol <- c("sa_finance1_cocode", "year", "lsales", "lsalary", "lgfa","lrawmat","lpower",
            "export", "import", "expimp", "exp","imp","limport",
-           "lexport","ldom_sales", "lagexpimp", "lagexp", "lagimp", "nic.2digit")
+           "lexport","ldom_sales", "lagexpimp", "lagexp", "lagimp", "nic.2digit", "sa_total_expense")
 lp <- longpd[,lpcol]
 
 
@@ -313,7 +313,7 @@ longprobit <- lapply(longprobit, function(x){
 longprobit <- do.call("rbind", longprobit)
 
 
-longprobit <- longprobit[,c("year","sa_finance1_cocode", "sa_total_income", "sa_sales",
+longprobit <- longprobit[,c("year","sa_finance1_cocode", "sa_total_income", "sa_sales","lsales",
                             "lgfa","lsize", "lsalary","age", "lpower", "lrawmat","exp","imp",
                             "lagexp","lagimp","initexp","initimp", "nic.2digit")]
 
