@@ -2,7 +2,7 @@ clear
 capture log close	
 global path "C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA"
 use "$path\biprobit.dta"
-log using C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\results.log, text replace
+log using C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\resultsLP.log, text replace
 xtset sa_finance1_cocode year
 
 xtprobit exp lagexp lpres lgfa lsalary initexp i.year i.nic_2digit, re 
