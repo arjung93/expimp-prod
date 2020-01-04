@@ -1,0 +1,44 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{exp}&\multicolumn{1}{c}{imp}&\multicolumn{1}{c}{imp}\\
+\hline
+main        &                     &                     &                     &                     \\
+lagexp      &       1.834\sym{***}&       1.786\sym{***}&                     &       0.380\sym{***}\\
+            &     (71.18)         &     (68.65)         &                     &     (16.31)         \\
+[1em]
+lpresacf    &       0.216\sym{***}&       0.198\sym{***}&       0.277\sym{***}&       0.266\sym{***}\\
+            &     (15.83)         &     (14.70)         &     (21.51)         &     (21.16)         \\
+[1em]
+lgfa        &      0.0748\sym{***}&      0.0539\sym{***}&       0.119\sym{***}&       0.110\sym{***}\\
+            &      (5.74)         &      (4.19)         &      (9.75)         &      (9.27)         \\
+[1em]
+lsalary     &       0.226\sym{***}&       0.201\sym{***}&       0.234\sym{***}&       0.206\sym{***}\\
+            &     (16.48)         &     (14.80)         &     (18.91)         &     (16.99)         \\
+[1em]
+initexp     &       1.333\sym{***}&       1.264\sym{***}&                     &                     \\
+            &     (29.35)         &     (28.62)         &                     &                     \\
+[1em]
+lagimp      &                     &       0.370\sym{***}&       1.600\sym{***}&       1.554\sym{***}\\
+            &                     &     (14.67)         &     (66.32)         &     (63.85)         \\
+[1em]
+initimp     &                     &                     &       1.081\sym{***}&       0.986\sym{***}\\
+            &                     &                     &     (28.27)         &     (26.62)         \\
+[1em]
+\_cons      &      -3.264\sym{***}&      -3.122\sym{***}&      -3.655\sym{***}&      -3.617\sym{***}\\
+            &    (-25.05)         &    (-24.47)         &    (-28.64)         &    (-29.17)         \\
+\hline
+lnsig2u     &                     &                     &                     &                     \\
+\_cons      &      -0.437\sym{***}&      -0.521\sym{***}&      -0.628\sym{***}&      -0.750\sym{***}\\
+            &     (-7.15)         &     (-8.36)         &    (-10.65)         &    (-12.25)         \\
+\hline
+rho         &       0.392         &       0.373         &       0.348         &       0.321         \\
+sigma\_u     &       0.804         &       0.771         &       0.731         &       0.687         \\
+ll          &    -14513.0         &    -14406.6         &    -15879.7         &    -15749.5         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
