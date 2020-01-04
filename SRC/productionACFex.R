@@ -183,7 +183,7 @@ prodestACF <- function (Y, fX, sX, pX, idvar, timevar, lagexp, lagimp, R = 20, c
     return(out)
 }
 
-
+# Discrete
 lp_ex <- lp
 lagexp <- as.numeric(as.character(lp_ex$lagexp))
 lagimp <- as.numeric(as.character(lp_ex$lagimp))
@@ -212,15 +212,61 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 
 
 sink(file="../DOC/TABLES/prodACF.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodACF")
+stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$\\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution ACF (Discrete)", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodACF")
 sink()
 
 regLPest <- do.call("rbind", lpex2@Estimates)
 regLPest <-t(regLPest)
-rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
+rownames(regLPest) <- c("$L_{it}$", "$K_{it}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
 
 
 sink(file="../DOC/TABLES/regACF.gen")
-stargazer(regLPest, title="Cobb-Douglus coefficients", label="regACF")
+stargazer(regLPest, title="Cobb-Douglus coefficients ACF (Discrete)", label="regACF")
+sink()
+
+lpexACF <- lpex_data
+save(lpexACF, file="ACF.rda")
+# Continuous
+lp_ex <- lp
+lagexp <- as.numeric(as.character(lag(log(lp$export+1),1)))
+lagimp <- as.numeric(as.character(lag(log(lp$import+1),1)))
+
+
+Y <- as.numeric(as.character(lp_ex$lsales))
+fX<- as.numeric(as.character(lp_ex$lsalary))
+sX<- as.numeric(as.character(lp_ex$lgfa))
+pX<- as.numeric(as.character(lp_ex$lrawmat))
+idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
+timevar<- as.numeric(as.character(lp_ex$year))
+nic <- as.factor(lp_ex$nic.2digit)
+
+lpex2 <- prodestACF(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
+
+
+lpex_data <- data.frame(do.call("cbind",lpex2@Data[-which(names(lpex2@Data) %in% "control")]))
+colnames(lpex_data) <- names(lpex2@Data[-which(names(lpex2@Data) %in% "control")])
+lpres <- lpex2@Data$Y - (lpex2@Data$free*lpex2@Estimates$pars[1]) - (lpex2@Data$state*lpex2@Estimates$pars[2])
+lpex_data$lpres <- lpres
+lpex_data <- pdata.frame(lpex_data, index=c("idvar","timevar"))
+lpex_data$lagres<- lag(lpex_data$lpres,1)
+lpex_data$lagres2 <- lpex_data$lagres^2
+lpex_data$lagres3 <- lpex_data$lagres^3
+lpex_data <- cbind(lpex_data, lp_ex[,c("lagexp","lagimp")])
+lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, data=lpex_data)
+
+
+
+sink(file="../DOC/TABLES/prodACFcont.gen")
+stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$\\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution ACF (Continuous)", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodACFcont")
+sink()
+
+regLPest <- do.call("rbind", lpex2@Estimates)
+regLPest <-t(regLPest)
+rownames(regLPest) <- c("$L_{it}$", "$K_{it}$")
+colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
+
+
+sink(file="../DOC/TABLES/regACFcont.gen")
+stargazer(regLPest, title="Cobb-Douglus coefficients ACF (Continuous)", label="regACFcont")
 sink()

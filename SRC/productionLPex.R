@@ -266,11 +266,12 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 save(lpex_data, file="forprobit.rda")
 
 sink(file="../DOC/TABLES/prod.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prod")
+stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$ \\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prod")
 sink()
+
 regLPest <- do.call("rbind", lpex@Estimates)
 regLPest <-t(regLPest)
-rownames(regLPest) <- c("$ \\beta_{l}$", "$ \\beta_{k}$")
+rownames(regLPest) <- c("$ l_{it}$", "$ K_{it}$")
 colnames(regLPest) <- c("Value", "Bootstrap Standard Errors")
 
 sink(file="../DOC/TABLES/regLP.gen")
@@ -303,7 +304,7 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 
 
 sink(file="../DOC/TABLES/prodcont.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$alpha_{1}$","$alpha_{2}$","$alpha_{3}$","$alpha_{4}$","$alpha_{5}$","$alpha_{6}$","$alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodcont")
+stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$\\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodcont")
 sink()
 regLPest <- do.call("rbind", lpex@Estimates)
 regLPest <-t(regLPest)

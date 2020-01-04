@@ -8,7 +8,7 @@ load(file="forprobit.rda")
 load(file="forproduction.rda")
 load(file="fulldata.rda")
 load(file="dynprobit.rda")
-
+load(file="ACF.rda")
 
 colnames(lpex_data)[5:6] <- c("sa_finance1_cocode", "year")
 
@@ -19,6 +19,11 @@ dynprobit <- pdata.frame(dynprobit, index=c("sa_finance1_cocode", "year"))
 forbiprobit <- merge(dynprobit[, c( "sa_finance1_cocode", "year", "lpres")]
                    , longprobit, c("sa_finance1_cocode", "year"))
 
+colnames(lpexACF)[5:6] <- c("sa_finance1_cocode", "year")
+colnames(lpexACF)[8] <- "lpresacf"
+
+forbiprobit <- merge(lpexACF[, c( "sa_finance1_cocode", "year", "lpresacf")]
+                   , forbiprobit, c("sa_finance1_cocode", "year"))
 
 write.dta(data=forbiprobit, file="../STATA/biprobit.dta", convert.factors="numeric")
 
@@ -26,16 +31,10 @@ write.dta(data=forbiprobit, file="../STATA/biprobit.dta", convert.factors="numer
 
 ## Variable Costs
 
-elas <- longpd[,c("sa_finance1_year","sa_finance1_cocode", "sa_total_expense", "export", "ldom_sales",
-                  "sa_power_and_fuel_exp", "sa_salaries", "sa_rawmat_exp")]
+summary(lm(sa_salaries+sa_rawmat_exp+sa_power_and_fuel_exp~dom_sales+export-1, data=longpd))
 
-elas <- elas[-elas$sa_total_expense<=0,]
-elas$logexpense <- log(elas$sa_total_expense+1)
-elas$logexpense2 <- log(elas$sa_power_and_fuel_exp + elas$sa_salaries+elas$sa_rawmat_exp)
-
-elas$logexport <- log(elas$export)
-elas <- elas[is.finite(elas$logexport),]
-summary(lm(logexpense~ldom_sales+logexport, data=elas))
+longpd$dom <- longpd$sa_total_income - longpd$export
+summary(lm(sa_total_expense~dom_sales+export-1, data=longpd))
 
 
 ## x <- plm(lexport~lpres+lgfa+lsalary+as.factor(year)+limport, data=dynprobit, model="within")

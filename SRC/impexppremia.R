@@ -20,12 +20,12 @@ patsales <- plm(patsales~exp+imp+exp*imp+age+as.factor(nic.2digit)+as.factor(yea
 
 sink(file="../DOC/TABLES/expimppremia.gen")
 stargazer(sales, lgfa, lrawmat, lsalary,
-          dep.var.labels=c("Sales", "Gross Fixed Assets", "Raw Materials"),
+          dep.var.labels=c("Sales", "Gross Fixed Assets", "Raw Materials","Salary"),
           covariate.labels=c("$d_{it}^{X}$","$d_{it}^{M}$","$Age_{it}$", "$d_{it}^{X}*d_{it}^{M}$"),
           title="Export and Import Premia",
           keep=c("exp","imp","age"),
-          add.lines= list(c("Industry Dummies","Yes","Yes","Yes","Yes"),
-              c("Time Fixed Effects","Yes","Yes","Yes","Yes")),
+          add.lines= list(c("Fixed Effects","Yes","Yes","Yes","Yes"),
+              c("Time Dummies","Yes","Yes","Yes","Yes")),
           label="expimppremia")
 sink()
 
@@ -36,8 +36,8 @@ stargazer(lexport,limport, capprod, patsales,
           covariate.labels=c("$d_{it}^{M}$","$d_{it}^{X}$","$Age_{it}$", "$d_{it}^{X}*d_{it}^{M}$"),
           title="Export and Import Premia",
           keep=c("exp","imp","age"),
-          add.lines= list(c("Industry Dummies","Yes","Yes","Yes","Yes"),
-              c("Time Fixed Effects","Yes","Yes","Yes","Yes")),
+          add.lines= list(c("Fixed Effects","Yes","Yes","Yes","Yes"),
+              c("Time Dummies","Yes","Yes","Yes","Yes")),
           label="prodpremia",
           keep.stat="n")
 sink()

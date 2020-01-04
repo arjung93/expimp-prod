@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+ \documentclass[11pt]{article}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -13,12 +13,12 @@
 \usepackage{threeparttable}
 \usepackage{pdflscape}
 \usepackage{cases}
- \usepackage[ style=authoryear,backend=biber, url=true]{biblatex}
- \addbibresource{new.bib}
 
+ \usepackage[style=authoryear,backend=biber, url=true]{biblatex}
+ \addbibresource{new.bib}
 \title{Exporting/Importing and Firm Performance: Evidence from India}
-\author{Arjun Gupta}
-%\institution{National Institute of Public Finance and Policy}
+\author{Arjun Gupta (2014592/823125)}
+% \institution{Tilburg University}
 \newcommand{\alert}[1]{#1}
 
 \newcommand{\floatintro}[1]{
@@ -43,12 +43,32 @@
 \begin{document}
 \maketitle
 
+\begin{center}
+\includegraphics[width=3cm]{./PICS/tilburg.png} 
+\end{center}
 
 \begin{abstract}
- 
+This research thesis provides empirical evidence whether we observe
+learning-by-doing and  self-selection hypothesis amongst Indian
+manufacturing firms. The learning-by-doing hypothesis is shown by
+endogenously accommodating  the the export/import decision in the
+Levinsohn-Petrin productivity estimation procedure. The self-selection phenomenon is
+checked with the help of a dynamic random effects probit model. The
+complementarity between exporting and importing is shown with the help
+of a dynamic bivariate probit model. 
 \end{abstract}
+\bigskip
 
+\begin{center}
+A thesis submitted in partial fulfillment of the requirements for the
+degree of Master of Science in Econometrics and Mathematical
+Economics\\ 
 
+\bigskip
+
+Tilburg School of Economics and Management\\
+Tilburg University
+\end{center}
 \newpage
 \small
 
@@ -60,13 +80,13 @@
 
 
 
-There is vast literature  which states that exporters/importers tend to
-out-perform non-exporters/non-importers  in terms of wages, capital,
-productivity. \cite{bernard1999exceptional}  say that this can be due
-to these reasons:
+There is vast empirical literature  that has documented that exporters tend to
+out-perform non-exporters  in terms of wages, capital,
+productivity. \textcite{bernard1999exceptional}  suggest that this can be due
+to the following phenomenon:
 \begin{itemize}
-\item export/import increases productivity (Self-selection)
-\item productivity increases export/import (Learning by doing)
+\item  Higher productivity leads to  export (Self-selection)
+\item Export market participation increases productivity (Learning by doing)
 \end{itemize}
 
 Self-selection (SS) hypothesis states that  more productive firms
@@ -75,11 +95,10 @@ participation in the trade market is accompanied by additional costs
 such as transport costs, establishing a distribution channel,
 cost of traversing bureaucratic channels  etc. This means that there
 are substantial sunk costs to participating in the trade
-market. Therefore, firms which are more productive enter  the
-export
-market. 
+market. Therefore, firms which are more productive enter the
+export market. 
 
-Learning-by-doing hypothesis for exporting (\cite{haidar2012trade}) states that exporting firms deal with
+Learning-by-doing hypothesis for exporting (\textcite{haidar2012trade}) states that exporting firms deal with
 tougher competition in the international market as compared to the
 domestic market, and therefore must improve their performance to
 remain active in the export market. Moreover, participating in the
@@ -87,35 +106,42 @@ international market leads knowledge flows from international buyers
 to help post entry performance of export starters. This means that exporting should
 cause productivity spillovers as well.
 
-The same hypothesis (self-selection and learning-by-doing) can  apply
-to import behavior of firms. Since importing also involves additional
-similar costs like additional taxes, transport costs, import duties
-etc. , firms that
-are more productive will enter the import market. Also, a firm
+However, most of the research in this field has been limited to
+exports and research on imports has been relatively low. The same hypothesis (self-selection and learning-by-doing) can  apply
+to import behavior of firms. Since importing intermediaries also
+involves additional
+similar costs like  taxes, transport costs, import duties
+etc., firms that are also more productive will \textit{Self-Select}
+into entering the import market. Also, since a firm
 participating in the import market can have access to higher quality
-of intermediated goods. \cite{topalova2011trade}  and \cite{halpern2011imported}
+of intermediary goods, it might lead to lead to productivity benefits
+i.e the firms might exhibit \textit{Learning-by-doing} phenomenon. 
+\textcite{topalova2011trade}  and \textcite{halpern2011imported}
 find that improved access to foreign technology can boost
 productivity. 
 
-Since  participating in the export/import market   involve sunk
-costs, therefore, firms that are the most productive must self-select
-themselves into participating in both export and
-import market.  Also, it would be interesting to see if participating
-in one activity affects participation in the other (i.e
-Complementarity between exporting and importing).  I plan to investigate whether there
-are benefits of importing to exporting and vice-versa by estimating
-the cost complementary nature between the two. 
+Since participating in one activity might increase the chances of
+participating in other as it might open up new information
+channels or because it fosters an increase in productivity and
+innovation. The former would decrease the cost of the the other
+activity. This means that there might be cost complementarity between
+exporting and importing.  
 
-
-
-India provides an interesting case as it liberalised its economy in 1992 which resulted in import
+India provides an interesting case as it liberalised its economy in
+1992 which resulted in decrease import/export
 tariffs, deregulation of markets, reduction of taxes, and greater 
-foreign investment. According to \cite{topalova2011trade}, \textit{the government's trade policy under the Eighth Five-Year Plan (1992-97) ushered
+foreign investment. According to \textcite{topalova2011trade}, \textit{the government's trade policy under the Eighth Five-Year Plan (1992-97) ushered
 in radical changes to the trade regime by sharply reducing the role of
 the import and export control system. The share of products subject to quantitative restrictions
 decreased from 87 percent in 1987‐88 to 45 percent in 1994-95, and the actual user
 condition on imports was discontinued. And since 1997, the decrease in
-output and input tariff has been very marginal.}
+output and input tariff has been very marginal.}. Therefore, it is
+important to find evidence of productivity gains from participation in
+the trade a market and how participation in one activity affects the
+participation in the other activity. It is also important to check
+whether participation in one trade activity complements participation
+in the other activity. This will help us in knowing the effect of one
+aspect of the trade market on the other. 
 
 So, my reasearch plan is to investigate:
 \begin{itemize}
@@ -123,11 +149,8 @@ So, my reasearch plan is to investigate:
   participate in the expprt/import market
 \item Learning-by-doing hypothesis: Check if there are productivity
   spillovers from participation in the export/import market
-\item Estimate the fixed and sunk costs of participation in the
-  export/import market and the decrease in costs due to the
-  complimentary (simultaneous and lagged) nature between the two
-\item Run counter-factual experiment to see the effect of decrease in
-  the costs to exporting/importing. 
+\item Complementarity between exporting and importing: Check if there
+  is complementarity between exporting and importing 
 \end{itemize}
 
 \section{Literature Review}
@@ -136,7 +159,7 @@ categories:
 \begin{enumerate}
 \item Importing and Productivity 
 \item Exporting and Producitivity
-\item Complimentarity between exporting and importing and its effect
+\item Complementarity between exporting and importing and its effect
   on productivity
 \end{enumerate}
 In this section, I write down the major literature contributions
@@ -147,12 +170,12 @@ higher quality of intermediate goods and might pave the way for future
 exporting by increasing the productivity or by providing
 cost-complementarity between the two activities.  
 
-\cite{halpern2011imported} studies effect of imports on productivity by estimating a structural
+\textcite{halpern2011imported} studies effect of imports on productivity by estimating a structural
 model of importers in a panel of Hungarian firms. They find that imports have
 a significant and large effect on firm productivity, about one-half of which is due
 to imperfect substitution between foreign and domestic goods. 
 
-\cite{topalova2011trade} find that the pro-competitive
+\textcite{topalova2011trade} find that the pro-competitive
 effects of the tariffs led firms to become more
 efficient, the larger impact appears to have come from 
 increased access to foreign inputs.
@@ -161,20 +184,20 @@ Most studies find that there is self-selection of more productive
 firms into exporting, however there is mixed evidence for
 learning-by-exporting. 
 
-\cite{aw2011}  estimate a dynamic structural model that captures both the behavioral
+\textcite{aw2011}  estimate a dynamic structural model that captures both the behavioral
 and technological linkages among R\&D, exporting, and
 productivity. They find that Relative to a
 plant that does neither activity, export market participation raises future productivity
 by 1.96 percent, R\&D investment raises it by 4.79 percent, and undertaking both
 activities raises it by 5.56 percent. 
 
- \cite{bernard1999exceptional} test the self-selection and
+ \textcite{bernard1999exceptional} test the self-selection and
  learning-by-doing hypothesis of exports on firms. They find that Good
  plants become exporters i.e. learn to export. and find that exporting
  increases the survival probability but it does not contribute towards
  productivity growth.  
 
-\cite{roberts1997decision} quantify the effect of prior exporting
+\textcite{roberts1997decision} quantify the effect of prior exporting
 decision on the current exporting decision and test the sunk cost
 hypothesis of these activities.  They  develop a dynamic discrete-
  choice model of exporting behavior that separates the roles of profit heterogeneity
@@ -184,14 +207,14 @@ hypothesis of these activities.  They  develop a dynamic discrete-
 
 
 In terms of work in this field with Indian firm level  data,
-\cite{haidar2012trade} and \cite{gupta2018exporting} find evidence of
+\textcite{haidar2012trade} and \textcite{gupta2018exporting} find evidence of
 self-selection of more productive firms into exporting, but they do
 not find evidence of learning-by-exporting.  
 \subsection{Cost Complementarity between Exporting and Importing}
 As far as I am aware, there have been two major papers in this field
-i.e \cite{aristei2013firms} and \cite{kasahara2013productivity}. 
+i.e \textcite{aristei2013firms} and \textcite{kasahara2013productivity}. 
 
-\cite{aristei2013firms} estimate a bivariate probit model to
+\textcite{aristei2013firms} estimate a bivariate probit model to
 understand the two-way relationship between exporting and importing. 
 Thy suse  firm-level data for a group of 27 Eastern European and 
 Central Asian countries from the World Bank Business Environment 
@@ -201,72 +224,82 @@ find that firms’ exporting activity does not increase the
 probability of importing, while the latter has a positive effect
  on foreign sales. 
 
-\cite{kasahara2013productivity} estimate a stochastic model of
+\textcite{kasahara2013productivity} estimate a stochastic model of
 exporting and importing that incorporates heterogeneity in transport
 costs and estimate export and import complimentarities between the two
 trade activities. They find that policies which inhibit the
 importation of  foreign intermediates can have a large adverse 
 effect on the exportation of final goods.  
 
-Another research paper in this field, \cite{muuls2009imports} find
+Another research paper in this field, \textcite{muuls2009imports} find
 that productivity advantage of exports towards non-exporters
 may be overstated in the current literature, 
 because imports were not taken into account as well as exports.
 \subsection{Productivity Estimation}
-Productivity estimation in all of the papers mentioned is done using
-the methods highlighted  below:
-\cite{olley1992dynamics},\cite{levinsohn2003estimating},
-\cite{ackerberg2006structural} and \cite{wooldridge2009estimating}. 
+Productivity estimation in all of the research papers mentioned is done using
+the methods highlighted below:
+\textcite{olley1992dynamics},\textcite{levinsohn2003estimating},
+\textcite{ackerberg2006structural} and \textcite{wooldridge2009estimating}. 
 These papers take inspiration from one another and the difference in
-estimation mentioned in these papers is very minimal. These methods
+estimation mentioned in these papers is very minimal. The method
+mentioned in \textcite{olley1992dynamics}
 have been explained in section \ref{prodest}
 
-With regards to productivity estimation, \cite{de2013detecting} highlights the importance of endogenising
+With regards to productivity estimation, \textcite{de2013detecting} highlights the importance of endogenizing
 the export decision in the minimisation problem of the productivity
 estimation. 
 
 \section{Data}\label{sec:data}
 I use annual firm level data from Centre for Monitoring Indian Economy
-(CMIE) which provides  data from 1989 to 2017. 
-
-I fetch the following variables from CMIE: 
-
+(CMIE) which provides  data from 1989 to 2017. Table \ref{indicator}
+displays the variables I fetch from the database and their meanings. 
+ 
 \begin{center}
 \input{./TABLES/indicatordescription.gen}
 \end{center}
 
-Table \ref{indicator} shows the variables and their meaning. I chose the variables
+I chose the variables
 which might be the most pertinent to my research question. 
-The variables stated above are nominal values. I fetch Wholseale Price
+The firm variables stated above are nominal values of Indian Rupees
+(Miilion). I fetch Wholseale Price
 Index (WPI), which provides the inflation rate of the wholesale prices
 and deflate the variables to give real values. Then, I clean the data
 to remove missing values and select firms with the broad industry
 classification code indicating that they are a manufacturing
-firms. Table \ref{compnfirms} shows the composition of firms by year: 
+firm.
+ Table \ref{compnfirms} in the Appendix shows the composition of
+firms by year.  
 \begin{center}
 \input{./TABLES/compnfirms.gen}
 \end{center}
- I restrict the time period of the study from 2001 to 2016.  Since, firms
+ I restrict the time period of the study from 2001 to 2016 as those
+ periods have  relatively high number of firms.  Since, firms
 are under no legal obligation to report their finances, this might
 mean  that small firms are less likely to report their
 finances. Therefore, I do not analyse the effect of export/import on
 the survival probability of the firm and do not consider the
-entry/exit decision of a firm. 
- However, this dataset includes all publicly listed firms as
+entry/exit decision of a firm. However, this dataset includes all publicly listed firms as
 their firm financials are public information. This might affect the 
 results as the dataset is biased towards bigger firms. 
 
-I create two additional variables \textit{Export}, \textit{Import},
+I create two additional variables \textit{Export Value},
+\textit{Import Value},
 \textit{Domestic Sales}
 by adding the following variables from the Table 1.  
 \begin{enumerate}
-\item Export: sa\_export\_goods $+$ sa\_export\_serv
-\item Import: sa\_import\_rawmat $+$        sa\_import\_stores\_spares
-  $+$ sa\_import\_fg            $+$sa\_import\_cap\_goods
-\item Domestic Sales: Total Sales - Export Sales
+\item Export Value: Sum of the exports of goods and exports of services \textit{sa\_export\_goods $+$ sa\_export\_serv}
+\item Import Value: Sum of imports of raw materials, stores and spares,
+  finished goods and capital goods \textit{sa\_import\_rawmat $+$        sa\_import\_stores\_spares
+  $+$ sa\_import\_fg            $+$sa\_import\_cap\_goods}
+\item Domestic Sales: Total Sales - Export Sales \textit{sa\_sales $-$ Export Value}
 \end{enumerate}
-Then, I create four dummy variables of trade market participation
-using the \textit{Export} and \textit{Import} variables: 
+Then, I create four dummy variables of trade market participation:
+\begin{itemize}
+\item Export Dummy: $d_{it}^{X}=1$ if \textit{Export Value} $> 0$
+\item Import Dummy: $d_{it}^{X}=1$ if \textit{Import Value} $> 0$
+\end{itemize} 
+This gives four categories on the basis of which we can divide the
+firms in the data set: 
 \begin{itemize}
 \item None: Firms that do not participate in the export/import market
 \item Export only: Firms that participate in the export market only
@@ -280,21 +313,23 @@ participate in the trade market is low,  around 20 to 35
 market is really high. Another interesting feature is that the number
 of firms that participate only in the import market is higher than the
 firms that participate only in the export market. This must mean that
-the demand for foreign intermediaries is really high. Almost 50 \% of
-firms in each year participate in both export/import market.  It is
-also seen that the participation rate in the trade is not increasing
-year on year.  
+the demand for foreign intermediaries is really high. Also, almost 50 \% of
+firms in each year participate in both export/import market. This
+might mean that there is a very high proportion of firms that participate
+in the both the trade market activities relative to the firms that
+participate only in one trade market activity. 
 \begin{center}
 \input{./TABLES/composition.gen}
 \end{center}
 \section{Descriptive Statistics}
-\subsection{Self-Selection}
-As a first step to see if more productive firms self-select into
-participating in the trade market, I calculate the mean and standard
+\subsection{Exporter/Importer Performance}
+As a first step to see that firms that participate in the trade market
+are better performers than firms that do not participate in the trade market, I calculate the mean and standard
 deviation and create the density plots for log of  sales, gross fixed assets,
 salaries and  expenditure on power and fuel for firms with different
 trade activity status. 
-Tables \ref{lsales}, \ref{lgfa}, \ref{tab:lsalary} and \ref{tab:lrawmat} the results for the variables mentioned above. 
+Tables \ref{lsales}, \ref{lgfa}, \ref{tab:lsalary} and
+\ref{tab:lrawmat} display the results for the variables mentioned above. 
 It can be seen that firms that participate in the trade market have
 a distribution that is more skewed towards the right for all the
 variables mentioned above. In the case of sales, firms that do not
@@ -309,7 +344,7 @@ only export and only import. On the other hand, the standard deviation in all
 the cases is very similar. This indicates that firms participating
 in the trade market has an positive effect on the observable characteristics of the firm.
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Sales (log)}
 \label{lsales}
 \begin{tabular}{c}
@@ -319,7 +354,7 @@ in the trade market has an positive effect on the observable characteristics of 
 \end{table}
 \end{center}
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Gross Fixed Assets (log)}
 \label{lgfa}
 \begin{tabular}{c}
@@ -329,7 +364,7 @@ in the trade market has an positive effect on the observable characteristics of 
 \end{table}
 \end{center}
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Salary (log)}
 \label{tab:lsalary}
 \begin{tabular}{c}
@@ -338,20 +373,10 @@ in the trade market has an positive effect on the observable characteristics of 
 \end{tabular}
 \end{table}
 \end{center}
-\begin{center}
-\begin{table}[htp]
-\caption{Summary statistics of Expenditure on raw material (log)}
-\label{tab:lrawmat}
-\begin{tabular}{c}
- \includegraphics{./PICS/denslrawmat.pdf}   \\ 
- \input{./TABLES/sumstatslrawmat.gen}  \\  
-\end{tabular}
-\end{table}
-\end{center}
 \subsection{Trade Premia}
 Trade premia is defined as the difference in
 attributes of firms based on their trade participation status. I
-estimate the trade premia using the following regression:
+estimate the trade premia using the following Fixed Effect (FE) regression:
 $$ X_{it} = \alpha + \beta_{1} d_{it}^{X}+ \beta_{2} d_{it}^{M}+
 \beta_{3} d_{it}^{X}*d_{it}^{M} + \beta_{4} age_{it} + \epsilon_{it}$$
 where $X_{it}$ is firm level characteristics such as Sales, Gross
@@ -378,15 +403,22 @@ has a positive coefficient and is significant at 1\% significance
 level. Therefore, the older a firm becomes the higher its capital,
 assets etc. become. 
 
-This section verifies the presence of trade premia in our dataset. In
-the next section, I descriptively check whether exports have an effect
-on vice-versa.  
+This section verifies the presence of trade premia in our
+dataset. This further substantiates the point that firms that
+participate in one trade market activity (export or import) have
+better sales, gross fixed assets etc than firms that do not
+participate in the trade market. Furthermore, firms that participate
+in the both of the trade market activities have a higher trade premia
+than the firms that participate in one of the trade activities. 
+ In the next section, I descriptively check whether exports have an effect
+on imports and vice-versa.  
 
 \subsection{Complementarity between Exporting and Importing}
 The difference between density plots of exporting firms that only participate in the
-export market and firms that participate in import market will help
-give an idea whether there is an effect of one activity on the other. 
-Table \ref{tab:lexport} displays the export value for firms that participate only in the
+export market and firms that participate in import market as well will help
+give a better  idea whether there is an effect of one activity on the other. 
+Table \ref{tab:lexport} displays the the density plot  of the log
+values of export  for firms that participate only in the
 export market and for firms that participate in both export/import
 market. 
 
@@ -395,8 +427,17 @@ export/import market have a higher mean of exports (5.24) than firms that only
 participate in the export market (3.56). This suggests that importing has a
 positive effect on exporting such that the firms export more than they
 would if they did not participate in the import market.     
+
+Table \ref{tab:limport} displays the density plot of the log value of  import  for firms that participate only in the
+import market and for firms that participate in both export/import
+market. 
+It is seen in Table \ref{tab:limport} that firms that participate in both the
+export/import market have a higher imports (4.95) than firms that only
+participate in the import market (3.41). This suggests that exporting has a
+positive effect on importing firms. 
+
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Export (log)}
 \label{tab:lexport}
 \begin{tabular}{c}
@@ -405,16 +446,9 @@ would if they did not participate in the import market.
 \end{tabular}
 \end{table}
 \end{center}
-Table \ref{tab:limport} displays the import value for firms that participate only in the
-import market and for firms that participate in both export/import
-market. 
-It is seen in Table \ref{tab:limport} that firms that participate in both the
-export/import market have a higher imports (4.95) than firms that only
-participate in the import market (3.41) . This suggests that exporting has a
-positive effect on importing firms. 
 
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Import (log)}
 \label{tab:limport}
 \begin{tabular}{c}
@@ -423,14 +457,16 @@ positive effect on importing firms.
 \end{tabular}
 \end{table}
 \end{center}
-Tables \ref{tab:lexport}and   \ref{tab:limport} suggest that both these activities have a
+Tables \ref{tab:lexport} and \ref{tab:limport} suggest that both these activities have a
 positive effect on the other and this might be because importing
-complements exporting and vice-versa. Therefore, there is correlation between these
+complements exporting and vice-versa. Therefore, there might be
+complementarity between these
 activities that needs further research. 
 
-I estimate the trade premia on exporting value of the discrete
+I estimate the trade premia similar to the regression in the previous
+section on exporting value of the discrete
 decision to import and vice-versa. This is done by estimating the
-following equation:
+following equation using a fixed-effects (FE) regression:
 
 $$  ln(Export)_{it} = \alpha +  \beta_{1} d_{it}^{M}+
 + \beta_{2} age_{it} + \epsilon_{it}$$
@@ -450,10 +486,10 @@ export also has a positive and significant effect on the quantity of
 imports by increasing the value of imports by 0.458.  This further suggests the presence of complementarity
 between exporting and importing. 
 
-In the next section, I investigate if exporting/importing contribute
-towards rough measures of productivity. 
+In the next section, I investigate the effect  exporting/importing on
+crude measures of productivity. 
 \subsection{Productivity and Export/Import}
-\cite{gupta2018exporting} define a rough measure of productivity known
+\textcite{gupta2018exporting} define a rough measure of productivity known
 as \textit{capital productivity}. It is defined as the log of value added per
 unit of capital used by a firm:
 
@@ -461,13 +497,13 @@ $$ log(VA_{it} - log(K_{it}))$$
 where $VA_{it}$ is firm-level value added, computed as total industrial sales plus
 change in stock minus power and fuel expenditures, and raw material
 expenses. 
- Table \ref{capprod} displays the summary statistics for this variable
+ Table \ref{tab:capprod} displays the summary statistics for this variable
 based on the trade activity status. It can be seen that mean of capital
 productivity increases as activity status moves from \textit{None} to
 \textit{Export only/Import only} to \textit{Both}, whereas the
 standard deviation also decreases.  
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Capital Productivity (log)}
 \label{tab:capprod}
 \begin{tabular}{c}
@@ -476,22 +512,21 @@ standard deviation also decreases.
 \end{tabular}
 \end{table}
 \end{center}
-
-Table \ref{tab:capprod} displays the summary statistics of Profit to Sales based on a
-firms trade market status. Profit to sales is calculated by dividing
-the profit after tax with sales. This measure can be interpreted as a
-profitability measure. It is seen in table \ref{tab:capprod} that participating in
-the trade market increases the profit to sales ratio by 0.17. Firms that do
+ It is seen in table \ref{tab:capprod} that firms participating in
+the trade market increases the capital productivity  as firms
+participating in the trade market have a higher mean than those firms
+that do not participate in the trade. Firms that do
 not participate in the trade market have a very high standard
-deviation of profit to sales. It is also interesting to see that mean
-profit to sales ratio in every case is negative. 
+deviation of profit to sales.
 
 I also use another rough measure of productivity i.e
 \textit{Profit to Sales} which is calculated by dividing the profit of
-a firm with its sales. Table \ref{tab:pts} shows the summary
+a firm with its sales. Profit to sales is calculated by dividing
+the profit after tax with sales. This measure can be interpreted as a
+profitability measure. Table \ref{tab:pts} shows the summary
 statistics for this variable. 
 \begin{center}
-\begin{table}[htp]
+\begin{table}[H]
 \caption{Summary statistics of Profit to Sales}
 \label{tab:pts}
 \begin{tabular}{c}
@@ -506,7 +541,7 @@ the trade market to -0.03 and  -0.06 when a firm is participating in
 import and export respectively to 0.01 when a firm is participating in
 both of the trade market activities.  
 
-The last two columns of table \ref{prodrpemia} estimate the trade
+The last two columns of table \ref{prodpremia} estimate the trade
 premia for the crude measures of the productivity defined above i.e
 Capital Productivity and Profit-to-sales ratio. It is seen that both
 of the crude measures of productivity react positively to the discrete
@@ -516,30 +551,29 @@ profit to sales ratio by 0.061. The discrete decision to import
 increases the  capital productivity by 0.097 and
 profit to sales ratio by 0.021. 
 Moreover, since the interaction term is really low in one case and 
-is not significant in the other.  This means that participation in both activities
+is not significant in the other.  This suggests that participation in both activities
 leads to higher productivity than participation in one activity. 
 \subsection{Sunk Cost (Transition Probability)}
 
 
 
 Table \ref{tab:transition} displays the transition probabilities
-observed in the data to see whether there is persistence in trade
-activity behavior. It is seen that there are very high levels of persistence from
-\textit{None} in t-1 to \textit{None} in t  and from \textit{Both} in
-t-1 to \textit{Both} in t. This means that there must be high sunk
+observed in the data  and the values in the brackets represent the
+number of firms. It is seen that there are very high levels of persistence from
+\textit{None} in t-1 to \textit{None} in t. This means that there must be high sunk
 costs to enter in the export/import market since only 12\% of the
 firms  that do not participate in the trade market in t-1 start
-participating in the trade market in t. The high levels of persistence
-in \textit{Both} must mean that this mechanism benefits the firms in a
-lot of ways. The levels of persistence in \textit{Import Only} and \textit{Export Only}  is not as high. A large
-portion of firms switch to participating in both the trade market
-activities.This can mean that participating in the export in time
-period in t-1 complements participating in the export market in period
+participating in the trade market in t. Moreover,   high levels of persistence
+are also observed in  \textit{Both}  (91.5\%). The levels of
+persistence in \textit{Import Only} and \textit{Export Only}  is not
+as high. A large portion of firms switch to participating in both the trade market
+activities. This might mean that participating in the export in time
+period in t-1 complements participating in the import  market in time period
 t and vice-versa. Also, the number of firms that flip-flop (i.e switch
 trade market status) is low, which provides further evidence that there are fixed costs
 to participating in the stock market as well. 
 \begin{center}
-\begin{table}[!htp]
+\begin{table}[H]
 \caption{Transition probability}
 \label{tab:transition}
 \input{./TABLES/transition.gen}
@@ -552,18 +586,20 @@ in the trade market are bigger (Trade premia), have higher
 productivity than firms that do not participate in the trade
 market. It provide evidence that exporting firms export more if they
 participate in the import market as well and vice-versa. It also
-provided evidence that there is persistence in trade status. 
+provided evidence that there is persistence in trade status
+(especially when the firms are not participating in the trade market
+and when they are participating in the export and import market). 
 
 In the next section, I proceed to calculate productivity using more
 sophisticated techniques used in the literature and check the endogenous effect
-on the decision to export/import on productivity. Then, check if the
+of the decision to export/import on productivity. Then, check if the
 sunk cost hypothesis and self-selection hypothesis is observed using a
 dynamic random effects probit model. I end the next section by
-estimating a bivariate probit model to examine the complementary
+estimating a dynamic bivariate probit model to examine the complementary
 nature of these two activities. 
-\section{Preliminary Analysis}
-Before modelling this behavior, I try to check if the phenomenon seen
-in the descriptive statistics are also seen in more sophisticated
+\section{ Analysis}
+I check if the phenomenon seen
+in the descriptive statistics are also observed using more sophisticated
 techniques. 
 
 I divide this into three parts and check whether: 
@@ -572,33 +608,147 @@ I divide this into three parts and check whether:
   impact productivity?
 \item Self-Selection and Sunk Cost Hypothesis : Selection of more productive firms into
   exporting/importing and persistence of these activities
-\item Complementarity between exporting and importing(Lagged and
-  Simultaneous): Does engaging
-  in one activity complements participation in the other ?
+\item Complementarity between exporting and importing (Lagged and
+  Contemporaneous): Does engaging
+  in one activity complement participation in the other?
 \end{itemize}
+
 \subsection{Learning-by-doing}
-I estimate  endogenously the effect of export/import on productivity
-using two techniques  used widely in this field: 
- \cite{levinsohn2003estimating} (LP)and
- \cite{ackerberg2006structural} (ACF).
-ACF results are shown to highlight the robustness of the results. 
-\subsubsection{Levinsohn-Petrin}
-\cite{levinsohn2003estimating} assume the following  Cobb-Douglus production function: 
+
+ I assume that the firms have a Cobb-Douglus
+production function: 
+
 \begin{equation}
-y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} +
-\omega_{it}(m_{it}, k_{it}) + \eta_{it} 
+y_{it} =   \beta_{l}l_{it} + \beta_{k}K_{it} +
+\omega_{it} + \eta_{it} 
+\end{equation}
+where $l_{it}$ is the labor, $K_{it}$ is capital, $\omega_{it}$ is the
+total factor productivity or unobserved productivity and $\eta_{it}$
+is a unknown shock affecting the firms output. However, the OLS
+estimation provides biased results as it does not account for
+simultaneity problem i.e the productivity of a firm should be
+correlated with the inputs of production. 
+
+There is a vast literature on the estimation of productivity starting
+with the seminal paper in productivity estimation: \textcite{olley1992dynamics} and subsequent
+modifications of their method: \textcite{levinsohn2003estimating},
+\textcite{ackerberg2006structural} and
+\textcite{wooldridge2009estimating}. The estimation strategy of
+\textcite{olley1992dynamics} is highlighted in section \ref{op}. 
+
+I use the  methods shown in \textcite{levinsohn2003estimating} and
+\textcite{ackerberg2006structural} to estimate Cobb-Douglus
+parameters. 
+
+
+\textcite{levinsohn2003estimating} \textbf{LP} uses a  strategy
+similar to \textcite{olley1992dynamics} but use intermediate input demand
+as the function to invert out $\omega_{it}$. 
+Here, the intermediated material demand function is given by:
+$$  m_{it} = m_{it}(\omega_{it}, k_{it})$$
+This function is assumed to be montonically increasing and therefore
+productivity can be found by inverting the function above. Therefore,
+we can write the Cobb-Douglus equation  as: 
+$$ y_{it} = \beta_{l}l_{it} + \phi_{it}(m_{it},K_{it})$$
+where $\phi_{it}(m_{it},K_{it}) =  \beta_{k}K_{it}+ \omega_{it}(m_{it}, K_{it})$
+They suggest the  use of a third degree polynomial to approximate 
+$\phi_{it}$ and substitute it into the equation above to give the
+following result: 
+
+$$  y_{it} =  \beta_{l}l_{it} + \sum_{i=0}^{3} \sum_{j=0}^{3-i}
+\delta_{ij}k_{it}^{i}m_{it}^{j}$$
+The coefficient is $\beta_{l}$ is estimtated by OLS using the equation
+above as they assume that the labor is a flexible input i.e there are
+no labor adjustment costs and $\hat{\phi_{it}}$ is estimtated by
+subtracting the effect of labor from
+the fitted value of the above equation:
+$$ \hat{\phi_{it}} = \hat{y_{it}} - \hat{\beta_{l}}l_{it} =
+ \sum_{i=0}^{3} \sum_{j=0}^{3-i}
+\hat{\delta_{ij}}k_{it}^{i}m_{it}^{j}$$
+Therefore, 
+So, for any value of $\beta_{k}^{*}$:
+$$\hat{\omega_{it}} = \hat{\phi_{it}} - \beta_{k}^{*}k_{it}$$
+$$ y_{it}^{*} = y_{it} - \beta_{l}l_{it} = \beta_{k}K_{it}
++ \omega_{it}(m_{it}, K_{it})$$
+Since it is also assumed that $\omega_{it}$ follows a first order markov
+process : 
+$$\omega_{it} = E[\omega_{it}|\omega_{it-1}] + \epsilon_{it}$$
+They also assume a polynomial expansion of the expectation above to give:
+$$ \omega_{it}=  \gamma_{o}+\gamma_{1}\omega_{it-1} +
+\gamma_{2}\omega_{it-1}^2 + \gamma_{3}\omega_{it-1}^3 + \epsilon_{it} $$ 
+Therefore, the value of $\beta_{K}$, for which the expression below is
+minimized is chosen to be the coefficient of capital.  
+\begin{equation}
+\min_{\beta_{k}^{*}}\sum (y_{it} - \hat{\beta_{l}l_{it}} -
+\beta_{k}^{*}K_{it} - \hat{E[\omega_{it}|\omega_{it-1}]})^2 
 \end{equation}
 
-Using OLS residuals of the Cobb-Douglus estimates provide biased
-estimates of productivity since there is correlation between
-productivity and characteristics  of firms.   
+On the other hand, \textcite{ackerberg2006structural}(ACF) use a
+similar strategy but, suggest that labour might be
+correlated with productivity. Therefore, they write  the firms input
+material demand as a function of productivity, capital as well as
+labor : 
+$$ m_{it} = f_{it}(\omega_{it}, k_{it}, l_{it})$$
+Inverting this function for $\omega_{it}$ and substituting into the
+production function results in the following 
+equation of the form:
+\begin{equation}
+y_{it} = \beta_{l}l_{it} + \beta_k k_{it} + f_{it}^{-1}(m_{it},
+k_{it}, l_{it})+ \epsilon_{it}
+\end{equation}
+They suggest that the  labor coefficient along with capital since it is correlated with
+productivity. 
+They suggest the following steps:
+\begin{enumerate}
+\item Obtain $\phi_{it}(m_{it}, k_{it}, l_{it}) = \beta_{l}l_{it} + \beta_k k_{it} + f_{it}^{-1}(m_{it},
+k_{it}, l_{it})$ by regressing $y_{it}$ on polynomial approximation of
+$\phi_{it}(m_{it}, k_{it}, l_{it})$
+\item Use the markovian nature of $\omega_{it} =
+  E(\omega_{it}|\omega_{it-1}) + e_{it}$
+and use the following moment equations to estimate $\beta_{K}$ and
+$\beta_{l}$:
+\begin{equation}
+E[e_{it}|(k_{it}, l_{it-1})]= 0
+\end{equation}
+\end{enumerate} 
 
-I use the variable gross fixed assets as a measure of capital, salary
+However, exogenously regressing lagged  export/import variables  on
+productivity (obtained by getting the residuals) suggests that past
+export/import performance does not impact the evolution of
+capital/labor. This has been highlighted by \textcite{de2013detecting}, and
+they suggest that the trade activities should be accommodated
+endogenously in the productivity evolution process. This is done by
+accommodating the the lagged export/import variable into the
+minimisation procedure of productivity:
+
+$\omega_{it} =
+  E(\omega_{it}|\omega_{it-1}, d_{it-1}^{X}, d_{it-1}^{M}) + e_{it}$
+
+% \subsection{Learning-by-doing}
+
+
+% I estimate the  endogenous  effect of export/import on productivity
+% using two techniques  used widely in this field: 
+%  \textcite{levinsohn2003estimating} (LP)and
+%  \textcite{ackerberg2006structural} (ACF).
+% ACF results are shown to highlight the robustness of the results. 
+% \subsubsection{Levinsohn-Petri}
+% \textcite{levinsohn2003estimating} assume the following  Cobb-Douglus production function: 
+% \begin{equation}
+% y_{it} = \beta_{o} + \beta_{l}l_{it} + \beta_{k}K_{it} +
+% \omega_{it}(m_{it}, k_{it}) + \eta_{it} 
+% \end{equation}
+
+% Using OLS residuals of the Cobb-Douglus estimates provide biased
+% estimates of productivity since there is correlation between
+% productivity and characteristics  of firms.   
+
+I use the log values of the following variables for the estimation
+procedure:  gross fixed assets as a measure of capital, salary
 as a measure of labor and a expenditure on raw materials as a measure
-of intermediated input. The estimation procedure has been described
-below (see here \ref{lp}). Since \cite{levinsohn2003estimating} assume
-a markovian nature of productivity evolution, where the
-productivity evolution is assumed to follow the procedure below:
+of intermediated input. Since productivity evolution is  assumed to
+have a markovian nature , I assume the following form of productivity
+evolution:
 $$ \omega_{it} = \alpha_{o} + \alpha_{1}\omega_{it-1} +
 \alpha_{2}\omega_{it-1} + \alpha_{3}\omega_{it-1}^{2}+
 \alpha_{4}d_{it-1}^{X} + \alpha_{5} d_{it-1}^{M} +
@@ -606,182 +756,341 @@ $$ \omega_{it} = \alpha_{o} + \alpha_{1}\omega_{it-1} +
 $$ 
 where $d_{it-1}^{X}$ and $d_{it-1}^{M}$ is the discrete decision to
 export and import respectively. 
- I use the method highlighted in \cite{de2013detecting}  to accommodate endogenous
-productivity evolution which allows  past export experience to impact
-the evolution of capital. The estimates of the productivity evolution
-are shown in Table \ref{prod}. The Cobb-Douglus coefficients are shown in
-Table \ref{regLP}. 
+
+The estimates of the productivity evolution and  the Cobb-Douglus
+coefficients  using the Levinsohn-Petrin
+method are shown in Table \ref{prod}  and 
+Table \ref{regLP} respectively. 
 \input{./TABLES/regLP.gen}
-\input{./TABLES/prod.gen} 
-
-\cite{de2013detecting} say that exogenously accomodating the
-decision to export/import implies that
-past export/import experience has no impact on direct technological
-improvements. Therefore, the coefficient of capital will be biased if
-the trade market decisions is correlated with capital. Table
-\ref{regLPex} displays the coefficients when the export/import
-decision is not endogenously allowed to contribute towards the
-productivity evolution. In this case, the coefficient of capital is
-biases upwards since the variation in output is attributed more
-towards capital.   
-\input{./TABLES/regLPex.gen}
-
-It is seen that productivity evolutions depends non linearly on past
-productivity. The interesting result is that lagged decision to export does not a have
+It is seen in Table \ref{prod} that productivity evolutions depends strongly
+on the past productivity and the coefficients suggest that there is a
+non linear relationship with  past
+productivity. However, the interesting result is that lagged decision to export does not a have
 a significant effect on productivity. However, it is seen that the
 discrete decision to import does have a significant effect on productivity i.e the
-decision to import causes the productivity to increase by 3 per
+lagged decision to import causes the productivity to increase by 3 per
 cent. The interaction term between exporting and importing also does
 not have a significant effect on productivity. 
 Table \ref{regLPcont} and \ref{prodcont} display the Cobb-Douglus coefficients when the
-productivity is dependent on the continuous value of export and import
+productivity evolution is dependent on the lagged continuous value of export
+and import rather than the lagged decision to export/import.
 and they show results similar to the ones shown in tables \ref{regLP}
-and \ref{prod} for the discrete decision. 
+and \ref{prod} for the discrete decision. They show that lagged
+continuous value of export does not have a significant effect on
+productivity, increase in lagged continuous value of import  by 1 unit
+increases the productivity by 2.6 \%.  
+\input{./TABLES/prod.gen} 
 
-\subsection{\cite{ackerberg2006structural}}
-The results from this method are shown in \ref{prodACF} and
+
+
+As written before, \textcite{de2013detecting} say that exogenously accommodating the
+decision to export/import implies that
+past export/import experience has no impact on direct technological
+improvements. Therefore, the coefficient of capital will be biased
+upwards if the decision to participate in the trade market correlated with capital. Table
+\ref{regLPex} displays the coefficients when the export/import
+decision is not endogenously accommodated in 
+productivity evolution. In this case, the coefficient of capital is
+biases upwards (0.452 compared to 0.437 in the endogenous case)  since
+the variation in output is attributed more towards capital rather than productivity.   
+\input{./TABLES/regLPex.gen}
+
+% \subsubsection{\textcite{ackerberg2006structural}}
+The results from the estimation  method mentioned in \textcite{ackerberg2006structural} are shown in \ref{prodACF} and
 \ref{regACF}. The coefficient of labor is much lower in this
-estimation method. This might mean that the labor coefficient is also
-correlated to productivity. However, in terms of the endogenous effect
+estimation method which suggests that labor is not a flexible input
+which suggests that is also correlated to productivity. However, in terms of the endogenous effect
 of export/import on productivity is roughly the same. The export
 decision does not have a significant effect on productivity and the
-import decision has a 2.9\% increase to the productivity. 
+import decision has a 2.6\% increase to the productivity. These
+results are similar to the results from the Levinsohn-Petrin
+estimation. 
 \input{./TABLES/prodACF.gen}
 \input{./TABLES/regACF.gen}
 
-Based on these results, I conclude that manufacturing firms experience learning-by-importing and
-do not experience learning-by-exporting.
+The procedure above does not account for immediate impact of the
+importing behavior to the output of a firm as it is assumed that
+participating in the import market only helps in increasing the
+productivity of the firm in the next period. This is a drawback of the
+estimation procedure. 
 
 
-
+Based on these results above, it is seen that manufacturing firms experience learning-by-importing and
+do not experience learning-by-exporting. 
 In the next section, I check if more productive self-select into
 exporting/importing and if the sunk cost hypothesis is observed for
-the discrete decision to export and import. 
-\subsubsection{Self Selection and Sunk Cost hypothesis}
+the discrete decision to export and import with the help of a dynamic probit
+random effects model. 
+\subsection{Self Selection and Sunk Cost hypothesis}
 The self-selection hypothesis states that entry into the trade market
 involves fixed and sunk costs and only the most productive firms can
 overcome these trade costs. Therefore, to participate in the
 export/import market a firm must pay a certain costs and only the most
 productive are able to pay the costs. To check this hypothesis, I
 estimate a dynamic random effects probit model similar to the model used
-in \cite{roberts1997decision}. I define $D_{it}^{X}$ as the discrete
+in \textcite{roberts1997decision}. I define $d_{it}^{X}$ as the discrete
 decision to export, where
- Bellman equation for a profit maximising firm is:
+ Bellman equation for a profit maximising firm deciding to enter the
+ export market is:
 \begin{equation}
-V_{it}(S_{it})= max_{D_{it}^{X}}E_{t}(\sum_{i=1}^{\infty} \delta^{t+i}R_{i,t+i}|S_{it})
+V_{it}(S_{it})= max_{d_{it}^{X}}E_{t}(\sum_{i=0}^{\infty} \delta^{t+i}R_{i,t+i}|S_{it})
 \end{equation}
  where $\delta$ is the one-period discount factor, $S_{it}$ is the
  relevant state variables affecting the firms decision, $R_{ij}$ is
  the revenue. The equation above can also be written as:
 \begin{equation}
-V_{it}(S_{it})= max_{D_{it}^{X}}(\pi^{D} + D_{it}^{X}(\pi^{X}- f^{X} -
-c^{X}(1-D_{it-1}^{X}))  + \sum_{j=t+1}^{\infty} \delta^{t-j}R_{ij}|S_{it})
+V_{it}(S_{it})= max_{D_{it}^{X}}(\pi^{D} + d_{it}^{X}(\pi^{X}- f^{X} -
+c^{X}(1-d_{it-1}^{X}))  + \sum_{j=t+1}^{\infty} \delta^{t-j}R_{ij}|S_{it})
 \end{equation}
 where $\pi^{D}$ is the domestic profit, $\pi^{X}$ is the export
 profit, $f^{X}$ is the fixed cost of exporting and $c^{X}$ is the sunk
 cost of exporting. 
 \begin{equation}
-V_{it}(S_{it})= max_{D_{it}^{X}}E_{t}(\pi^{D} + D_{it}^{X}(\pi^{X}- f^{X} -
-c^{X}(1-D_{it-1}^{X}))  + \delta E (V_{it}(S_{it+1})|S_{it}, d_{it}^{X}))
+V_{it}(S_{it})= max_{D_{it}^{X}}E(\pi^{D} + d_{it}^{X}(\pi^{X}- f^{X} -
+c^{X}(1-d_{it-1}^{X})  + \delta E (V_{it}(S_{it+1})|S_{it}, d_{it}^{X})))
 \end{equation}
 
  Thus, a firm will participate in the export market if:
 \begin{equation}
 \pi_{it}^{*} = \pi^{D}+\pi^{X}  +
-\delta^{t}E_{t}(V_{i,t+1}(S_{it+1}|S_{it},D_{it}^{X}=1) -
+\delta E_{t}(V_{i,t+1}(S_{it+1}|S_{it},D_{it}^{X}=1) -
 V_{i,t+1}(S_{it+1}|S_{it},D_{it}^{X}=1) ) -  (f^{X} + c^{X}(1-D_{it-1}^{X}))
 \end{equation}
-And the reduced form expression of the equation above becomes: 
+It is assumed that the state variables entering the Bellman equation
+are the following: $S_{it}= (K_{it}, l_{it}, \omega_{it},
+d_{it-1}^{X})$ i.e capital, labor, productivity and lagged decision to
+participate in the export market. In the model above, it is assumed
+that a firm pays a sunk cost if $d_{it-1}^{X} = 0$. Therefore, if there are no sunk costs, then
+according to the Bellman equation above, a firm will export as long as
+the the current profits plus the discounted expected value is greater
+than the fixed costs of exporting. 
+The reduced form expression of the equation above is: 
 \begin{equation}
   d_{it}^{X}=\begin{cases}
-   1 , & \text{if $\pi_{it}^{*}>  $}.\\
+   1 , & \text{if $\pi_{it}^{*} \geq 0$}.\\
    0 , & \text{if $\pi_{it}^{*}<  0$}.
   \end{cases}
 \end{equation}
-To make it a dynamic probit model, I write the equation above as a linear
-function of firm-level characteristics along with dummy variables for
-industry and time. 
+To enable to reduced form estimation of the model, I write the equation above as a linear
+function of the relevant state variables along with dummy variables to
+adjust for industry and time effects, to give the equation below:
+
 \begin{equation}
-  d_{it}^{X}=\begin{cases}
-   1 , & \text{if $\gamma_{1}^{X} d_{it-1}^{X} + 
-\gamma_{3}^{X} \hat{\omega}_{it-1}  + \beta_{1}^{X}K_{it-1}  +
-IndustrialDummy_{i}^{X} + TimeDummy_{t}^{X}  + \alpha_{i}+ \epsilon_{it}^{X}>= 0   $}.\\
-   0 , & \text{otherwise}.
-  \end{cases}
+  \pi_{it}^{*}=   \gamma_{1}^{X} d_{it-1}^{X} + 
+\gamma_{3}^{X} \hat{\omega}_{it}  + \beta_{1}^{X}K_{it}  +\beta_{2}^{X}L_{it}
+IndustrialDummy_{i}^{X} + TimeDummy_{t}^{X}  + \alpha_{i}+ \epsilon_{it}^{X}
 \end{equation}
-So if the coefficient of  $d_{it-1}^{X}$ is signifcantly positive, it provides
-evidence of sunk cost to participate in the export market and if the
-coefficient of $\omega_{t-1}$ is positive, then firms with high
-productivity self-select into participation in the export market.
+So if the coefficient of  $d_{it-1}^{X}$ is significantly positive, it provides
+evidence of sunk cost to participate in the export market as this
+means that there is a persistence in the exporting behavior. If the
+sunk cost hypothesis did not hold then the probability of exporting
+should not depend on the lagged decision to export. And if the
+coefficient of $\omega_{t-1}$ is positive, then this proves the
+self-selection hypothesis as firms with high
+productivity have a higher probability of participating  in the export market.
+
+
 
 A similar model can be estimated with the discrete decision to import,
 since importing also involves additional fixed and sunk costs, a firm
 would be only participate in the import market if gets productivity
 benefits to overcome the costs. Learning-from-importing has been
-demonstrated in the previous section, therefore a firm will import if:
+demonstrated in the previous section.  The Bellman equation of a firm
+deciding to enter the import market is the following: 
+
 \begin{equation}
-\pi  +
-\delta E_{t}(V_{i,t+1}(S_{it+1}|S_{it},d_{it}^{M}=1) -
-V_{i,t+1}(S_{it+1}|S_{it},d_{it}^{X}=0) ) >=  (f^{M} + c^{M}(1-d_{it-1}^{M}))
+V_{it}(S_{it})= max_{D_{it}^{M}}(\pi + d_{it}^{M}(- f^{M} -
+c^{M}(1-d_{it-1}^{M})  + \delta E (V_{it}(S_{it+1})|S_{it}, d_{it}^{M})))
 \end{equation}
 where $\pi$ is total profit of a firm, $f^{M}$ is the fixed cost of
-importing and  $c^{M}$ is the sunk cost of importing.
-Since $S_{it}$ contains productivity which will benefit from
-participating in the import market, a firm will import if the
+importing and  $c^{M}$ is the sunk cost of importing and  $S_{it} = (K_{it}, l_{it}, \omega_{it},
+d_{it-1}^{M})$. 
+
+Since $S_{it}$ contains productivity, this Bellman equation assumes that
+importing in time t provides benefits  in t+1 as the decision to
+import improves the productivity in the next period. This has been
+shown in
+the learning-by-doing section. Here, a firm will participate in the
+import market if:
+\begin{equation}
+\pi^{*}= \pi  +
+\delta E_{t}(V_{i,t+1}(S_{it+1}|S_{it},d_{it}^{M}=1) -
+V_{i,t+1}(S_{it+1}|S_{it},d_{it}^{X}=0) ) -  (f^{M} +
+c^{M}(1-d_{it-1}^{M})) > 0
+\end{equation}
+
+Therefore,  a firm will import if profit
+plus discounted 
 productivity benefits outweigh the costs to participate in the import
 market. This can be tested with a reduced form dynamic probit model similar to
 the discrete decision to export: 
 \begin{equation}
   d_{it}^{M}=\begin{cases}
-   1 , & \text{if $\gamma_{1}^{X} d_{it-1}^{M} + 
-\gamma_{3}^{M} \hat{\omega}_{it-1}  + \beta_{1}^{M}K_{it-1}  +\beta_{2}^{M}L_{it-1}
-IndustrialDummy_{i}^{M} + TimeDummy_{t}^{M}  + \alpha_{i}+\epsilon_{it}^{M}>= 0   $}.\\
+   1 , & \text{if $\pi^{*}  $}.\\
    0 , & \text{otherwise}.
   \end{cases}
 \end{equation}
-Therefore, the reduced form equations for both the discrete choices
+Therefore, the reduced form equations for the \textbf{base model} of both the discrete choices
 can be written as:
 \begin{equation}
-d_{it}^{M}^{*} = \gamma_{1}^{M} d_{it-1}^{M} + 
-\gamma_{3}^{M} \hat{\omega}_{it-1}  + \beta_{1}^{M}K_{it-1}  +\beta_{2}^{M}L_{it-1}
-IndustrialDummy_{i}^{M} + TimeDummy_{t}^{M}  + \alpha_{i}+\epsilon_{it}^{M}
+d_{it}^{X*} = \gamma_{1}^{X} d_{it-1}^{X} + 
+\gamma_{3}^{X} \hat{\omega}_{it}  + \beta_{1}^{X}K_{it}  +\beta_{2}^{L}L_{it-1}
+si_{i}^{X} + \mu_{t}^{X}  + \alpha_{i}+\epsilon_{it}^{X}
 \end{equation}
 \begin{equation}
-d_{it}^{X}^{*} = \gamma_{1}^{X} d_{it-1}^{X} + 
-\gamma_{3}^{X} \hat{\omega}_{it-1}  + \beta_{1}^{X}K_{it-1}  +\beta_{2}^{X}L_{it-1}
-IndustrialDummy_{i}^{X} + TimeDummy_{t}^{X}  + \alpha_{i}+\epsilon_{it}^{X}
+d_{it}^{M*} = \gamma_{1}^{M} d_{it-1}^{M} + 
+\gamma_{3}^{M} \hat{\omega}_{it}  + \beta_{1}^{M}K_{it}  +\beta_{2}^{L}L_{it}
+s_{i}^{M} + \mu_{t}^{M}  + \alpha_{i}+\epsilon_{it}^{M}
 \end{equation}
+Here $s_{i}$ is a vector of industry dummies and $\mu_{t}$ is a vector
+of time dummies. 
+
+To check the presence of lagged complementarity between exporting and
+importing, I add another variableto state space: lagged export
+choice into the import decision equation and lagged import choice
+to export decision equation. Therefore, the Bellman equations that
+accounts for lagged complementarity for the export decision is: 
+\begin{equation}
+V_{it}(S_{it})= max_{D_{it}^{X}}E(\pi^{D} + 
+(\lambda *d_{it-1}^{M} + 1 - d_{it-1}^{M})*d_{it}^{X}(\pi^{X}- f^{X} -
+c^{X}(1-d_{it-1}^{X})  + \delta E (V_{it}(S_{it+1})|S_{it}, d_{it}^{X})))
+\end{equation}
+Here, $\lambda$ has a value between 0 and 1 if a firm participated in
+the import market in the previous period.
+
+Similarly, the Bellman equation for the import decision is: 
+\begin{equation}
+V_{it}(S_{it})= max_{D_{it}^{M}}(\pi + (\lambda *d_{it-1}^{M} + 1 - d_{it-1}^{M}) *d_{it}^{M}(- f^{M} -
+c^{M}(1-d_{it-1}^{M})  + \delta E (V_{it}(S_{it+1})|S_{it}, d_{it}^{M})))
+\end{equation}
+Here, $\lambda$ has a value between 0 and 1 if a firm participated in
+the export market in the previous period. And the reduced form
+equation of the two Bellman equations that account for lagged
+complementarity are the following:
+
+
+\begin{equation}
+d_{it}^{X*}=   \gamma_{1}^{X} d_{it-1}^{X} + \gamma_{2}^{M} d_{it-1}^{M}+
+\gamma_{3}^{X} \hat{\omega}_{it}  + \beta_{1}^{X}K_{it}  +\beta_{2}^{X}L_{it}+
+s_{i}^{X} + \mu_{t}^{X}  + \alpha_{i}+ \epsilon_{it}^{X}
+\end{equation}
+Here, it is important to notice that  $\gamma_{2}^{M}$ measures the effect of lagged importing on
+exporting after accounting for the productivity benefits of importing,
+since the equation already uses the productivity
+estimates. Therefore, if $\gamma_{2}^{X}>0$, then this means that
+importing in time t leads to decrease in cost of exporting at time t$+$1.  
+\begin{equation}
+d_{it}^{M*}=   \gamma_{1}^{M} d_{it-1}^{M} + \gamma_{2}^{M} d_{it-1}^{M}+
+\gamma_{3}^{M} \hat{\omega}_{it}  + \beta_{1}^{M}K_{it}  +\beta_{2}^{M}L_{it}+
+s_{i}^{M} + \mu_{t}^{M}  + \alpha_{i}+ \epsilon_{it}^{M}
+\end{equation}
+In the equation above, if  $\gamma_{2}^{X}>0$, then this means that
+exporting in time t leads to decrease in cost of importing at time t$+$1.
+  
 I use the dynamic random effects probit specification with Wooldridge
-method which treats the intial conditions problem by accounting for
+method (\textcite{wooldridge2005simple}) which treats the initial conditions problem by accounting for
 the correlation of the initial value with $\alpha$:
 $$  \alpha_{i}= \gamma d_{i1}+ \tilde{\alpha_{I}} $$
+where $ \tilde{\alpha_{I}} \sim N(0, \sigma_{\alpha}^{2}) $
+
+I use the log value of gross fixed assets as a measure of capital, log
+value of wages as a measure of labor and use productivity estimates  of
+the Levinsohn-Petrin method in the previous section. 
+
 \begin{center}
+\begin{table}[H]
+\caption{Dynamic Random Effects Probit (Estimates)}
+\label{tab:dynprobit}
 \input{../STATA/dynprobit.tex}
+\end{table}
 \end{center}
-The state dependence variable has a high positive value significant at
-1\% level for both the exporting and importing. This means that there
-is a lot of persistence in both exporting and importing. This means
-that both these activities require a fixed cost as illustrated
-above. It is seen that the lagged productivity coefficient is also
-positive and significant at 1\% level. This means that if the lagged
-productivity increases, then the chance of a firm participating in the
-export and import market also increases. This provides evidence of
-Self-Selection. The capital and salary variables are also positive and
-significant. This provides evidence of the sunk cost hypothesis and
-the self-selection hypothesis. 
 
-Since there are large number of firms that participate in both
-export/import market and the complementary nature between the two
-activities observed in the previous section,  I also include the lagged decision to export in
-the the dynamic probit specification of the decision to import and
-vice-versa. This would provide the effect of the lagged complementarity
-between the decisions. 
+\begin{center}
+\begin{table}[H]
+\caption{Dynamic Random Effects Probit (Average Marginal Effects)}
+\label{tab:dynprobitme}
+\input{../STATA/dynprobitme.tex}
+\end{table}
+\end{center}
 
-However, this estimation does not
-account for the simultaneous and lagged correlation between exporting
-and importing. The next section shows the results of a biprobit
-estimation of the equation above along with lagged dependence of
-exporting on importing and vice-versa. 
+Table \ref{tab:dynprobit} and \ref{tab:dynprobitme} displays the
+estimates and average marginal effects of the dynamic random
+effects probit model respectively. Columns 1 and 3 display the result for the base
+reduced model of importing and exporting, whereas columns 2 and 4
+display the estimates when accounting for the lagged complementarity
+between exporting and importing.
+
+The likelihood ratio test to see if the base model is rejected by the
+model that accounts for lagged complementarity gives the following
+results:
+\begin{enumerate}
+\item Export: \\$H_{o}$: Base Model, $H_{1}$:Model with lagged discrete
+  import variable.
+$LR= 2[ln(model2) - ln(model1)] = 2[-14406.6 + +14513.0] = 106.4$
+The critical value of $\chi^{2}_{1;0.95}= 3.84 $. Therefore $H_{o}$ is
+rejected. 
+\item Import:\\ $H_{o}$: Base Model, $H_{1}$:Model with lagged discrete
+  export variable. 
+$LR= 2[ln(model2) - ln(model1)] = 2[-15749.5 + 15879.7 ] = 130.19$
+The critical value of $\chi^{2}_{1;0.95}= 3.84 $. Therefore $H_{o}$ is
+rejected. 
+\end{enumerate}
+In both cases, the model that accounts for the lagged complementarity
+performs better than the base model. Thereofore, I interpret the model
+that acoounts for the lagged complementarity. 
+ 
+
+ Export: The state dependence parameter is positive
+  significant at 1\% level with the highest magnitude amonst all of
+  the coefficients. This means that there is persistence in
+  exporting behavior which confirms that sunk-cost hypothesis. The average marginal effect of the lagged
+  decision to export is 0.218. Productivity also has a significant and
+  positive effect on exporting which provides evidence of
+  self-selection of high productivity into exporting. Capital and Labor
+  also have a positive and significant effect, which tells us that a
+  bigger firm has a higher chance of participating in the export
+  market. The lagged import is
+  significant and positive and this provides evidence  that importing
+  at time t increases the probability of exporting at time $t+1$ and
+  cofirms the presence of cost complementarity.  The value of
+  $sigma^2_{\alpha}$ in the table does not account for the
+  contribution of the intial condition. Therefore, the actual 
+  unobserved heterogeneity $\sigma^2_{\alpha}= \lambda^2 *
+  \hat{Var(d_{i1}^{X}} + \hat{sigma^2_{\tilde{\alpha}}}= 1.16$. This
+  means that individual effects capture  about 54\% of the unexplained
+  variance. This suggests there are variables other than the ones used
+  in the estimation that contribute towards the export market
+  participation decision. 
+
+
+ Import:  The results for the import decision are quite similar to the
+ results for the export decision. The state dependence parameter is the most highest
+  amongst all variables and
+  significant at 1\% level. This means that there is persistence in
+  importing behavior and confirms the sunk cost hypothesis for import decision. The average marginal effect of the lagged
+  decision to export is 0.202. Productivity is also significant at 1\%
+  and has a 
+  positive effect on importing. This provides evidence of
+  self-selection of high productivity into importing. Capital and Labor
+  also have a positive and significant effect, which confirms that
+  bigger firms have a higher probability of import participation.  The lagged export coefficient is
+  significant and positive and this provides evidence  that exporting
+  at time t increases the probability of importing at time $t+1$. The
+  lagged cost complementarity hypothesis is also confirmed for the
+  import decision.  The
+  unobserved heterogeneity is high as it explains about 48\% of the unexplained
+  variation in the data and the variance of the unobserved
+  heterogeneity is significant. This value is lower than the value
+  when the lagged export decision is not included in the dynamic
+  specification (Model 1) 
+
+These results provide evidence of the sunk-cost hypothesis,
+self-selection of higher productivity and bigger firms into
+exporting/importing and lagged complementarity. However, this estimation does not
+account for the contemporaneous  complementarity between exporting
+and importing. The next section shows the results of a dynamic
+bivariate probit model which accounts for simultaneous complementarity
+as well. 
 
 % I use the following equations  to verify that more productive firms
 % self-select into participating in the export/import market:
@@ -821,15 +1130,40 @@ exporting on importing and vice-versa.
 % exporting and importing as the lagged productivity for three
 % consecutive time periods before exporting/importing has a
 % significantly positive value. 
-\subsection{Complimentarity between exporting and importing(Lagged and
-Simultaneous)}
-Since the previous dynamic probit model does not account for simultaneous and
- complementarity between exporting and importing, I estimate a
-dynamic bivariate probit model of exporting and importing behavior. 
+\subsection{Complementarity between exporting and importing(Lagged and
+Contemporaneous)}
 
-Let $d_{it}^{X}$ be the discrete decision to participate in export
-market and $d_{it}^{XM}$ be the discrete decision to participate in import
-market.  Then, the bivariate dynamic probit model takes the following form 
+The bellman equation of a profit maximising firm deciding to export
+and import is the following:  
+
+\begin{equation}
+V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}^{X}\pi_{it}^{X} +
+F(d_{it}, d_{it-1}) + \beta E(V_{it}(s_{it+1}|s_{it}, d_{it})))
+\end{equation}
+where $d_{it}= (d_{it}^X, d_{it}^M)$ and $S_{it}= (K_{it}, L_{it},
+\omega_{it}, d_{it-1}^X, d_{it-1}^M)$.  $F(d_{it}, d_{it-1})$ is the
+fixed/sunk costs the firms must pay to export/import and it takes the
+following form:
+
+$F(d_{it}, d_{it-1})= $
+\begin{enumerate}
+\item   $f^{x} + c^{X}(1 - d_{it-1}^X)$\hfill  for $ (d_{it}^X, d_{it}^M) =
+  (1,0) $
+\item   $f^{M} + c^{M}(1 - d_{it-1}^M)$\hfill  for $ (d_{it}^X, d_{it}^M) =
+  (0,1) $
+\item   $\lambda[f^{x} + f^{M} + c^{X}(1 - d_{it-1}^X) + c^{M}(1 -
+  d_{it-1}^M)]$  \hfill for $ (d_{it}^X, d_{it}^M) =
+  (1,1) $
+\item   0  \hfill for $ (d_{it}^X, d_{it}^M) =
+  (0,0) $
+\end{enumerate}
+Here $f^{X}$ is the fixed cost of exporting,$C^{X}$ is the sunk cost
+of exporting, $f^{M}$ is the fixed cost of importing, $f^{M}$ is the
+fixed cost of importing and $\lambda$ captures the degrees of
+complementarity between exporting and importing. 
+
+The reduced form model of the bellman equation is a dynamic bivariate
+probit model.  Then, the bivariate dynamic probit model in this takes the following form:
 
 \begin{equation}
   d_{it}^{X}=\begin{cases}
@@ -849,23 +1183,26 @@ export status controlling for lagged firm characteristics and industry and time 
 effects. 
 \begin{equation}
 d_{it}^{X*} = \gamma_{1}^{X} d_{it-1}^{X} + \gamma_{2}^{X} d_{it-1}^{M}+
-\gamma_{3}^{X} \hat{\omega}_{it-1}  + \beta_{1}^{X}K_{it-1}  +
-IndustrialDummy_{i}^{X} + TimeDummy_{t}^{X}  + \epsilon_{it}^{X}
+\gamma_{3}^{X} \hat{\omega}_{it}  + \beta_{1}^{X}K_{it}  +
+s_{i}^{X} + \mu_{t}^{X}  + \epsilon_{it}^{X}
 \end{equation}
 Here $\gamma_{1}$ identifies the state dependence coefficient, $\gamma_{2}$ accounts for
 the fact that participating in one activity in time t-1 improves the
 odds of participating in the other at time t (lagged complimentarity),$\gamma_{3}$ accounts for
 the self-selection mechanism, $\beta_{1}$ accounts for capital at time
-t-1 and $IndustrialDummy_{i}^{M}$  $TimeDummy_{t}^{M}$ are industrial
+t-1 and $s_{i}^{M}$  $\mu_{t}^{M}$ are industrial
 and time dummies respectively.
+
+The reduced form specification for import is similar to the export
+equation:
 \begin{equation}
 d_{it}^{M*} = \gamma_{1}^{M} d_{it-1}^{M} + \gamma_{2}^{M} d_{it-1}^{X}+
-\gamma_{3}^{M} \hat{\omega}_{it-1}  + \beta_{1}^{M}K_{it-1}  +
-IndustrialDummy_{i}^{M} + TimeDummy_{t}^{M}  + \epsilon_{it}^{M}
+\gamma_{3}^{M} \hat{\omega}_{it}  + \beta_{1}^{M}K_{it}  +
+s_{i}^{M} + \mu_{t}^{M}  + \epsilon_{it}^{M}
 \end{equation}
 
 The bivariate specification also allows for the
-contemporaneous correlation between the two choices as
+contemporaneous complementarity between the two choices as
 $\epsilon_{it}^{X}$ and $\epsilon_{it}^{M}$ are allowed to be
 correlated. This gives gives the following form to the error
 structure: 
@@ -884,68 +1221,50 @@ structure:
 \]
 The estimated $\rho$ measures the correlation between the unobserved
 errors between the two activities. Therefore, this provides evidence
-of simultaneous complementarity if it significantly positive after
+of contemporaneous complementarity if it significantly positive after
 controlling for different effects. 
 This model specification has been used to test the contemporaneous relationship
-by \cite{aristei2013firms} and \cite{aw2011}. 
-The initial conditions problems is treating by assuming that $d_{i1}$ is 
-endogenously given. The  equation is estimated by assuming that lagged
-firm characteristics and industry and time  dummy variables account
-for the differences between firms, negating the use of a random
-effects model. 
-\begin{center}
-\begin{table}[htbp]
-\caption{Dynamic Probit Estimates}
-\begin{tabular}{@{\extracolsep{5pt}}lcc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
- & $d_{it}^{X}$ & $d_{it}^{M}$ \\
-\cline{2-3} 
+by \textcite{aristei2013firms} and \textcite{aw2011}. 
 
-$d_{it-1}^{X}$ & 2.520*** & 0.407*** \\
- & -158.98 & -25.13 \\
-$d_{it-1}^{M}$ & 0.388*** & 2.173*** \\
- & -21.58 & -136.24 \\
-$\hat{\omega_{it-1}}$ & 0.0759*** & 0.126*** \\
- & -8.97 & -15.72 \\
-$K_{it-1}$ & 0.0220** & 0.0899*** \\
- & -2.88 & -12.23 \\
-$L_{it-1}$ & 0.107*** & 0.106*** \\
- & -13.62 & -13.92 \\
-cons & -2.068*** & 0.446*** \\
- & (-14.17) & -31.66 \\
-$\rho$ & 0.4457163*** &  \\
- & (-0.01407) &  \\
-N & 67593 &  \\
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular}
+This model has a few drawbacks: it does not account for individual
+heterogeneity ($\alpha_{i}$) and it does not account for the  initial
+conditions problems. Therefore, the model assumes that $d_{i1}$ is 
+endogenously given and that the firm characteristics and industry and time  dummy variables account
+for the individual heterogeneity between firms.
+\begin{center}
+\begin{table}[H]
+\caption{Dynamic Bivariate Probit (Estimates)}
+\label{tab:biprobit}
+\input{../STATA/biprobit.tex}
 \end{table}
-\end{center}
-Table 13 displays the results for dynamic probit specification. All
-  the coefficients are significant at 1\% level.  The
+\end{center} 
+Table \ref{tab:biprobit} displays the results for dynamic probit specification. All
+  the coefficients are significant at 1\% level and are quite similar
+  to the coefficients in the previous section.  The
   state-dependence coefficient has the strongest effect amongst all
   the variables, suggesting that there is persistence in both the
-  activities. There is a positive effect of lagged
+  activities and high sunk cost. There is a positive effect of 
   productivity on both activities, providing further evidence of
-  self-selection of firms into exporting and importing. 
-
-The results suggest a two-way relationship between exporters and
-  importers: Firms which were importing in the previous year are more
+  self-selection of firms into exporting and importing. The
+  coefficients of capital, labor and productivity are positive and
+  quite similar to each other. Firms which were importing in the previous year are more
   likely to be exporters and firms which were exporting in the
-  previous year are more likely to be importing this year. Also, the
-  correlation between the errors represented by $\rho$ is
-  significantly different than zero suggesting that there simultaneous
-  complementarity between exporting and importing.
-\subsection{Conclusion}
+  previous year are more likely to be importing this year.
+
+
+The results suggest  simultaneous complementarity between exporters and
+  importers as the likelihood-ratio test with the null hypothesis that
+  the correlation between the unobserved errors is 0 is rejected at
+  1\% significance level. The estimated value of $\rho$ is 0.438 and
+  is significantly different than zero. This suggests that there is
+  simultaneous complementarity between exporting and importing. 
+\section{Conclusion}
 
 The results from this section and descriptive statistics suggest a few
 overall themes of the data: 
 \begin{itemize}
 \item Learning-by-doing: I estimate productivity using
-  \cite{levinsohn2003estimating} such that they are dependent on the
+  \textcite{levinsohn2003estimating} such that they are dependent on the
   lagged export and import choices and I get the following results for
   the two trading activities:
 \begin{enumerate}
@@ -980,8 +1299,8 @@ overall themes of the data:
 \item Import: There is strong persistence in importing behavior,
   lagged export decision has a positive effect on current importing
   behavior. 
-\item: Simultaneous Complementarity: There is a strong presence of
-  simultaneous complementarity since the errors for the equations are
+\item: Contemporaneous Complementarity: There is a strong presence of
+  contemporaneous complementarity since the errors for the equations are
   highly correlated are significant at 1\% level.  
 \end{enumerate}
 The bivaraite dynamic provide  results suggest that there is strong cost complementarity
@@ -993,137 +1312,143 @@ mechanism.
 
 \end{itemize}
 
-\section{Model}
+% \section{Model}
 
-I use a model inspired from  \cite{aw2011} and \cite{kasahara2013productivity}. 
+% I use a model inspired from  \textcite{aw2011} and \textcite{kasahara2013productivity}. 
 
-\subsection{Static Decision}
+% \subsection{Static Decision}
 
-A firm i has a standard Cobb-Douglas Production Function and faces a
-marginal cost:
+% A firm i has a standard Cobb-Douglas Production Function and faces a
+% marginal cost:
 
-\begin{equation}
-ln c_{it} = \beta_{o} + \beta_{k}ln k_{it} + \beta_{w}ln w_{t} + \omega_{it}
-\end{equation}
-where 
-\begin{itemize}
-\item $K_{it}$ is the unit of output
-\item $w_{t}$ is a vector of variable input prices common to all firms
-\item $\omega_{it}$ is the productivity shock
-\end{itemize}
+% \begin{equation}
+% ln c_{it} = \beta_{o} + \beta_{k}ln k_{it} + \beta_{w}ln w_{t} + \omega_{it}
+% \end{equation}
+% where 
+% \begin{itemize}
+% \item $K_{it}$ is the unit of output
+% \item $w_{t}$ is a vector of variable input prices common to all firms
+% \item $\omega_{it}$ is the productivity shock
+% \end{itemize}
 
-A firm faces a constant elasticity of demand (CES) function assumed to
-be of the Dixit-Stiglitz form :
+% A firm faces a constant elasticity of demand (CES) function assumed to
+% be of the Dixit-Stiglitz form :
 
-\begin{equation}
-Q_{it}^{D} = Q_{t}^{D}(\frac{P_{it}^{D}}{P_{t}^{D}})^{\eta_{d}}= \Phi_{t}^{D} (p_{it}^{D})^{\eta_{d}}
-\end{equation} 
-where $Q_{t}^{d}$ is the industry aggregate output, $P_{t}^{d}$ is
-the price index and $P_{it}^{d}$ is the firm i's price, $\eta_{D}$ is
-the constant elasticity of demand. So, the firms demand depends upon
-aggregate market conditions $\Phi_{t}^{D}$
+% \begin{equation}
+% Q_{it}^{D} = Q_{t}^{D}(\frac{P_{it}^{D}}{P_{t}^{D}})^{\eta_{d}}= \Phi_{t}^{D} (p_{it}^{D})^{\eta_{d}}
+% \end{equation} 
+% where $Q_{t}^{d}$ is the industry aggregate output, $P_{t}^{d}$ is
+% the price index and $P_{it}^{d}$ is the firm i's price, $\eta_{D}$ is
+% the constant elasticity of demand. So, the firms demand depends upon
+% aggregate market conditions $\Phi_{t}^{D}$
 
-The demand function in the export market has a similar structure
-except that it also depends on an industry-specific demand shifter: 
-\begin{equation}
-Q_{it}^{X} =
-Q_{t}^{X}(\frac{P_{it}^{X}}{P_{t}^{X}})^{\eta_{d}}exp(z_{it})= \Phi_{t}^{X} (p_{it}^{X})^{\eta_{d}}exp(z_{it})
-\end{equation} 
-where $z_{it}$ is the unobserved firm specific demand
-shock. 
+% The demand function in the export market has a similar structure
+% except that it also depends on an industry-specific demand shifter: 
+% \begin{equation}
+% Q_{it}^{X} =
+% Q_{t}^{X}(\frac{P_{it}^{X}}{P_{t}^{X}})^{\eta_{d}}exp(z_{it})= \Phi_{t}^{X} (p_{it}^{X})^{\eta_{d}}exp(z_{it})
+% \end{equation} 
+% where $z_{it}$ is the unobserved firm specific demand
+% shock. 
 
-Equation 2 can be used to obtain an expression for $P_{it}$ and a
-firms domestic revenue is $R_{it} = P_{it}Q_{it}$, and inserting price
-into the revenue function and taking a log to get the revenue function
-in the domestic market:
+% Equation 2 can be used to obtain an expression for $P_{it}$ and a
+% firms domestic revenue is $R_{it} = P_{it}Q_{it}$, and inserting price
+% into the revenue function and taking a log to get the revenue function
+% in the domestic market:
 
-\begin{equation}
-ln r_{it} = (\eta_{d} +1) ln \frac{\eta_{d}}{\eta_{d} +1}  + ln
-\Phi_{t}^{D} + (\eta_{d} +1)(\beta_{k}K_{it} + \beta_{w} ln w_{t} +
-\omega_{it}) 
-\end{equation}
- The revenue function for the export market can be similarly derived
- to get:
-\begin{equation}
-ln r_{it} = (\eta_{d} +1) ln \frac{\eta_{d}}{\eta_{d} +1}  + ln
-\Phi_{t}^{X} + (\eta_{d} +1)(\beta_{k}K_{it} + \beta_{w} ln w_{t} +
-\omega_{it})  +  z_{it}
-\end{equation}
-
-
-\cite{das2007market} display a relation between profits and revenue. I
-use this estimate the constant demand of elasticity in both the
-domestic and export market. 
-In the domestic market, the profits are: 
-\begin{equation}
-\pi_{it}^d = \frac{1}{\eta_{d}} r_{it}^{d}(K_{it}, \omega_{it}, \Phi_{t}^{D})
-\end{equation} 
-
-In the export market, the profits are: 
-\begin{equation}
-\pi_{it}^X = \frac{1}{\eta_{X}} r_{it}^{X}(K_{it}, \omega_{it}, \Phi_{t}^{X})
-\end{equation} 
-
-\subsection{Transition of Productivity}
-
-The firm-level productivity is allowed to the be endogenously affected
-by the firms decision to export and import just as before. . Therefore, the law of
-motion of productivity is:
-
-\begin{equation}
-\omega_{it} = g(\omega_{it-1}, d_{it-1}^{X}, d_{it-1}^{M}) + \nu_{it}
-\end{equation}
-
-\begin{equation}
-\omega_{it} = \alpha_{o} + \alpha_{1}\omega_{it-1} +
-\alpha_{2}\omega_{it-1} + \alpha_{3}\omega_{it-1}^{2}+
-\alpha_{4}d_{it-1}^{X} + \alpha_{5} d_{it-1}^{M} + \alpha_{6}d_{it-1}^{X}d_{it-1}^{M}  \nu_{it}
-\end{equation}
-
-where $d_{it-1}^{X}$ is an indicator function of the firms lagged export
-participation, $d_{it-1}^{M}$ is an indicator function of the firms lagged import
-participation and $\nu_{it}$ is an iid shock to the productivity. The
-lagged export and import indicator variables allow for
-learning-by-exporting and productivity benefits from importing. 
-
-The model assumes that productivity is only affected by the intensity
-of export/importing but is only dependent on the decision. 
-
-The firm-specific demand shock$z_{it}$, and industry index $\Phi_{t}^{X}$  and
-$\Phi_{t}^{X}$ is modelled as an exogenous AR(1) process. 
+% \begin{equation}
+% ln r_{it} = (\eta_{d} +1) ln \frac{\eta_{d}}{\eta_{d} +1}  + ln
+% \Phi_{t}^{D} + (\eta_{d} +1)(\beta_{k}K_{it} + \beta_{w} ln w_{t} +
+% \omega_{it}) 
+% \end{equation}
+%  The revenue function for the export market can be similarly derived
+%  to get:
+% \begin{equation}
+% ln r_{it} = (\eta_{d} +1) ln \frac{\eta_{d}}{\eta_{d} +1}  + ln
+% \Phi_{t}^{X} + (\eta_{d} +1)(\beta_{k}K_{it} + \beta_{w} ln w_{t} +
+% \omega_{it})  +  z_{it}
+% \end{equation}
 
 
-\subsection{Dynamic Model}
+% \textcite{das2007market} display a relation between profits and revenue. I
+% use this estimate the constant demand of elasticity in both the
+% domestic and export market. 
+% In the domestic market, the profits are: 
+% \begin{equation}
+% \pi_{it}^d = \frac{1}{\eta_{d}} r_{it}^{d}(K_{it}, \omega_{it}, \Phi_{t}^{D})
+% \end{equation} 
+
+% In the export market, the profits are: 
+% \begin{equation}
+% \pi_{it}^X = \frac{1}{\eta_{X}} r_{it}^{X}(K_{it}, \omega_{it}, \Phi_{t}^{X})
+% \end{equation} 
+
+% \begin{equation}
+% tvc_{it} = r_{it}^{D}(1 + \frac{1}{\eta_{D}}) + r_{it}^{D}(1 +
+% \frac{1}{\eta_{D}}) + \epsilon_{it}
+% \end{equation}
+
+
+% \subsection{Transition of Productivity}
+
+% The firm-level productivity is allowed to the be endogenously affected
+% by the firms decision to export and import just as before. . Therefore, the law of
+% motion of productivity is:
+
+% \begin{equation}
+% \omega_{it} = g(\omega_{it-1}, d_{it-1}^{X}, d_{it-1}^{M}) + \nu_{it}
+% \end{equation}
+
+% \begin{equation}
+% \omega_{it} = \alpha_{o} + \alpha_{1}\omega_{it-1} +
+% \alpha_{2}\omega_{it-1} + \alpha_{3}\omega_{it-1}^{2}+
+% \alpha_{4}d_{it-1}^{X} + \alpha_{5} d_{it-1}^{M} + \alpha_{6}d_{it-1}^{X}d_{it-1}^{M}  \nu_{it}
+% \end{equation}
+
+% where $d_{it-1}^{X}$ is an indicator function of the firms lagged export
+% participation, $d_{it-1}^{M}$ is an indicator function of the firms lagged import
+% participation and $\nu_{it}$ is an iid shock to the productivity. The
+% lagged export and import indicator variables allow for
+% learning-by-exporting and productivity benefits from importing. 
+
+% The model assumes that productivity is only affected by the intensity
+% of export/importing but is only dependent on the decision. 
+
+% The firm-specific demand shock$z_{it}$, and industry index $\Phi_{t}^{X}$  and
+% $\Phi_{t}^{X}$ is modelled as an exogenous AR(1) process. 
+
+
+% \subsection{Dynamic Model}
  
-Firm must pay a fixed/sunk costs of trading. Let $d_{i,t}^X$ be the
-indicator function of participation in the export market and
-$d_{i,t}^M$ be the indicator function of participation in the import
-market. Then the total costs (sunk and fixed) paid by firm i in period t is given by:
+% Firm must pay a fixed/sunk costs of trading. Let $d_{i,t}^X$ be the
+% indicator function of participation in the export market and
+% $d_{i,t}^M$ be the indicator function of participation in the import
+% market. Then the total costs (sunk and fixed) paid by firm i in period t is given by:
 
 
-$F(d_{it}, d_{it-1})= $
-\begin{enumerate}
-\item   $f^{x} + c^{X}(1 - d_{it-1}^X)$\hfill  for $ (d_{it}^X, d_{it}^M) =
-  (1,0) $
-\item   $f^{M} + c^{M}(1 - d_{it-1}^M)$\hfill  for $ (d_{it}^X, d_{it}^M) =
-  (0,1) $
-\item   $\lambda[f^{x} + f^{M} + c^{X}(1 - d_{it-1}^X) + c^{M}(1 -
-  d_{it-1}^M)]$  \hfill for $ (d_{it}^X, d_{it}^M) =
-  (1,1) $
-\item   0  \hfill for $ (d_{it}^X, d_{it}^M) =
-  (0,0) $
-\end{enumerate}
-Here $f^{X}$ is the fixed cost of exporting,$C^{X}$ is the sunk cost
-of exporting, $f^{M}$ is the fixed cost of importing, $f^{M}$ is the
-fixed cost of importing and $\lambda$ captures the degrees of
-complementarity between exporting and importing. 
+% $F(d_{it}, d_{it-1})= $
+% \begin{enumerate}
+% \item   $f^{x} + c^{X}(1 - d_{it-1}^X)$\hfill  for $ (d_{it}^X, d_{it}^M) =
+%   (1,0) $
+% \item   $f^{M} + c^{M}(1 - d_{it-1}^M)$\hfill  for $ (d_{it}^X, d_{it}^M) =
+%   (0,1) $
+% \item   $\lambda[f^{x} + f^{M} + c^{X}(1 - d_{it-1}^X) + c^{M}(1 -
+%   d_{it-1}^M)]$  \hfill for $ (d_{it}^X, d_{it}^M) =
+%   (1,1) $
+% \item   0  \hfill for $ (d_{it}^X, d_{it}^M) =
+%   (0,0) $
+% \end{enumerate}
+% Here $f^{X}$ is the fixed cost of exporting,$C^{X}$ is the sunk cost
+% of exporting, $f^{M}$ is the fixed cost of importing, $f^{M}$ is the
+% fixed cost of importing and $\lambda$ captures the degrees of
+% complementarity between exporting and importing. 
 
-$$ S_{it} = (\omega_{it}, K_{it}, d_{it-1}^{X}, d_{it-1}^{M},
-\Phi_{t}^{X}, \Phi_{t}^{D}, z_{it})$$
+% $$ S_{it} = (\omega_{it}, K_{it}, d_{it-1}^{X}, d_{it-1}^{M},
+% \Phi_{t}^{X}, \Phi_{t}^{D}, z_{it})$$
 
-\begin{equation}
-V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}\pi_{it}^{X} + F(d_{it}, d_{it-1}) + \beta E(V_{it}(s_{it+1}|s_{it})))
-\end{equation}
+% \begin{equation}
+% V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}\pi_{it}^{X} + F(d_{it}, d_{it-1}) + \beta E(V_{it}(s_{it+1}|s_{it})))
+% \end{equation}
 
 % Therefore, for any state vector, the marginal benefit of exporting is
 % equal to:
@@ -1165,12 +1490,25 @@ V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}\pi_{it}^{X} + F(d_{it}, d_{it-1}) + 
 %   V_{it+1}(s_{it+1}|e_{it}=0, m_{it} =1) - m_{it-1} \gamma_{it}^{mf} , \beta E_{t}
 %   V_{it+1}(s_{it+1}|e_{it}=0, m_{it} =0) \} dG^{\gamma}
 % \end{equation}
-\section{Estimation}
+
 \printbibliography[omitnumbers=false]
 \section{Appendix}
 
+\subsection{Appendix (Descriptive Statistics)}
 \begin{center}
-\begin{table}[tp]
+\begin{table}[H]
+\caption{Summary statistics of Expenditure on raw material (log)}
+\label{tab:lrawmat}
+\begin{tabular}{c}
+ \includegraphics{./PICS/denslrawmat.pdf}   \\ 
+ \input{./TABLES/sumstatslrawmat.gen}  \\  
+\end{tabular}
+\end{table}
+\end{center}
+
+
+\begin{center}
+\begin{table}[H]
 \caption{Summary statistics of expenditure on power and fuel (log)}
 \begin{tabular}{c}
  \includegraphics{./PICS/denslpower.pdf}   \\ 
@@ -1179,10 +1517,10 @@ V_{it}(S_{it}) = max_d(\pi_{it}^{d} +d_{it}\pi_{it}^{X} + F(d_{it}, d_{it-1}) + 
 \end{table}
 \end{center}
 
-\subsection{Productivity Estimation (OP,LP,ACF)}\label{prodest}
-\subsubsection{\cite{olley1992dynamics} (OP) }\label{op}
+\subsection{Appendix (Productivity Estimation OP)}\label{prodest}
+\label{op}
 
- \cite{olley1992dynamics} (OP) use the
+ \textcite{olley1992dynamics} (OP) use the
 following strategy to estimate the Cobb-Douglus function: 
 
 
@@ -1229,8 +1567,8 @@ Since $\omega_{it}$ follows a first order markov process, it can be
 written as: 
 $$ \omega_{it} = h(\omega_{it-1}) + e_{it}$$
 Then $\phi_{it}$ can be written as: 
-$$ \phi_{it} = beta_{k}K_{it} + h(\omega_{it-1}) + e_{it}$$
-$$ \phi_{it} = beta_{k}K_{it} + h(\phi_{it-1}- \beta_{k}k_{it-1}) + e_{it}$$
+$$ \phi_{it} = \beta_{k}K_{it} + h(\omega_{it-1}) + e_{it}$$
+$$ \phi_{it} = \beta_{k}K_{it} + h(\phi_{it-1}- \beta_{k}k_{it-1}) + e_{it}$$
 The unknown form of function h is approximated by quadratic function
 and for any value of $\beta_K$ to get:
 $$ \hat{\phi_{it}} = beta_{k}K_{it} +\gamma_{0}
@@ -1239,98 +1577,24 @@ $$ \hat{\phi_{it}} = beta_{k}K_{it} +\gamma_{0}
 + \gamma_{3}(\hat{\omega_{it-1}^{\beta_{k}}})^{3} $$
  This expression is minimised to get the estimate of $\beta_{k}$. 
 \end{enumerate}
-\subsubsection{\cite{levinsohn2003estimating} (LP)}
-\cite{levinsohn2003estimating} \textbf{LP} uses a similar strategy but use intermediate input demand
-as the function to invert out $\omega_{it}$. 
-Here, the intermediated material demand function is given by:
-$$  m_{it} = m_{it}(\omega_{it}, k_{it})$$
-This function is assumed to be montonically increasing and therefore
-productivity can be found by inverting the function above. Therefore,
-we can write the equation above as: 
-$$ y_{it} = \beta_{l}l_{it} + \phi_{it}(m_{it},K_{it})$$
-where $\phi_{it}(m_{it},K_{it}) =  \beta_{k}K_{it}+ \omega_{it}(m_{it}, K_{it})$
+% \subsubsection{\textcite{levinsohn2003estimating} (LP)}
 
-They suggest to use a third degree polynomial approximation of
-$\phi_{it}$ and substitute it into the equation above to give the
-following result: 
-
-$$  y_{it} =  \beta_{l}l_{it} + \sum_{i=0}^{3} \sum_{j=0}^{3-i}
-\delta_{ij}k_{it}^{i}m_{it}^{j}$$
-The coefficient is $\beta_{l}$ is estimtated by OLS using the equation
-above and $\hat{\phi_{it}}$ is estimtated by subtracting labor from
-the fitted value of the above equation:
-$$ \hat{\phi_{it}} = \hat{y_{it}} - \hat{\beta_{l}}l_{it} =
- \sum_{i=0}^{3} \sum_{j=0}^{3-i}
-\hat{\delta_{ij}}k_{it}^{i}m_{it}^{j}$$
-Therefore, 
-
-So, for any value of $\beta_{k}^{*}$:
-$$\hat{\omega_{it}} = \hat{\phi_{it}} - \beta_{k}^{*}k_{it}$$
-$$ y_{it}^{*} = y_{it} - \beta_{l}l_{it} = \beta_{k}K_{it}
-+ \omega_{it}(m_{it}, K_{it})$$
- 
-Since it is also assumed that $\omega_{it}$ follows a first order markov
-process : 
-$$\omega_{it} = E[\omega_{it}|\omega_{it-1}] + \epsilon_{it}$$
-They also assume a polynomial expansion of the expectation above to give:
-$$ \omega_{it}=  \gamma_{o}+\gamma_{1}\omega_{it-1} +
-\gamma_{2}\omega_{it-1}^2 + \gamma_{3}\omega_{it-1}^3 + \epsilon_{it} $$ 
-
-Therefore, the value of $\beta_{K}$, for which the expression below is
-minimized is chosen to be the coefficient.  
-\begin{equation}
-\min_{\beta_{k}^{*}}\sum (y_{it} - \hat{\beta_{l}l_{it}} -
-\beta_{k}^{*}K_{it} - \hat{E[\omega_{it}|\omega_{it-1}]})^2 
-\end{equation}
-
-\subsubsection{\cite{ackerberg2006structural}(ACF)}
-\cite{ackerberg2006structural}(ACF) suggest that labour might be
-correlated with productivity and might not be a fully flexible
-method and therefore the firms input material demand is written as: 
-$$ m_{it} = f_{it}(\omega_{it}, k_{it}, l_{it})$$
-Inverting this function for $\omega_{it}$ and substituting into the
-production function results in the following 
-equation of the form:
-\begin{equation}
-y_{it} = \beta_{l}l_{it} + \beta_k k_{it} + f_{it}^{-1}(m_{it},
-k_{it}, l_{it})+ \epsilon_{it}
-\end{equation}
-They suggest that the  labor coefficient should be estimated
-in the second stage of the estimation since it is correlated with
-productivity. 
-They suggest the following steps:
-
-\begin{enumerate}
-\item Obtain $\phi_{it}(m_{it}, k_{it}, l_{it}) = \beta_{l}l_{it} + \beta_k k_{it} + f_{it}^{-1}(m_{it},
-k_{it}, l_{it})$ by regression $y_{it}$ on polynomial approximation of
-$\phi_{it}(m_{it}, k_{it}, l_{it})$
-\item Use the markovian nature of $\omega_{it} =
-  E(\omega_{it}|\omega_{it-1}) + e_{it}$
-and use the following moment equations to estimate $\beta_{K}$ and
-$\beta_{l}$:
-\begin{equation}
-E[e_{it}|(k_{it}, l_{it-1})]= 0
-\end{equation}
-\end{enumerate} 
-
+% \subsubsection{\textcite{ackerberg2006structural}(ACF)}
+\subsection{Appendix (Learning-by-doing)}
 \input{./TABLES/prodcont.gen} 
 \input{./TABLES/regLPcont.gen}
 
-\subsection{Dynamic Random Effects Probit  Model}
+\input{./TABLES/prodACFcont.gen} 
+\input{./TABLES/regACFcont.gen}
+
+\subsection{Appendix (Dynamic Random Effects Probit  Model)}
 Let i be the unit and t be the time. A dynamic random effects probit
 is written as: 
 $$ y_{it}^{*} = \gamma y_{i,t-1} + x_{it}'\beta + \alpha_{i} +
 \epsilon_{it}; y_{it}=1[y_{it}^{*} > 0]$$
 where $\gamma$ is the state dependence parameter.
 
-Assumptions: 
 
-\begin{enumerate}
-\item The i units are a random sample
-\item $\epsilon_{it} \tilde{} N(0,1)$ is independent of $x_{i}$
-\item $\alpha_{it} \tilde{} N(0,\sigma_{alpha}^{2})$ is independent of
-  $x_{i}$ and $\epsilon_{it}$
-\end{enumerate}
 
 There are three ways to estimate the above equation: 
 \begin{enumerate}
@@ -1338,9 +1602,25 @@ There are three ways to estimate the above equation:
 \item Heckman Method
 \item Wooldridge Method
 \end{enumerate} 
-Code for bivariate probit model 
-\textit{biprobit dumexp dumrd x lnk lagexp lagdumrd year92-year93, r}
+I use the Wooldridge method which assumes that $\alpha_{i}$:
+$$\alpha_{i} = \lambda y_{i1} + \tilde{\alpha_{i}}$$
 
+Assumptions: 
+
+\begin{enumerate}
+\item The i-units are a random sample
+\item $\epsilon_{it} \sim N(0,1)$ is independent of $x_{i}$
+\item $\tilde{\alpha_{i}} \sim N(0,\sigma_{alpha}^{2})$ is independent of
+  $x_{i}$ and $\epsilon_{it}$
+\end{enumerate}
+
+The likelihood function is given by:
+$$ L_{i}(\beta, \gamma, \sigma_{\alpha},\lambda)= \int_{-\infty}^{\infty}
+\prod_{t=2}^{T}\Phi(x^{'}_{it}\beta + \gamma y_{it-1} + \lambda y_{i1} +
+\tilde{\alpha}) \frac{\phi(\tilde{\alpha})}{\sigma_{\tilde{\alpha}}}
+d\tilde{\alpha}$$ 
+
+$$ L(\beta, \gamma, \sigma_{\alpha},\lambda) = \prod_{i=1}^{N}L_{i}(\beta, \gamma, \sigma_{\alpha},\lambda:y_{i},x_{i}$$
 The marginal effects are given by:
 \begin{equation}
 \frac{\delta E[y_{it}|x_{it}, \alpha_{i}]}{\delta x_{it,j}} =
@@ -1350,9 +1630,52 @@ The marginal effects are given by:
 I report the average marginal effects which are given by: 
 $$ \frac{1}{N} \sum_{i}\phi( x_{it}^{'} \beta + \alpha_{i})
 \hat{\beta_{j}}$$
-Other way to write down marginal effect is the marginal effect at the
-average. 
 
-\subsection{Nested Fixed Point Theorem}
+\subsection{Appendix (Dynamic Bivariate Probit Model)}
+Let the latent model be: 
+$$y^{*}_{i1,t}= x_{i1,t}^{T}\beta_{1} + y_{i1,t-1}\gamma + \varepsilon_{i1}$$
+$$y^{*}_{2ti}= x_{i2t}^{T}\beta_{2}y_{i1,t-1}\gamma + \varepsilon_{i2}$$
+
+we have the observed responses as, 
+$$y_{i1,t}= I(y^{*}_{i1,t}>0)$$
+$$y_{2i,t}= I(y^{*}_{2i,t}>0)$$
+
+The error distribution is given as follows,
+$$(\varepsilon_{i1,t}, \varepsilon_{i2,t}) \sim N \begin{pmatrix} 0, & \begin{pmatrix}1 & \rho\\ \rho & 1\end{pmatrix} 
+\end{pmatrix}$$
+
+The multivariate normal density  of $f(y*_{i1,t} , y*_{i2,t})$  given the assumption above is given by: 
+\begin{equation}
+\begin{aligned}
+    f(y_{i1,t},y_{i2}) = \frac{1}{2\pi \sigma_{y_{i1,t}}\sigma_{y_{i1,t}}\sqrt{1-\rho^2}} exp(\frac{-1}{2(1-\rho^2)} [\frac{(y_{i1,t} - \mu_{y_{i1,t}})^2}{\sigma_{y_{i1,t}}^{2}} + \\
+    \frac{(y_{i2} - \mu_{y_{i2}})^2}{\sigma_{y_{i2}}^{2}} 
+    -2 \rho \frac{(y_{i1,t} - \mu_{y_{i1,t}}) (y_{i2} - \mu_{y_{i2}})
+    }{\sigma_{y_{i1,t}}\sigma_{y_{i2}}}]
+  \end{aligned}
+\end{equation}
+Therefore the log-likelihood function is given by 
+
+\begin{equation}
+\begin{aligned}
+L(\beta_1,\beta_2,\gamma_1,\gamma_2) = \Big( \prod
+P(Y_{1i,t}=1,Y_{2i,t}=1\mid\beta_1,\beta_2,\gamma_1,\gamma_2)^{Y_{1i,t}Y_{2i,t}}\\
+ P(Y_{1i,t}=0,Y_{2i,t}=1\mid\beta_1,\beta_2,\gamma_1,\gamma_2)^{(1-Y_{1i,t})Y_{2i,t}}  \\
+P(Y_{1i,t}=1,Y_{2i,t}=0\mid\beta_1,\beta_2,\gamma_1,\gamma_2)^{Y_{1i,t}(1-Y_{2i,t})}\\
+P(Y_{1i,t}=0,Y_{2i,t}=0\mid\beta_1,\beta_2,\gamma_1,\gamma_2)^{(1-Y_{1i,t})(1-Y_{2i,t})} \Big)
+\end{aligned}
+\end{equation}
+
+
+
+
+\begin{equation}
+\begin{aligned}
+L(\beta_1,\beta_2) = \sum(\Phi( Y_{1i,t}Y_{2i,t}\ln \Phi(X_1\beta_1,X_2\beta_2,\rho) \\
+ + (1-Y_{1i,t})Y_{2i,t}\ln \Phi(-X_1\beta_1,X_2\beta_2,-\rho) \\
++ Y_{1i,t}(1-Y_{2i,t})\ln \Phi(X_1\beta_1,-X_2\beta_2,-\rho) \\
+ +(1-Y_{1i,t})(1-Y_{2i,t})\ln \Phi(-X_1\beta_1,-X_2\beta_2,\rho) \Big))\\
+\end{aligned}
+\end{equation}
+
 
 \end{document}

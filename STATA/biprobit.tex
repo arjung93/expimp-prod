@@ -1,56 +1,38 @@
-{
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\begin{tabular}{l*{1}{c}}
+\begin{center}
+\begin{tabular}{l*{2}{c}}
 \hline\hline
-            &\multicolumn{1}{c}{(1)}\\
-            &\multicolumn{1}{c}{exp}\\
-\hline
-exp         &                     \\
-lagexp      &       2.539\sym{***}\\
-            &    (152.29)         \\
-[1em]
-lagimp      &       0.360\sym{***}\\
-            &     (19.05)         \\
-[1em]
-lpres       &       0.103\sym{***}\\
-            &     (11.84)         \\
-[1em]
-lgfa        &     0.00873         \\
-            &      (1.08)         \\
-[1em]
-lsalary     &       0.135\sym{***}\\
-            &     (16.29)         \\
-[1em]
-\_cons      &      -2.212\sym{***}\\
-            &    (-28.56)         \\
-\hline
-imp         &                     \\
-lagexp      &       0.397\sym{***}\\
-            &     (23.28)         \\
-[1em]
-lagimp      &       2.175\sym{***}\\
-            &    (129.84)         \\
-[1em]
-lpres       &       0.165\sym{***}\\
-            &     (19.66)         \\
-[1em]
-lgfa        &      0.0788\sym{***}\\
-            &     (10.27)         \\
-[1em]
-lsalary     &       0.134\sym{***}\\
-            &     (16.52)         \\
-[1em]
-\_cons      &      -2.768\sym{***}\\
-            &    (-36.07)         \\
-\hline
-athrho      &                     \\
-\_cons      &       0.439\sym{***}\\
-            &     (29.48)         \\
-\hline
-rho         &       0.413         \\
-chi2        &     61856.1         \\
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+            &\multicolumn{1}{c}{Export
+              Decsion}&\multicolumn{1}{c}{Import Decision}\\
+\hline\\
+
+$d_{it-1}^{X}$      &       2.539$^{***}$\ &       0.397$^{***}$\\
+            &    (152.29)          &     (23.28)         \\
+[1em]                                                    
+$d_{it-1}^{X}$      &       0.360$^{***}$\ &       2.175$^{***}$\\
+            &     (19.05)          &    (129.84)         \\
+[1em]                                                    
+$\hat{\omega}_{it}$       &       0.103$^{***}$\ &       0.165$^{***}$\\
+            &     (11.84)          &     (19.66)         \\
+[1em]                                                    
+$K_{it}$       &     0.00873          &      0.0788$^{***}$\\\
+            &      (1.08)          &     (10.27)         \\
+[1em]                                                    
+$L_{it}$     &       0.135$^{***}$\ &       0.134$^{***}$\\
+            &     (16.29)          &     (16.52)         \\
+[1em]                                                    
+Constant      &      -2.212$^{***}$\ &      -2.768$^{***}$\\
+            &    (-28.56)          &    (-36.07)         \\
+\hline                                                   
+$\rho$                                &       0.439$^{***}$ &\\
+                                 &     (29.48)         &\\
+LR test& $\rho=0$, $\chi^{2}(1)= 868.863$&\\
+& p=0.000&\\
+Industry Dummies & Yes& \\
+Time Dummies& Yes& \\
 \hline\hline
 \multicolumn{2}{l}{\footnotesize \textit{t} statistics in parentheses}\\
-\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{2}{l}{\footnotesize $^{*}$ \(p<0.05\), $^{**}$ \(p<0.01\), $^{***}$ \(p<0.001\)}\\
 \end{tabular}
-}
+\end{center}
+

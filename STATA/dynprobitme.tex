@@ -1,28 +1,30 @@
-{
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{center}
 \begin{tabular}{l*{4}{c}}
-\hline\hline
+\hline\hline&\multicolumn{2}{c}{Export
+              Decision}&\multicolumn{2}{c}{Import Decision}\\
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
-            &\multicolumn{1}{c}{} &\multicolumn{1}{c}{} &\multicolumn{1}{c}{} &\multicolumn{1}{c}{} \\
+            &\multicolumn{1}{c}{Base}&\multicolumn{1}{c}{Lagged}&\multicolumn{1}{c}{Base}&\multicolumn{1}{c}{Lagged}\\
+&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Complementarity}&\multicolumn{1}{c}{}&\multicolumn{1}{c}{Complementarity}\\
+
+      
 \hline
-lagexp      &       0.218\sym{***}&       0.212\sym{***}&                     &      0.0495\sym{***}\\
+$d_{it-1}^{X}$      &       0.218$^{***}$&       0.212$^{***}$&                     &      0.0495$^{***}$\\
             &     (53.32)         &     (53.84)         &                     &     (16.34)         \\
-[1em]
-lpres       &      0.0257\sym{***}&      0.0235\sym{***}&      0.0362\sym{***}&      0.0347\sym{***}\\
+$d_{it-1}^{M}$      &                     &      0.0439$^{***}$&       0.209$^{***}$&       0.202$^{***}$\\
+            &                     &     (14.65)         &     (53.75)
+                                                                                    &     (53.94)         \\
+$\hat{\omega}_{it}$       &      0.0257$^{***}$&      0.0235$^{***}$&      0.0362$^{***}$&      0.0347$^{***}$\\
             &     (15.99)         &     (14.82)         &     (21.92)         &     (21.55)         \\
-[1em]
-lgfa        &     0.00797\sym{***}&     0.00553\sym{***}&      0.0142\sym{***}&      0.0130\sym{***}\\
+
+$K_{it}$        &     0.00797$^{***}$&     0.00553$^{***}$&      0.0142$^{***}$&      0.0130$^{***}$\\
             &      (5.19)         &      (3.66)         &      (9.03)         &      (8.54)         \\
-[1em]
-lsalary     &      0.0250\sym{***}&      0.0220\sym{***}&      0.0279\sym{***}&      0.0243\sym{***}\\
+
+$L_{it}$     &      0.0250$^{***}$&      0.0220$^{***}$&      0.0279$^{***}$&      0.0243$^{***}$\\
             &     (15.20)         &     (13.62)         &     (17.27)         &     (15.37)         \\
-[1em]
-lagimp      &                     &      0.0439\sym{***}&       0.209\sym{***}&       0.202\sym{***}\\
-            &                     &     (14.65)         &     (53.75)         &     (53.94)         \\
 \hline
 \(N\)       &       62485         &       62485         &       62485         &       62485         \\
 \hline\hline
 \multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
-\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{5}{l}{\footnotesize $^{*}$ \(p<0.05\), $^{**}$ \(p<0.01\), $^{***}$ \(p<0.001\)}\\
 \end{tabular}
-}
+\end{center}

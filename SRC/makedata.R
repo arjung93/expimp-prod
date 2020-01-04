@@ -68,6 +68,14 @@ colnames(meta) <- c("variable", "indicator", "unit", "table")
 meta <- meta[meta$variable %in% colnames(long),][,1:2]
 nic <- c("nic.2digit", "Broad industry classification code")
 meta <- rbind(meta, nic)
+colnames(meta) <- c("Variable", "Indicator")
+meta <- meta[which(meta$Variable %in% c("sa_company_name", "sa_finance1_year", "sa_sales", "sa_rawmat_exp",
+                                        "sa_power_and_fuel_exp", "sa_salaries", "sa_pat",
+                                        "sa_gross_fixed_assets", "sa_export_goods" , "sa_export_serv",
+                                        "sa_import_rawmat","sa_import_stores_spares", "sa_import_fg",
+                                        "sa_import_capital_goods", "nic.2digit")),]
+meta$Indicator <- gsub("[(]cif[)]" , "", meta$Indicator)
+
 sink("../DOC/TABLES/indicatordescription.gen")
 print(xtable(unique(meta), caption="Data Variables", label="indicator"),
       include.rownames=FALSE,
@@ -183,58 +191,58 @@ pdf("../DOC/PICS/denslsales.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lsales, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) + theme_bw()
 dev.off()
 
 pdf("../DOC/PICS/denslgfa.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lgfa, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) +theme_bw()
 dev.off()
 
 pdf("../DOC/PICS/denslsalary.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lsalary, colour=expimp))+ geom_density() + theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))  +theme_bw()
 dev.off()
 pdf("../DOC/PICS/denslpower.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lpower, colour=expimp))+ geom_density() + theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                    values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                    values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
 dev.off()
 pdf("../DOC/PICS/denslrawmat.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lrawmat, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
 dev.off()
 pdf("../DOC/PICS/denslexport.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lexport, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("Export only", "Both"),
-                     values= c( "10"="red", "11"= "black"))
+                     values= c( "10"="red", "11"= "black"))+theme_bw()
 dev.off()
 pdf("../DOC/PICS/denslimport.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=limport, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c( "Import only", "Both"),
-                     values= c("01"= "green", "11"= "black"))
+                     values= c("01"= "green", "11"= "black"))+theme_bw()
 dev.off()
 
 pdf("../DOC/PICS/denscapprod.pdf", width=5.6, height=2.4, pointsize=10)
 ggplot(long, aes(x=capprod, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
 dev.off()
 
 
 pdf("../DOC/PICS/denspatsales.pdf", width=5.6, height=2.4, pointsize=10)
 ggplot(long, aes(x=patsales, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+ xlim(-0.5,0.5)
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+ xlim(-0.5,0.5)+theme_bw()
 dev.off()
 
 ## Summary statisitics 
@@ -280,6 +288,34 @@ longpd$lagimp <- lag(longpd$imp,1)
 
 transition <- split(longpd, longpd$lagexpimp)
 transition <- lapply( transition, function(x){
+    z <- round(table(x$expimp)/nrow(x),3)
+    y <- paste("(",as.character(round((table(x$expimp)/nrow(x))*nrow(x),0)),")" ,sep="")
+    return(rbind(z,y))
+    })
+transition <- do.call("rbind", transition)
+colnames(transition) <- c("None", "Import Only", "Export Only", "Both")
+transition <- cbind(c("None","", "Import Only","", "Export Only","", "Both",""), transition)
+colnames(transition)[1] <- "T-1/ T"
+genxtable(xtable(transition, label="transition"), "../DOC/TABLES/transition")
+
+lpcol <- c("sa_finance1_cocode", "year", "lsales", "lsalary", "lgfa","lrawmat","lpower",
+           "export", "import", "expimp", "exp","imp","limport",
+           "lexport","dom_sales","ldom_sales", "lagexpimp", "lagexp", "lagimp", "nic.2digit", "sa_total_expense",           "sa_nf_operating_expenses")
+lp <- longpd[,lpcol]
+
+
+save(lp,file="forproduction.rda")
+save(longpd, file="fulldata.rda")
+
+## Creating summary statistics for the censored data
+lp_ex <- longpd[which(as.numeric(as.character(lp$year))>2007 & as.numeric(as.character(lp$year))<2012),]
+
+lp_ex[(is.na(lp_ex$lagexpimp)),"lagexpimp"] <- "00"
+lp_ex[(is.na(lp_ex$lagimp)),"lagimp"] <- 0
+lp_ex[(is.na(lp_ex$lagexp)),"lagexp"] <- 0
+
+transition <- split(lp_ex, lp_ex$lagexpimp)
+transition <- lapply( transition, function(x){
     x <- round(table(x$expimp)/nrow(x),3)
     return(x)
     })
@@ -287,21 +323,95 @@ transition <- do.call("rbind", transition)
 colnames(transition) <- c("None", "Import Only", "Export Only", "Both")
 transition <- cbind(c("None", "Import Only", "Export Only", "Both"), transition)
 colnames(transition)[1] <- "T-1/ T"
-genxtable(xtable(transition, label="transition"), "../DOC/TABLES/transition")
 
-lpcol <- c("sa_finance1_cocode", "year", "lsales", "lsalary", "lgfa","lrawmat","lpower",
-           "export", "import", "expimp", "exp","imp","limport",
-           "lexport","ldom_sales", "lagexpimp", "lagexp", "lagimp", "nic.2digit", "sa_total_expense")
-lp <- longpd[,lpcol]
+tvc <- lm(sa_nf_operating_expenses~dom_sales+export-1, data=lp_ex)
 
-
-save(lp,file="forproduction.rda")
-save(longpd, file="fulldata.rda")
+etad <- 1/(coef(tvc)[1]-1)
+etax <- 1/(coef(tvc)[2]-1)
+ss <- etad +1
 
 
+dat <- data.frame(stno=lp_ex$sa_finance1_cocode,
+                  year= as.numeric(as.character(lp_ex$year)),
+                  lnds=lp_ex$ldom_sales,
+                  lnk= lp_ex$lgfa,
+                  lnm= lp_ex$lrawmat,
+                  lne= lp_ex$lpower,
+                  dumexp= lp_ex$exp,
+                  dumimp=lp_ex$imp,
+                  lagk = lag(lp_ex$lgfa,1),
+                  lagexp= lp_ex$lagexp,
+                  lagimp= lp_ex$lagimp,
+                  tvc = lp_ex$sa_nf_operating_expenses,
+                  dsales= lp_ex$dom_sales,
+                  valexp= lp_ex$export)
 
+dat <- dat[!is.na(dat$lnds),]
+dat <- dat[!is.na(dat$lne),]
+
+dat$lm1 <- dat$lnm
+dat$lm2 <- (dat$lnm)^2
+dat$lm3 <- (dat$lnm)^3
+
+dat$lk1 <- dat$lnk
+dat$lk2 <- (dat$lnk)^2
+dat$lk3 <- (dat$lnk)^3
+
+dat$le1 <- dat$lne
+dat$le2 <- (dat$lne)^2
+dat$le3 <- (dat$lne)^3
+
+
+dat$crosskm <- dat$lnk*dat$lnm
+dat$crosskm2 <- dat$lnk*(dat$lnm)^2
+dat$crossk2m <- (dat$lnk)^2 * dat$lnm
+
+dat$crosske <- dat$lnk*dat$lne
+dat$crosske2 <- dat$lnk*(dat$lne)^2
+dat$crossk2e <- (dat$lnk)^2 * dat$lne
+
+ols1 <- lm(lnds ~ as.factor(year) + lm1 +lm2 +lm3 + lk1 +lk2 +lk3  + le1 +le2 +le3 + crosskm+ crosskm2+ crossk2m + crosske+ crosske2+ crossk2e , data=dat)
+
+year <- model.matrix(~as.factor(dat$year), dat)
+
+
+const <- coef(ols1)["(Intercept)"]
+beta2009 <- coef(ols1)["as.factor(year)2009"]
+beta2010 <- coef(ols1)["as.factor(year)2010"]
+beta2011 <- coef(ols1)["as.factor(year)2011"]
+
+
+phi <- fitted(ols1) - rep(const,nrow(dat))  - beta2009*year[,"as.factor(dat$year)2009"] - beta2010*year[,"as.factor(dat$year)2010"]- beta2011*year[,"as.factor(dat$year)2011"]
+dat$phi <- phi
+
+tvc <- lm(tvc~dsales+valexp-1, data=dat)
+
+etad <- 1/(coef(tvc)["dsales"]-1)
+etax <- 1/(coef(tvc)["valexp"]-1)
+ss <- etad + 1
+dat$ss <- ss
+
+dat <- pdata.frame(dat, index=c("stno", "year"))
+dat$philag <- lag(dat$phi,1)
+dat <- dat[!is.na(dat$lagk),]
+
+x <- nls(phi~ -Beta_const*ss + Beta_lnk*ss*lnk+Beta_1*(philag- Beta_lnk*ss*lagk) 
+    -(Beta_2/ss)*(philag-Beta_lnk*ss*lagk)^2 
+    +(Beta_3/(ss^2))*(philag-Beta_lnk*ss*lagk)^3 
+    -Beta_4*ss*lagimp-Beta_5*ss*lagexp-Beta_6*ss*lagexp*lagimp, 
+    data=dat,
+  , start= list(Beta_const=1,
+                Beta_lnk=1,
+                Beta_1=1,
+                Beta_2=1,
+                Beta_3=1,
+                Beta_4=1,
+                Beta_5=1,
+                Beta_6=1)
+    )
 
 # Creating intital export and import variable for dynamic probit model 
+
 longprobit <- split(longpd, longpd$sa_finance1_cocode)
 
 longprobit <- lapply(longprobit, function(x){
@@ -316,5 +426,20 @@ longprobit <- do.call("rbind", longprobit)
 longprobit <- longprobit[,c("year","sa_finance1_cocode", "sa_total_income", "sa_sales","lsales",
                             "lgfa","lsize", "lsalary","age", "lpower", "lrawmat","exp","imp",
                             "lagexp","lagimp","initexp","initimp", "nic.2digit")]
+
+## Individual variance contribution
+
+# Export 
+(1.333^2)*var(longprobit$initexp) + 0.804
+(1.264^2)*var(longprobit$initexp) + 0.771
+
+((1.264^2)*var(longprobit$initexp) + 0.771)/((1.264^2)*var(longprobit$initexp) + 0.771+1)
+
+# Import 
+(1.081^2)*var(longprobit$initimp) + 0.731
+((0.986^2)*var(longprobit$initimp) + 0.687)/((0.986^2)*var(longprobit$initimp) + 0.687+1)
+
+
+
 
 save(longprobit, file="dynprobit.rda")

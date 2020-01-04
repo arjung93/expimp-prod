@@ -105,7 +105,7 @@ fininst <- sa.ann.fin[,fininst, with=FALSE]
 ca <- c("sa_finance1_cocode" , "sa_finance1_year", "sa_current_assets")
 ca <- sa.ann.fin[, ca, with=FALSE]
 # Expenses        
-expenses <- c("sa_finance1_cocode", "sa_finance1_year", "sa_total_expense", "sa_power_and_fuel_exp", "sa_salaries", "sa_rawmat_exp")
+expenses <- c("sa_finance1_cocode", "sa_finance1_year", "sa_total_expense", "sa_power_and_fuel_exp", "sa_salaries", "sa_rawmat_exp","sa_nf_operating_expenses")
 expenses <- sa.ann.fin[,expenses, with=FALSE]
 # Export   
 export <- c("sa_finance1_cocode", "sa_finance1_year", "sa_export_goods", "sa_export_serv")
