@@ -1,0 +1,41 @@
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Sat, Jan 04, 2020 - 05:48:11  CET
+\begin{table}[!htbp] \centering 
+  \caption{Productivity Evolution ACF (Continuous)} 
+  \label{prodACFcont} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & $\omega_{it}$ \\ 
+\hline \\[-1.8ex] 
+ $\alpha_{1}$ & 0.781$^{***}$ \\ 
+  & (0.004) \\ 
+  & \\ 
+ $\alpha_{2}$ & 0.062$^{***}$ \\ 
+  & (0.001) \\ 
+  & \\ 
+ $\alpha_{3}$ & $-$0.006$^{***}$ \\ 
+  & (0.0002) \\ 
+  & \\ 
+ $\alpha_{4}$ & 0.004 \\ 
+  & (0.008) \\ 
+  & \\ 
+ $\alpha_{5}$ & 0.043$^{***}$ \\ 
+  & (0.006) \\ 
+  & \\ 
+ $\alpha_{6}$ & $-$0.006 \\ 
+  & (0.009) \\ 
+  & \\ 
+ $\alpha_{0}$ & 0.237$^{***}$ \\ 
+  & (0.007) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 62,487 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

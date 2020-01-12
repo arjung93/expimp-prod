@@ -1,0 +1,12 @@
+% latex table generated in R 3.4.4 by xtable 1.8-4 package
+% Fri Jan  3 15:42:00 2020
+\begin{tabular}{lll}
+  \hline
+Status & mean & sd \\ 
+  \hline
+None & 5.09 & 1.68 \\ 
+  Import only & 6.26 & 1.8 \\ 
+  Export Only & 5.49 & 1.53 \\ 
+  Both & 7.06 & 1.73 \\ 
+   \hline
+\end{tabular}

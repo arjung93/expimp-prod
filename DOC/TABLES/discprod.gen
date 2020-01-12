@@ -1,0 +1,30 @@
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, Nov 13, 2019 - 05:35:10  CET
+\begin{table}[!htbp] \centering 
+  \caption{Effect of Discrete Decision on Lagged Productivity} 
+  \label{discprod} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & t-1 & t-2 & t-3 \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ $d_{it}^{X}$ & 0.125$^{***}$ & 0.070$^{***}$ & 0.042$^{***}$ \\ 
+  & (0.011) & (0.012) & (0.013) \\ 
+  & & & \\ 
+ $d_{it}^{M}$ & 0.138$^{***}$ & 0.080$^{***}$ & 0.049$^{***}$ \\ 
+  & (0.009) & (0.010) & (0.011) \\ 
+  & & & \\ 
+ $d_{it}^{X}*d_{it}^{M}$ & $-$0.020 & 0.015 & 0.026$^{*}$ \\ 
+  & (0.013) & (0.014) & (0.015) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 59,634 & 46,246 & 36,293 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

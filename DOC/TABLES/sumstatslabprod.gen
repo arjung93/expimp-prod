@@ -1,0 +1,12 @@
+% latex table generated in R 3.4.4 by xtable 1.8-4 package
+% Sun Nov  3 14:28:23 2019
+\begin{tabular}{lll}
+  \hline
+Status & mean & sd \\ 
+  \hline
+None & 3.44215334411264 & 1.12102131502007 \\ 
+  Import only & 3.53510972158958 & 0.962217406175945 \\ 
+  Export Only & 3.35845842653088 & 1.03668030661028 \\ 
+  Both & 3.30318168770837 & 0.786269097921808 \\ 
+   \hline
+\end{tabular}

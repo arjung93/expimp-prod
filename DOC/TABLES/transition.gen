@@ -1,0 +1,16 @@
+% latex table generated in R 3.4.4 by xtable 1.8-4 package
+% Fri Jan  3 15:42:03 2020
+\begin{tabular}{lllll}
+  \hline
+T-1/ T & None & Import Only & Export Only & Both \\ 
+  \hline
+None & 0.877 & 0.068 & 0.033 & 0.022 \\ 
+   & (16431) & (1275) & (623) & (416) \\ 
+  Import Only & 0.131 & 0.732 & 0.011 & 0.127 \\ 
+   & (1304) & (7278) & (107) & (1259) \\ 
+  Export Only & 0.134 & 0.023 & 0.664 & 0.179 \\ 
+   & (650) & (113) & (3215) & (865) \\ 
+  Both & 0.016 & 0.036 & 0.033 & 0.915 \\ 
+   & (467) & (1030) & (963) & (26491) \\ 
+   \hline
+\end{tabular}

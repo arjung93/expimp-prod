@@ -1,0 +1,35 @@
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Sun, Dec 15, 2019 - 05:02:16  CET
+\begin{table}[H] \centering 
+  \caption{Export and Import Premia} 
+  \label{prodpremia} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+\\[-1.8ex] & Export & Import & Capital Productivity & Profit to Sales \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ $d_{it}^{M}$ & 0.506$^{***}$ &  & 0.159$^{***}$ & 0.061$^{***}$ \\ 
+  & (0.026) &  & (0.009) & (0.004) \\ 
+  & & & & \\ 
+ $d_{it}^{X}$ &  & 0.458$^{***}$ & 0.097$^{***}$ & 0.021$^{***}$ \\ 
+  &  & (0.024) & (0.011) & (0.005) \\ 
+  & & & & \\ 
+ $Age_{it}$ & 0.068$^{***}$ & 0.051$^{***}$ & $-$0.005$^{***}$ & $-$0.001$^{**}$ \\ 
+  & (0.003) & (0.002) & (0.001) & (0.0004) \\ 
+  & & & & \\ 
+ $d_{it}^{X}*d_{it}^{M}$ &  &  & $-$0.027$^{**}$ & $-$0.005 \\ 
+  &  &  & (0.013) & (0.006) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Fixed Effects & Yes & Yes & Yes & Yes \\ 
+Time Dummies & Yes & Yes & Yes & Yes \\ 
+Observations & 38,359 & 44,174 & 69,374 & 72,401 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

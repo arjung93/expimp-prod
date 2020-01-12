@@ -1,0 +1,16 @@
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Sat, Jan 04, 2020 - 05:53:33  CET
+\begin{table}[!htbp] \centering 
+  \caption{Cobb-Douglus coefficients ACF (Discrete)} 
+  \label{regACF} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & Value & Bootstrap Standard Errors \\ 
+\hline \\[-1.8ex] 
+\$L\_\{it\}\$ & $0.374$ & $0.142$ \\ 
+\$K\_\{it\}\$ & $0.474$ & $0.082$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
