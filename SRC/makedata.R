@@ -53,7 +53,15 @@ table(long$year)
 compnfirms <- t(t(table(long$year)))
 compnfirms <- data.frame(rownames(compnfirms), compnfirms[,1])
 colnames(compnfirms) <- c("Year","Number of firms")
+plot(compnfirms, type="p")
 genxtable(xtable(compnfirms, caption="Compostion of firms by year",label="compnfirms"), "../DOC/TABLES/compnfirms")
+compnfirms$Year <- as.character(compnfirms$Year)
+colnames(compnfirms)[2] <-  "nfirms"
+
+pdf("../DOC/TABLES/compnfirms.pdf", width=5.6, height=2.4, pointsize=10)
+par(mai=c(.4, .7, .3, .2))
+plot(compnfirms, type="l", xlab="Year", ylab="Number of firms")
+dev.off()
 
 ## Filtering data from 2001 to 2016
 long$year <- as.numeric(long$year)

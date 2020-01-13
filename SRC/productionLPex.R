@@ -249,7 +249,7 @@ idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
 timevar<- as.numeric(as.character(lp_ex$year))
 nic <- as.factor(lp_ex$nic.2digit)
 
-lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
+lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp, R=200)
 
 lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
 colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
@@ -266,7 +266,7 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 save(lpex_data, file="forprobit.rda")
 
 sink(file="../DOC/TABLES/prod.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$ \\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prod")
+stargazer(lpex_prodevol, covariate.labels=c("$\\omega_{it-1}$","$\\omega_{it-1}^{2}$","$\\omega_{it-1}^{3}$","$d_{it-1}^{X}$","$d_{it-1}^{M}$","$d_{it-1}^{X}*d_{it-1}^{M}$","Constant"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prod")
 sink()
 
 regLPest <- do.call("rbind", lpex@Estimates)
@@ -289,7 +289,7 @@ pX<- as.numeric(as.character(lp_ex$lrawmat))
 idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
 timevar<- as.numeric(as.character(lp_ex$year))
 
-lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp)
+lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp, R=200)
 
 lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
 colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])
@@ -304,7 +304,7 @@ lpex_prodevol <- lm(lpres~lagres+lagres2+lagres3+lagexp+lagimp+ lagexp*lagimp, d
 
 
 sink(file="../DOC/TABLES/prodcont.gen")
-stargazer(lpex_prodevol, covariate.labels=c("$\\alpha_{1}$","$\\alpha_{2}$","$\\alpha_{3}$","$\\alpha_{4}$","$\\alpha_{5}$","$\\alpha_{6}$","$\\alpha_{0}$"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodcont")
+stargazer(lpex_prodevol, covariate.labels=c("$\\omega_{it-1}$","$\\omega_{it-1}^{2}$","$\\omega_{it-1}^{3}$","$d_{it-1}^{X}$","$d_{it-1}^{M}$","$d_{it-1}^{X}*d_{it-1}^{M}$","Constant"), title="Productivity Evolution", keep.stat="n", dep.var.labels= c("$\\omega_{it}$"), label="prodcont")
 sink()
 regLPest <- do.call("rbind", lpex@Estimates)
 regLPest <-t(regLPest)
