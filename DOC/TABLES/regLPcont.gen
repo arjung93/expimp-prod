@@ -1,6 +1,6 @@
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sun, Dec 15, 2019 - 05:19:41  CET
+% Date and time: Sun, Jan 12, 2020 - 03:45:44  CET
 \begin{table}[!htbp] \centering 
   \caption{Cobb-Douglus coefficients LP (Continuous)} 
   \label{regLPcont} 
@@ -9,8 +9,10 @@
 \hline \\[-1.8ex] 
  & Value & Bootstrap Standard Errors \\ 
 \hline \\[-1.8ex] 
-$ \beta_{L}$ & $0.299$ & $0.006$ \\ 
-$ \beta_{K}$ & $0.429$ & $0.020$ \\ 
-\hline \\[-1.8ex] 
+$ l_{it}$ & $0.299$ & $0.006$ \\ 
+$ k_{it}$ & $0.429$ & $0.018$ \\ 
+\hline \\[-1.8ex]
+\multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are calculated using 200 bootstrapped samples}\\
+
 \end{tabular} 
 \end{table} 

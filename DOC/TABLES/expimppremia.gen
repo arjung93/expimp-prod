@@ -1,7 +1,7 @@
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Sun, Dec 15, 2019 - 05:01:35  CET
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
   \caption{Export and Import Premia} 
   \label{expimppremia} 
 \begin{tabular}{@{\extracolsep{5pt}}lcccc} 
@@ -30,7 +30,6 @@ Time Dummies & Yes & Yes & Yes & Yes \\
 Observations & 73,882 & 73,882 & 73,882 & 73,882 \\ 
 R$^{2}$ & 0.142 & 0.171 & 0.137 & 0.255 \\ 
 Adjusted R$^{2}$ & 0.026 & 0.059 & 0.021 & 0.154 \\ 
-F Statistic (df = 18; 65079) & 599.067$^{***}$ & 745.988$^{***}$ & 575.117$^{***}$ & 1,234.501$^{***}$ \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 

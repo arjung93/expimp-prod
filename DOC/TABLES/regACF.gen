@@ -1,6 +1,6 @@
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jan 04, 2020 - 05:53:33  CET
+% Date and time: Sun, Jan 12, 2020 - 04:04:14  CET
 \begin{table}[!htbp] \centering 
   \caption{Cobb-Douglus coefficients ACF (Discrete)} 
   \label{regACF} 
@@ -9,8 +9,10 @@
 \hline \\[-1.8ex] 
  & Value & Bootstrap Standard Errors \\ 
 \hline \\[-1.8ex] 
-\$L\_\{it\}\$ & $0.374$ & $0.142$ \\ 
-\$K\_\{it\}\$ & $0.474$ & $0.082$ \\ 
-\hline \\[-1.8ex] 
+$ l_{it}$ & $0.374$ & $0.107$ \\ 
+$ k_{it}$ & $0.474$ & $0.073$ \\ 
+\hline \\[-1.8ex]
+\multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are calculated using 200 bootstrapped samples}\\
+
 \end{tabular} 
 \end{table} 

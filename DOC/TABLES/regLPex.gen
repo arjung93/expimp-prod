@@ -2,15 +2,16 @@
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Tue, Dec 03, 2019 - 07:54:43  CET
 \begin{table}[H] \centering 
-  \caption{Cobb-Douglus coefficients LP (Discrete)}  
+  \caption{Cobb-Douglus coefficients LP (Exogenous Productivity Evolution)}  
   \label{regLPex} 
 \begin{tabular}{@{\extracolsep{5pt}} ccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
  & Value & Bootstrap Standard Errors \\ 
 \hline \\[-1.8ex] 
-$ \beta_{L}$ & $0.295$ & $0.005$ \\ 
-$ \beta_{K}$  & $0.452$ & $0.021$ \\ 
-\hline \\[-1.8ex] 
+$ l_{it}$ & $0.295$ & $0.005$ \\ 
+$ k_{it}$  & $0.452$ & $0.021$ \\ 
+\hline \\[-1.8ex]
+\multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are calculated using 200 bootstrapped samples}\\
 \end{tabular} 
 \end{table} 

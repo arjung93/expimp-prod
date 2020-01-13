@@ -1,6 +1,6 @@
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jan 04, 2020 - 05:53:33  CET
+% Date and time: Sun, Jan 12, 2020 - 04:04:10  CET
 \begin{table}[!htbp] \centering 
   \caption{Productivity Evolution ACF (Discrete)} 
   \label{prodACF} 
@@ -11,25 +11,25 @@
 \cline{2-2} 
 \\[-1.8ex] & $\omega_{it}$ \\ 
 \hline \\[-1.8ex] 
- $\alpha_{1}$ & 0.755$^{***}$ \\ 
+ $\omega_{it-1}$ & 0.755$^{***}$ \\ 
   & (0.004) \\ 
   & \\ 
- $\alpha_{2}$ & 0.073$^{***}$ \\ 
+ $\omega_{it-1}^{2}$ & 0.073$^{***}$ \\ 
   & (0.002) \\ 
   & \\ 
- $\alpha_{3}$ & $-$0.008$^{***}$ \\ 
+ $\omega_{it-1}^{3}$ & $-$0.008$^{***}$ \\ 
   & (0.0003) \\ 
   & \\ 
- $\alpha_{4}$ & 0.00004 \\ 
+ $d_{it-1}^{X}$ & 0.00003 \\ 
   & (0.007) \\ 
   & \\ 
- $\alpha_{5}$ & 0.026$^{***}$ \\ 
+ $d_{it-1}^{M}$ & 0.026$^{***}$ \\ 
   & (0.005) \\ 
   & \\ 
- $\alpha_{6}$ & $-$0.005 \\ 
+ $d_{it-1}^{X}*d_{it-1}^{M}$ & $-$0.005 \\ 
   & (0.009) \\ 
   & \\ 
- $\alpha_{0}$ & 0.250$^{***}$ \\ 
+ Constant & 0.250$^{***}$ \\ 
   & (0.006) \\ 
   & \\ 
 \hline \\[-1.8ex] 
