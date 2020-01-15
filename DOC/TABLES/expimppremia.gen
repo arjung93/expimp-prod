@@ -32,9 +32,12 @@ Observations & 73,882 & 73,882 & 73,882 & 73,882 \\
 R$^{2}$ & 0.142 & 0.171 & 0.137 & 0.255 \\ 
 Adjusted R$^{2}$ & 0.026 & 0.059 & 0.021 & 0.154 \\ 
 \hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05;
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Standard errors shown
+in parenthesis clustered at industry level} \\
+
+ & \multicolumn{4}{r}{\footnotesize$^{*}$p$<$0.1; $^{**}$p$<$0.05;
  $^{***}$p$<$0.01} \\
- \multicolumn{5}{l}{} \\
+
 \end{tabular} 
 \end{table} 

@@ -1,5 +1,5 @@
 % latex table generated in R 3.4.4 by xtable 1.8-4 package
-% Fri Jan  3 15:41:38 2020
+% Wed Jan 15 12:10:16 2020
 \begin{table}[ht]
 \centering
 \begin{tabular}{ll}
@@ -10,19 +10,19 @@ sa\_company\_name & Prowess company name \\
   sa\_finance1\_year & Year \\ 
   sa\_sales & Sales \\ 
   sa\_rawmat\_exp & Raw material expenses \\ 
-  sa\_power\_and\_fuel\_exp & Power \& fuel \\ 
+  sa\_power\_and\_fuel\_exp & Power \& fuel expenses\\ 
   sa\_salaries & Salaries \& wages \\ 
   sa\_pat & Profit after tax \\ 
   sa\_gross\_fixed\_assets & Gross fixed assets \\ 
-  sa\_export\_goods & Export of goods(fob) \\ 
+  sa\_export\_goods & Export of goods \\ 
   sa\_export\_serv & Export of services \\ 
   sa\_import\_rawmat & Import of raw materials  \\ 
   sa\_import\_stores\_spares & Import of stores and spares  \\ 
   sa\_import\_fg & Import of finished goods  \\ 
   nic.2digit & Broad industry classification code \\ 
    \hline
-   \textit{Note:} & \textit{Values are INR Million}
+   \textit{Note:}&\footnotesize Variables are in INR Million\\ 
 \end{tabular}
-\caption{Data Variables}
+\caption{Data Variables} 
 \label{indicator}
 \end{table}

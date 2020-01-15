@@ -1,8 +1,8 @@
 % latex table generated in R 3.4.4 by xtable 1.8-4 package
-% Fri Jan  3 15:42:01 2020
+% Wed Jan 15 12:19:27 2020
 \begin{tabular}{lll}
   \hline
-Status & mean & sd \\ 
+Status & Mean & Sd \\ 
   \hline
 None & -0.1 & 0.43 \\ 
   Import only & -0.03 & 0.29 \\ 

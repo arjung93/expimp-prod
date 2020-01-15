@@ -1,8 +1,10 @@
 % latex table generated in R 3.4.4 by xtable 1.8-4 package
 % Fri Jan  3 15:42:03 2020
-\begin{tabular}{lllll}
+\begin{tabular}{l|cccc}
   \hline
-T-1/ T & None & Import Only & Export Only & Both \\ 
+  Status Year t & \multicolumn{4}{c}{Status Year $t+1$}\\
+  \hline
+ & None & Import Only & Export Only & Both \\ 
   \hline
 None & 0.877 & 0.068 & 0.033 & 0.022 \\ 
    & (16431) & (1275) & (623) & (416) \\ 

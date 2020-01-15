@@ -1,7 +1,7 @@
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
 % Date and time: Sun, Jan 12, 2020 - 04:24:24  CET
-\begin{table}[!htbp] \centering 
+\begin{table}[H] \centering 
   \caption{Productivity Evolution ACF (Continuous)} 
   \label{prodACFcont} 
 \begin{tabular}{@{\extracolsep{5pt}}lc} 

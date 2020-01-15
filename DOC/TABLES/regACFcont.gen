@@ -12,6 +12,7 @@
 $ l_{it}$ & $0.062$ & $0.206$ \\ 
 $ k_{it}$ & $0.603$ & $0.101$ \\ 
 \hline \\[-1.8ex]
-\multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are calculated using 200 bootstrapped samples}\\
+\multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are
+ calculated using 200 block bootstrapped samples}\\
 \end{tabular} 
 \end{table} 

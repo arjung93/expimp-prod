@@ -29,7 +29,12 @@ Fixed Effects & Yes & Yes & Yes & Yes \\
 Time Dummies & Yes & Yes & Yes & Yes \\ 
 Observations & 38,359 & 44,174 & 69,374 & 72,401 \\ 
 \hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Standard errors shown
+in parenthesis clustered at industry level} \\
+
+ & \multicolumn{4}{r}{\footnotesize$^{*}$p$<$0.1; $^{**}$p$<$0.05;
+ $^{***}$p$<$0.01} \\
+
 \end{tabular} 
 \end{table} 

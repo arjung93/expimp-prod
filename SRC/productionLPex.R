@@ -249,7 +249,7 @@ idvar<- as.numeric(as.character(lp_ex$sa_finance1_cocode))
 timevar<- as.numeric(as.character(lp_ex$year))
 nic <- as.factor(lp_ex$nic.2digit)
 
-lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp, R=200)
+lpex <- prodestLP_ex(Y,fX,sX,pX,idvar, timevar, lagexp, lagimp, R=10)
 
 lpex_data <- data.frame(do.call("cbind",lpex@Data[-which(names(lpex@Data) %in% "control")]))
 colnames(lpex_data) <- names(lpex@Data[-which(names(lpex@Data) %in% "control")])

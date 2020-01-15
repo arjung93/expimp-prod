@@ -53,7 +53,6 @@ table(long$year)
 compnfirms <- t(t(table(long$year)))
 compnfirms <- data.frame(rownames(compnfirms), compnfirms[,1])
 colnames(compnfirms) <- c("Year","Number of firms")
-plot(compnfirms, type="p")
 genxtable(xtable(compnfirms, caption="Compostion of firms by year",label="compnfirms"), "../DOC/TABLES/compnfirms")
 compnfirms$Year <- as.character(compnfirms$Year)
 colnames(compnfirms)[2] <-  "nfirms"
@@ -61,6 +60,8 @@ colnames(compnfirms)[2] <-  "nfirms"
 pdf("../DOC/TABLES/compnfirms.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 plot(compnfirms, type="l", xlab="Year", ylab="Number of firms")
+abline(v="2001", col="grey")
+abline(v="2016", col="grey")
 dev.off()
 
 ## Filtering data from 2001 to 2016
@@ -161,6 +162,12 @@ comp_table <- lapply(comp_table, function(x){
 comp_table <- do.call("rbind", comp_table)
 genxtable(xtable(comp_table, caption="Composition of firms based on trade market participation", label="comp_table"), "../DOC/TABLES/composition")
 
+
+par(mar =  c(5, 4, 4, 6) + 0.1)
+matplot(as.character(comp_table$Year),comp_table[,2:5], type="l" , ylab="%", xlab="Year")
+legend.outside(legend = c("None","Import Only", "Export Only","Both"), col=1:4, pch=1)
+
+
 ### Productivity 
 ## Labour Productivity
 long$sa_sales_n_chg_in_stk[which(is.na(long$sa_sales_n_chg_in_stk))] <- 0
@@ -199,58 +206,58 @@ pdf("../DOC/PICS/denslsales.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lsales, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) + theme_bw()
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) + theme_bw() + xlab("Sales")
 dev.off()
 
 pdf("../DOC/PICS/denslgfa.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lgfa, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) +theme_bw()
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black")) +theme_bw()+ xlab("Gross Fixed Assets")
 dev.off()
 
 pdf("../DOC/PICS/denslsalary.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lsalary, colour=expimp))+ geom_density() + theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))  +theme_bw()
+                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))  +theme_bw()+ xlab("Salary")
 dev.off()
-pdf("../DOC/PICS/denslpower.pdf", width=5.6, height=2.4, pointsize=10)
+pdf("../DOC/PICS/denslpower.pdf", width=3.5, height=2, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lpower, colour=expimp))+ geom_density() + theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                    values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
+                    values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()+ xlab("Expenditure on Power and Fuel")
 dev.off()
-pdf("../DOC/PICS/denslrawmat.pdf", width=5.6, height=2.4, pointsize=10)
+pdf("../DOC/PICS/denslrawmat.pdf", width=3.5, height=2, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lrawmat, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
+                     values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()+ xlab("Expenditure on Raw Material")
 dev.off()
 pdf("../DOC/PICS/denslexport.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=lexport, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c("Export only", "Both"),
-                     values= c( "10"="red", "11"= "black"))+theme_bw()
+                     values= c( "10"="red", "11"= "black"))+theme_bw()+ xlab("Export")
 dev.off()
 pdf("../DOC/PICS/denslimport.pdf", width=5.6, height=2.4, pointsize=10)
 par(mai=c(.4, .7, .3, .2))
 ggplot(long, aes(x=limport, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
  scale_color_manual(name = "Trade Status", labels= c( "Import only", "Both"),
-                     values= c("01"= "green", "11"= "black"))+theme_bw()
+                     values= c("01"= "green", "11"= "black"))+theme_bw()+ xlab("Import")
 dev.off()
 
 pdf("../DOC/PICS/denscapprod.pdf", width=5.6, height=2.4, pointsize=10)
 ggplot(long, aes(x=capprod, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+theme_bw()+ xlab("Capital Productivity")
 dev.off()
 
 
 pdf("../DOC/PICS/denspatsales.pdf", width=5.6, height=2.4, pointsize=10)
 ggplot(long, aes(x=patsales, colour=expimp))+ geom_density()+ theme(legend.position=c(0.85, 0.85))+
     scale_color_manual(name = "Trade Status", labels= c("None","Export only", "Import only", "Both"),
-                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+ xlim(-0.5,0.5)+theme_bw()
+                       values= c("00"= "blue", "01"= "green", "10"="red", "11"= "black"))+ xlim(-0.5,0.5)+theme_bw()+ xlab("Profit to Sales")
 dev.off()
 
 ## Summary statisitics 
@@ -279,7 +286,7 @@ sumstats <- lapply(sumstats, function(x){
     sdstat<- round(sd(x[,y], na.rm=TRUE),2)
     sdstat[is.nan(sdstat)] <- 0
     x <- cbind(status,meanstat, sdstat)
-    colnames(x) <- c("Status","mean", "sd")
+    colnames(x) <- c("Status","Mean", "Sd")
     return(x)
 })
 sumstats <- do.call("rbind", sumstats)
