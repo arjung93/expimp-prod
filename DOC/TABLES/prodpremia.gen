@@ -30,8 +30,8 @@ Time Dummies & Yes & Yes & Yes & Yes \\
 Observations & 38,359 & 44,174 & 69,374 & 72,401 \\ 
 \hline 
 \hline \\[-1.8ex]
-\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Standard errors shown
-in parenthesis clustered at industry level} \\
+\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Robust standard errors shown
+in parenthesis} \\
 
  & \multicolumn{4}{r}{\footnotesize$^{*}$p$<$0.1; $^{**}$p$<$0.05;
  $^{***}$p$<$0.01} \\

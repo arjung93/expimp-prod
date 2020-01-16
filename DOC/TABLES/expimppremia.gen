@@ -33,8 +33,8 @@ R$^{2}$ & 0.142 & 0.171 & 0.137 & 0.255 \\
 Adjusted R$^{2}$ & 0.026 & 0.059 & 0.021 & 0.154 \\ 
 \hline 
 \hline \\[-1.8ex]
-\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Standard errors shown
-in parenthesis clustered at industry level} \\
+\textit{Note:}  & \multicolumn{4}{r}{\footnotesize Robust standard errors shown
+in parenthesis } \\
 
  & \multicolumn{4}{r}{\footnotesize$^{*}$p$<$0.1; $^{**}$p$<$0.05;
  $^{***}$p$<$0.01} \\
