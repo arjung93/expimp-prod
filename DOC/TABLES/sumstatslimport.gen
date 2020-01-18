@@ -4,9 +4,7 @@
   \hline
 Status & Mean & Sd \\ 
   \hline
-None & 0 & 0 \\ 
   Import only & 3.44 & 2.38 \\ 
-  Export Only & 0 & 0 \\ 
   Both & 4.99 & 2.45 \\ 
    \hline
 \end{tabular}
