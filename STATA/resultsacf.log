@@ -2,7 +2,7 @@
       name:  <unnamed>
        log:  C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\resultsacf.log
   log type:  text
- opened on:   5 Jan 2020, 14:47:07
+ opened on:  18 Jan 2020, 14:46:39
 
 . xtset sa_finance1_cocode year
        panel variable:  sa_finance1_cocode (unbalanced)
@@ -554,12 +554,6 @@ dy/dx w.r.t. : lagexp lagimp lpresacf lgfa lsalary
 (output written to C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\dynprobitacfme.tex)
 
 . 
-end of do-file
-
-. doedit "C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\biprobitacf.do"
-
-. do "C:\Users\u823125\AppData\Local\Temp\STD00000000.tmp"
-
 . biprobit exp imp lagexp lagimp lpresacf lgfa lsalary i.year i.nic_2digit, r
 
 Fitting comparison equation 1:
@@ -734,6 +728,18 @@ Wald test of rho=0: chi2(1) = 868.861                     Prob > chi2 = 0.0000
 
 . esttab a using "$path/biprobitacf.tex" , replace drop(*.nic_2digit *.year) stats(rho chi2)
 (output written to C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA/biprobitacf.tex)
+
+. 
+end of do-file
+
+. do "C:\Users\u823125\AppData\Local\Temp\STD00000000.tmp"
+
+. esttab mexp1 mexp2 mimp1 mimp2 using "$path\dynprobitacf.tex", se replace drop(*.nic_2digit *.year) stats(rho sigma_u ll) 
+(output written to C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\dynprobitacf.tex)
+
+. 
+. esttab mexp11 mexp22 mimp11 mimp22 using "$path\dynprobitacfme.tex", se replace
+(output written to C:\Users\u823125\Downloads\expimp-prod-master\expimp-prod-master\STATA\dynprobitacfme.tex)
 
 . 
 end of do-file
