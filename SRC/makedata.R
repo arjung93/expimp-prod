@@ -78,12 +78,22 @@ meta <- meta[meta$variable %in% colnames(long),][,1:2]
 nic <- c("nic.2digit", "Broad industry classification code")
 meta <- rbind(meta, nic)
 colnames(meta) <- c("Variable", "Indicator")
-meta <- meta[which(meta$Variable %in% c("sa_company_name", "sa_finance1_year", "sa_sales", "sa_rawmat_exp",
+meta <- meta[which(meta$Variable %in% c( "sa_sales", "sa_rawmat_exp",
                                         "sa_power_and_fuel_exp", "sa_salaries", "sa_pat",
                                         "sa_gross_fixed_assets", "sa_export_goods" , "sa_export_serv",
                                         "sa_import_rawmat","sa_import_stores_spares", "sa_import_fg",
                                         "sa_import_capital_goods", "nic.2digit")),]
 meta$Indicator <- gsub("[(]cif[)]" , "", meta$Indicator)
+
+metamedian <- data.frame(Median=apply(long[,which(colnames(long) %in% meta$Variable)],2,function(x) median(x,na.rm=TRUE)))
+metamedian$Variable <- rownames(metamedian)
+rownames(metamedian) <- NULL
+meta <- merge(meta, metamedian, by="Variable")
+metaiqr <- data.frame(IQR=apply(long[,which(colnames(long) %in% meta$Variable)],2,function(x) IQR(x,na.rm=TRUE))) 
+metaiqr$Variable <- rownames(metaiqr)
+rownames(metaiqr) <- NULL
+meta <- merge(meta, metaiqr, by="Variable")
+meta <- meta[,c("Indicator","Median", "IQR")]
 
 sink("../DOC/TABLES/indicatordescription.gen")
 print(xtable(unique(meta), caption="Data Variables", label="indicator"),

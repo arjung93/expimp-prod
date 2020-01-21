@@ -13,7 +13,7 @@ $ l_{it}$ & $0.374$ & $0.107$ \\
 $ k_{it}$ & $0.474$ & $0.073$ \\ 
 \hline \\[-1.8ex]
 \multicolumn{3}{l} {\footnotesize \textit{Note:} Standard erros are
- calculated using 200 block bootstrapped samples}\\
+ calculated using 200 block bootstrap samples}\\
 
 \end{tabular} 
 \end{table} 

@@ -1,27 +1,25 @@
 % latex table generated in R 3.4.4 by xtable 1.8-4 package
-% Wed Jan 15 12:10:16 2020
-\begin{table}[H]
+% Mon Jan 20 15:13:10 2020
+\begin{table}[ht]
 \centering
-\begin{tabular}{ll}
+\begin{tabular}{lrr}
   \hline
-Variable & Indicator \\ 
+Variables & Median & IQR \\ 
   \hline
-sa\_company\_name & Prowess company name \\ 
-  sa\_finance1\_year & Year \\ 
-  sa\_sales & Sales \\ 
-  sa\_rawmat\_exp & Raw material expenses \\ 
-  sa\_power\_and\_fuel\_exp & Power \& fuel expenses\\ 
-  sa\_salaries & Salaries \& wages \\ 
-  sa\_pat & Profit after tax \\ 
-  sa\_gross\_fixed\_assets & Gross fixed assets \\ 
-  sa\_export\_goods & Export of goods \\ 
-  sa\_export\_serv & Export of services \\ 
-  sa\_import\_rawmat & Import of raw materials  \\ 
-  sa\_import\_stores\_spares & Import of stores and spares  \\ 
-  sa\_import\_fg & Import of finished goods  \\ 
-  nic.2digit & Broad industry classification code \\ 
+  Gross fixed assets & 280.20 & 1002.75 \\
+    Expenditure on Power \& fuel & 18.80 & 72.00 \\ 
+  Raw material Expenses & 277.00 & 966.33 \\ 
+  Salaries \& wages & 25.30 & 94.50 \\ 
+  Sales & 593.40 & 1987.90 \\ 
+  Export of goods & 112.50 & 518.25 \\ 
+  Export of services & 11.80 & 69.90 \\ 
+              Import of finished goods  & 39.65 & 219.93 \\ 
+  Import of raw materials  & 70.10 & 325.65 \\ 
+  Import of stores and spares  & 4.60 & 22.90 \\ 
+  Profit after tax & 8.10 & 62.90 \\ 
    \hline
-   \textit{Note:}&\footnotesize Variables are in INR Million\\ 
+   \multicolumn{3}{r}\textit{Note:}  {\footnotesize Variable values are 
+ in INR Million}\\
 \end{tabular}
 \caption{Data Variables} 
 \label{indicator}
