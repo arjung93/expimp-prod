@@ -8,4 +8,5 @@ clean:
 
 squeaky:
 	-rm proposal.pdf
-
+slides: 
+	latexmk -pdf sl_defence.tex
